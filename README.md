@@ -121,7 +121,7 @@ Royal Glam Boutique (Homepage)
 ## 9. Changelog
 - **10 Aug 2026:** Structured README.md with academic subtitles.
 
-## References
+## 10. References
 -Ambrose, G. & Harris, P. (2015) Design Thinking. London: Bloomsbury.
 
 -Chacon, S. & Straub, B. (2014) Pro Git. 2nd ed. New York: Apress.
