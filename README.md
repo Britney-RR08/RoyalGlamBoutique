@@ -66,6 +66,7 @@ This submission contains:
 - Visual and XML sitemap.
 - README.md file in academic style.
 
+*(Part 2 and Part 3 will follow in future submissions.)*
 ---
 
 ## 8. Sitemap
@@ -103,3 +104,30 @@ Royal Glam Boutique (Homepage)
      ├── Cart Summary
      └── Checkout
 
+### 8.2 XML Sitemap
+```xml
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://royalglamboutique.com/homepage</loc></url>
+  <url><loc>https://royalglamboutique.com/catalogue</loc></url>
+  <url><loc>https://royalglamboutique.com/blog</loc></url>
+  <url><loc>https://royalglamboutique.com/contact</loc></url>
+  <url><loc>https://royalglamboutique.com/location</loc></url>
+  <url><loc>https://royalglamboutique.com/account</loc></url>
+  <url><loc>https://royalglamboutique.com/cart</loc></url>
+</urlset>
+
+---
+
+## 9. Changelog
+- **10 Aug 2026:** Structured README.md with academic subtitles.
+
+## References
+-Ambrose, G. & Harris, P. (2015) Design Thinking. London: Bloomsbury.
+
+-Chacon, S. & Straub, B. (2014) Pro Git. 2nd ed. New York: Apress.
+
+-GitHub Docs (2026) Collaborating with pull requests. Available at: <https://docs.github.com/> [Accessed 10 August 2026].
+
+-Loeliger, J. & McCullough, M. (2012) Version Control with Git. Sebastopol: O’Reilly Media.
+
+-Sitemaps.org (2026) Sitemap Protocol. Available at: <https://www.sitemaps.org/> [Accessed 10 August 2026].
