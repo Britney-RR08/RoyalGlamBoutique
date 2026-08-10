@@ -72,49 +72,83 @@ This submission contains:
 ## 8. Sitemap
 ### 8.1 Visual Sitemap
 
-Royal Glam Boutique (Homepage)
-│
-├── Catalogue
-│    ├── Luxury Handbag
-│    ├── Designer Jewellery
-│    └── Premium Accessories
-│
-├── Blog
-│    ├── Featured Post
-│    ├── Categories
-│    └── Recent Posts
-│
-├── Contact
-│    ├── Contact Form
-│    ├── Phone Number
-│    ├── Email Address
-│    └── Social Media Links
-│
-├── Location
-│    ├── Map
-│    ├── Storefront
-│    └── Interior
-│
-├── Account
-│    ├── My Profile
-│    ├── Order History
-│    └── Account Settings
-│
-└── Cart
-     ├── Cart Summary
-     └── Checkout
+![Royal Glam Boutique Sitemap](sitemap/royal-glam-sitemap.png)
 
-### 8.2 XML Sitemap
-```xml
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://royalglamboutique.com/homepage</loc></url>
-  <url><loc>https://royalglamboutique.com/catalogue</loc></url>
-  <url><loc>https://royalglamboutique.com/blog</loc></url>
-  <url><loc>https://royalglamboutique.com/contact</loc></url>
-  <url><loc>https://royalglamboutique.com/location</loc></url>
-  <url><loc>https://royalglamboutique.com/account</loc></url>
-  <url><loc>https://royalglamboutique.com/cart</loc></url>
-</urlset>
+*Figure 1: Visual representation of the Royal Glam Boutique website structure.*
+
+### 8.2 HTML Sitemap
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Royal Glam Boutique Sitemap</title>
+</head>
+<body>
+  <h1>Royal Glam Boutique Sitemap</h1>
+
+  <!-- Navigation Menu -->
+  <nav>
+    <a href="index.html">Homepage</a> |
+    <a href="catalog.html">Catalogue</a> |
+    <a href="blog.html">Blog</a> |
+    <a href="contact.html">Contact</a> |
+    <a href="location.html">Location</a> |
+    <a href="account.html">Account</a> |
+    <a href="cart.html">Cart</a>
+  </nav>
+
+  <!-- Sitemap Structure -->
+  <ul>
+    <li><a href="index.html">Homepage</a></li>
+
+    <li><a href="catalog.html">Catalogue</a>
+      <ul>
+        <li><a href="catalog/luxury-handbag.html">Luxury Handbag</a></li>
+        <li><a href="catalog/designer-jewellery.html">Designer Jewellery</a></li>
+        <li><a href="catalog/premium-accessories.html">Premium Accessories</a></li>
+      </ul>
+    </li>
+
+    <li><a href="blog.html">Blog</a>
+      <ul>
+        <li><a href="blog/featured-post.html">Featured Post</a></li>
+        <li><a href="blog/categories.html">Categories</a></li>
+        <li><a href="blog/recent-posts.html">Recent Posts</a></li>
+      </ul>
+    </li>
+
+    <li><a href="contact.html">Contact</a>
+      <ul>
+        <li><a href="contact/form.html">Contact Form</a></li>
+        <li><a href="contact/phone.html">Phone Number</a></li>
+        <li><a href="contact/email.html">Email Address</a></li>
+        <li><a href="contact/social.html">Social Media Links</a></li>
+      </ul>
+    </li>
+
+    <li><a href="location.html">Location</a>
+      <ul>
+        <li><a href="location/map.html">Map</a></li>
+        <li><a href="location/storefront.html">Storefront</a></li>
+        <li><a href="location/interior.html">Interior</a></li>
+      </ul>
+    </li>
+
+    <li><a href="account.html">Account</a>
+      <ul>
+        <li><a href="account/profile.html">My Profile</a></li>
+        <li><a href="account/order-history.html">Order History</a></li>
+        <li><a href="account/settings.html">Account Settings</a></li>
+      </ul>
+    </li>
+
+    <li><a href="cart.html">Cart</a>
+      <ul>
+        <li><a href="cart/summary.html">Cart Summary</a></li>
+        <li><a href="cart/checkout.html">Checkout</a></li>
+      </ul>
+    </li>
+  </ul>
+
 
 ---
 
