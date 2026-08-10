@@ -1,4 +1,4 @@
-# Royal Glam Boutique – 
+# Royal Glam Boutique 
 
 ## 1. Project Title
 Royal Glam Boutique Website Development 
