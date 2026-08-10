@@ -1,7 +1,7 @@
-# Royal Glam Boutique – Proposal 7
+# Royal Glam Boutique – 
 
 ## 1. Project Title
-Royal Glam Boutique Website Development (Proposal 7)
+Royal Glam Boutique Website Development 
 
 ---
 
