@@ -72,7 +72,7 @@ This submission contains:
 ## 8. Sitemap
 ### 8.1 Visual Sitemap
 
-![Royal Glam Boutique Sitemap](sitemap/royal-glam-sitemap.png)
+<img width="1037" height="644" alt="image" src="https://github.com/user-attachments/assets/95e5508e-fbaa-4a0b-a134-fcdda215717d" />
 
 *Figure 1: Visual representation of the Royal Glam Boutique website structure.*
 
