@@ -178,6 +178,7 @@ This submission contains:
 ## 9. Changelog
 - **10 Aug 2026:** Structured README.md with academic subtitles.
 - **14 Aug 2026:** Edited the sitemap code
+- **14 Aug 2026:** Replace visual sitemap image in README
 
 ## 10. References
 -Ambrose, G. & Harris, P. (2015) Design Thinking. London: Bloomsbury.
