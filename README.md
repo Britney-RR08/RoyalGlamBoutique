@@ -97,63 +97,87 @@ This submission contains:
   </nav>
 
   <!-- Sitemap Structure -->
-  <ul>
-    <li><a href="index.html">Homepage</a></li>
+    <h2>Sitemap</h2>
+    <!--Sitemap for Website-->
+<ul>
+   <li><a href="Assets/about.html">About Us</a></li>
+   <li><a href="Assets/catalog.html">Catalog</a></li>
+   <li><a href="Assets/blog.html">Blog</a></li>
+   <li><a href="Assets/contact.html">Contact</a></li>
+   <li><a href="Assets/account.html">Account</a></li>
+   <li><a href="Assets/cart.html">Cart</a></li>
+</ul>
 
-    <li><a href="catalog.html">Catalogue</a>
+<h2>Sitemap</h2>
+    <!--Sitemap for Website-->
       <ul>
-        <li><a href="catalog/luxury-handbag.html">Luxury Handbag</a></li>
-        <li><a href="catalog/designer-jewellery.html">Designer Jewellery</a></li>
-        <li><a href="catalog/premium-accessories.html">Premium Accessories</a></li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="catalog.html">Catalog</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="account.html">Account</a></li>
+        <li><a href="cart.html">Cart</a></li>
       </ul>
-    </li>
 
-    <li><a href="blog.html">Blog</a>
-      <ul>
-        <li><a href="blog/featured-post.html">Featured Post</a></li>
-        <li><a href="blog/categories.html">Categories</a></li>
-        <li><a href="blog/recent-posts.html">Recent Posts</a></li>
+          <h2>Sitemap</h2>
+    <!--Sitemap for Website-->
+     <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About-us</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="account.html">Account</a></li>
+        <li><a href="cart.html">Cart</a></li>
       </ul>
-    </li>
 
-    <li><a href="contact.html">Contact</a>
-      <ul>
-        <li><a href="contact/form.html">Contact Form</a></li>
-        <li><a href="contact/phone.html">Phone Number</a></li>
-        <li><a href="contact/email.html">Email Address</a></li>
-        <li><a href="contact/social.html">Social Media Links</a></li>
+        <h2>Sitemap</h2>
+    <!--Sitemap for Website-->
+     <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About-us</a></li>
+        <li><a href="catalog.html">Catalog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="account.html">Account</a></li>
+        <li><a href="cart.html">Cart</a></li>
       </ul>
-    </li>
 
-    <li><a href="location.html">Location</a>
-      <ul>
-        <li><a href="location/map.html">Map</a></li>
-        <li><a href="location/storefront.html">Storefront</a></li>
-        <li><a href="location/interior.html">Interior</a></li>
+         <h2>Sitemap</h2>
+    <!--Sitemap for Website-->
+     <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About-us</a></li>
+        <li><a href="catalog.html">Catalog</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="account.html">Account</a></li>
+        <li><a href="cart.html">Cart</a></li>
       </ul>
-    </li>
 
-    <li><a href="account.html">Account</a>
-      <ul>
-        <li><a href="account/profile.html">My Profile</a></li>
-        <li><a href="account/order-history.html">Order History</a></li>
-        <li><a href="account/settings.html">Account Settings</a></li>
+        <h2>Sitemap</h2>
+    <!--Sitemap for Website-->
+     <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About-us</a></li>
+        <li><a href="catalog.html">Catalog</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="Contact.html">contact</a></li>
+        <li><a href="cart.html">Cart</a></li>
       </ul>
-    </li>
 
-    <li><a href="cart.html">Cart</a>
-      <ul>
-        <li><a href="cart/summary.html">Cart Summary</a></li>
-        <li><a href="cart/checkout.html">Checkout</a></li>
+         <h2>Sitemap</h2>
+    <!--Sitemap for Website-->
+     <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About-us</a></li>
+        <li><a href="catalog.html">Catalog</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="account.html">Account</a></li>
       </ul>
-    </li>
-  </ul>
-
-
 ---
 
 ## 9. Changelog
 - **10 Aug 2026:** Structured README.md with academic subtitles.
+- **14 Aug 2026:** Edited the sitemap code
 
 ## 10. References
 -Ambrose, G. & Harris, P. (2015) Design Thinking. London: Bloomsbury.
