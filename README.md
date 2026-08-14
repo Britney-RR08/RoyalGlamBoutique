@@ -28,6 +28,7 @@ Sitemaps and wireframes have been used to plan the website's structure and funct
 
 ### 3.5 Academic Value  
 The project reflects best practices of information systems, project management, and web design. It serves not only as a practical example of ICT usage but also as an academic assignment.
+
 ---
 
 ## 4. Website Goals and Objectives
@@ -179,6 +180,7 @@ This submission contains:
 - **10 Aug 2026:** Structured README.md with academic subtitles.
 - **14 Aug 2026:** Edited the sitemap code
 - **14 Aug 2026:** Replace visual sitemap image in README
+- **14 Aug 2026:** Add section on website goals and objectives
 
 ## 10. References
 -Ambrose, G. & Harris, P. (2015) Design Thinking. London: Bloomsbury.
