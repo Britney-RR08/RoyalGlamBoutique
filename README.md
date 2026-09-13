@@ -180,7 +180,49 @@ This submission contains:
 - **10 Aug 2026:** Structured README.md with academic subtitles.
 - **14 Aug 2026:** Edited the sitemap code
 - **14 Aug 2026:** Replace visual sitemap image in README
-- **14 Aug 2026:** Add section on website goals and objectives
+- **14 Aug 2026:** Added a section on website goals and objectives
+
+- **13 Sep 2026:** Acknowledged the feedback received from the first assignment and worked to make the second attempt better.
+- Added more content on my webpages:
+- Added 3 more webpages, increasing my initial webpage count: size guide, checkout, and order confirmation.
+
+Home page: 
+-Added more images and information about a boutique store, with references to an existing website.
+-Added the amount each product co
+
+About page:
+-Added the team members of Royal Glam Boutique alongside their roles.
+-Added more insight on the shipping, returns, and payments of the items being sold.
+-Added more insight on the policy and data protection.
+
+Contact page:
+-Added business hours.
+-Added a "get in touch" insight for users to use to contact the boutique.
+-Added a segment of apps that users can connect with the boutique on or at.
+-Added frequently asked questions by customers.
+-Added customer support.
+-Added partnership opportunities.
+
+Catalog page:
+-Added a product filter setting that shows the category, price range, colour, and size.
+-Added pricing for products.
+-Added the descriptions for each product.
+-Added a rating for each item.
+
+Cart page:
+-Added a checkout form that includes payment options.
+-Added order summary.
+
+Checkout page:
+-Added billing details.
+-Added shipping methods.
+-Added payment details.
+
+Account page:
+-Added loyalty rewards.
+-Added newsletter preferences.
+-Added payment methods.
+-Added account settings.
 
 ## 10. References
 -Ambrose, G. & Harris, P. (2015) Design Thinking. London: Bloomsbury.
