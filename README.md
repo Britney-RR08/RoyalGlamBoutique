@@ -181,40 +181,62 @@ This submission contains:
 - **14 Aug 2026:** Edited the sitemap code
 - **14 Aug 2026:** Replace visual sitemap image in README
 - **14 Aug 2026:** Added a section on website goals and objectives
-- **13 Sep 2026:** Acknowledged the feedback received from the first assignment and worked to make the second attempt better.
-- Added more content on my webpages:
-- Added 3 more webpages, increasing my initial webpage count: size guide, checkout, and order confirmation.
-**13 Sep 2026:**Home page: 
--Added more images and information about a boutique store, with references to an existing website.
--Added the price of each product.
-**13 Sep 2026:**About page:
--Added the team members of Royal Glam Boutique alongside their roles.
--Added more insight on the shipping, returns, and payments of the items being sold.
--Added more insight on the policy and data protection.
-**13 Sep 2026:**Contact page:
--Added business hours.
--Added a "get in touch" insight for users to use to contact the boutique.
--Added a segment of apps that users can connect with the boutique on or at.
--Added frequently asked questions by customers.
--Added customer support.
--Added partnership opportunities.
-**13 Sep 2026:**Catalog page:
--Added a product filter setting that shows the category, price range, colour, and size.
--Added pricing for products.
--Added the descriptions for each product.
--Added a rating for each item.
-**13 Sep 2026:**Cart page:
--Added a checkout form that includes payment options.
--Added order summary.
-**13 Sep 2026:**Checkout page:
--Added billing details.
--Added shipping methods.
--Added payment details.
-**13 Sep 2026:**Account page:
--Added loyalty rewards.
--Added newsletter preferences.
--Added payment methods.
--Added account settings.
+## 13 Sep 2026
+### Second Attempt – Feedback Integration
+Acknowledged feedback from the first assignment and worked to improve the second attempt. Key updates include:
+
+#### General Updates
+- Added more content across webpages.
+- Increased total webpage count by 3: **Size Guide**, **Checkout**, and **Order Confirmation**.
+  
+### Size Guide Page
+-Helps customers choose the correct size before purchasing.
+-Clothing, shoe, and jewellery size charts with explanations.
+-Reduces returns and increases customer satisfaction by ensuring accurate sizing.
+
+### Order Confirmation Page
+-Confirms successful purchases.
+-Order summary and confirmation message.
+-Provides closure and reassurance that the order has been processed.
+
+### Checkout Page
+-Finalizes the purchase process.
+-Billing details, shipping methods, and payment details.
+-Ensures smooth transactions and gives customers confidence in secure payment handling.
+
+#### Home Page
+- Added more images and boutique store information.
+- Included product prices with references to an existing website.
+
+#### About Page
+- Listed team members of Royal Glam Boutique with their roles.
+- Added insight on shipping, returns, and payment processes.
+- Expanded policy and data protection details.
+
+#### Contact Page
+- Added business hours.
+- Included a “Get in Touch” section for customer communication.
+- Added apps for boutique connectivity.
+- Integrated FAQs, customer support, and partnership opportunities.
+
+#### Catalog Page
+- Implemented product filters (category, price range, colour, size).
+- Added product pricing and descriptions.
+- Included ratings for each item.
+
+#### Cart Page
+- Added a checkout form with payment options.
+- Included an order summary.
+
+#### Checkout Page
+- Added billing details.
+- Added shipping methods.
+- Added payment details.
+
+#### Account Page
+- Added loyalty rewards.
+- Included newsletter preferences.
+- Added payment methods and account settings.
 
 ## 10. References
 -Ambrose, G. & Harris, P. (2015) Design Thinking. London: Bloomsbury.
