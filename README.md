@@ -81,7 +81,9 @@ This submission contains:
 
 ## 8. Sitemap
 ### 8.1 Visual Sitemap
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/8bc3f966-e1f4-4100-b9c7-7b38d088a7b7" /># Royal Glam Boutique
 
+image link 
 blob: <https://gemini.google.com/473e2645-831f-4a6b-a410-fb78f1806920>
 
 *Figure 1: Visual representation of the Royal Glam Boutique website structure.*
