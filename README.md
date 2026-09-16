@@ -58,21 +58,23 @@ The project reflects best practices of information systems, project management, 
   
 ---
 
-## 7. Part 1 Details
+## POE OUTCOMES
+
+## 7. 1 Part 1 Details
 This submission contains:
 - Private GitHub repository.
 - Wireframes for all seven pages.
 - Visual and XML sitemap.
 - README.md file in academic style.
 
- ## Part 2 Details
+ ## 7. 2 Part 2 Details
 This submission contains:
--External CSS Stylesheets 
--CSS Selectors 
--Desktop Styling Techniques
--Cascading Nature of CSS
--Developer Tools
--Responsive Web Design
+-External CSS Stylesheets.
+-CSS Selectors. 
+-Desktop Styling Techniques.
+-Cascading Nature of CSS.
+-Developer Tools.
+-Responsive Web Design.
 
 *(Part 3 will follow in future submissions.)*
 ---
