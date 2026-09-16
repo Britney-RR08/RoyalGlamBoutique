@@ -113,7 +113,7 @@ blob: <https://gemini.google.com/473e2645-831f-4a6b-a410-fb78f1806920>
 - **13 Sep 2026:** Working with feedbacl from part 1
 - **13 Sep 2026:** Second Attempt – Feedback Integration
 - **13 Sep 2026:** Acknowledged feedback from the first assignment and worked to improve the second attempt. Key updates include:
-- 
+  
 - **13 Sep 2026:**
 - General Updates:
 - Added more content across webpages.
