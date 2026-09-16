@@ -182,58 +182,58 @@ This submission contains:
 - **14 Aug 2026:** Replace visual sitemap image in README
 - **14 Aug 2026:** Added a section on website goals and objectives
 - **13 Sep 2026:** Working with feedbacl from part 1
-### Second Attempt – Feedback Integration
-Acknowledged feedback from the first assignment and worked to improve the second attempt. Key updates include:
+- **13 Sep 2026:** ### Second Attempt – Feedback Integration
+- **13 Sep 2026:** Acknowledged feedback from the first assignment and worked to improve the second attempt. Key updates include:
 
-#### General Updates
+- **13 Sep 2026:** #### General Updates
 - Added more content across webpages.
 - Increased total webpage count by 3: **Size Guide**, **Checkout**, and **Order Confirmation**.
   
-### Size Guide Page
+- **13 Sep 2026:**### Size Guide Page
 -Helps customers choose the correct size before purchasing.
 -Clothing, shoe, and jewellery size charts with explanations.
 -Reduces returns and increases customer satisfaction by ensuring accurate sizing.
 
-### Order Confirmation Page
+- **13 Sep 2026:**### Order Confirmation Page
 -Confirms successful purchases.
 -Order summary and confirmation message.
 -Provides closure and reassurance that the order has been processed.
 
-### Checkout Page
+- **13 Sep 2026:** #### Checkout Page
 -Finalizes the purchase process.
 -Billing details, shipping methods, and payment details.
 -Ensures smooth transactions and gives customers confidence in secure payment handling.
 
-#### Home Page
+- **13 Sep 2026:** #### Home Page
 - Added more images and boutique store information.
 - Included product prices with references to an existing website.
 
-#### About Page
+- **13 Sep 2026:** #### About Page
 - Listed team members of Royal Glam Boutique with their roles.
 - Added insight on shipping, returns, and payment processes.
 - Expanded policy and data protection details.
 
-#### Contact Page
+- **13 Sep 2026:**#### Contact Page
 - Added business hours.
 - Included a “Get in Touch” section for customer communication.
 - Added apps for boutique connectivity.
 - Integrated FAQs, customer support, and partnership opportunities.
 
-#### Catalog Page
+- **13 Sep 2026:** #### Catalog Page
 - Implemented product filters (category, price range, colour, size).
 - Added product pricing and descriptions.
 - Included ratings for each item.
 
-#### Cart Page
+- **13 Sep 2026:** #### Cart Page
 - Added a checkout form with payment options.
 - Included an order summary.
 
-#### Checkout Page
+- **13 Sep 2026:** #### Checkout Page
 - Added billing details.
 - Added shipping methods.
 - Added payment details.
 
-#### Account Page
+- **13 Sep 2026:**#### Account Page
 - Added loyalty rewards.
 - Included newsletter preferences.
 - Added payment methods and account settings.
