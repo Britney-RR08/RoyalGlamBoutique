@@ -1,4 +1,4 @@
-# Royal Glam Boutique 
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/8bc3f966-e1f4-4100-b9c7-7b38d088a7b7" /># Royal Glam Boutique 
 
 ## 1. Project Title
 Royal Glam Boutique Website Development 
@@ -15,10 +15,10 @@ Royal Glam Boutique Website Development
 
 ## 3. Project Overview
 ### 3.1 Purpose  
-The project showcases collaboration in software development and planning of websites.
+The project showcases collaboration in software development and website planning.
 
 ### 3.2 Scope  
-The website has seven pages – Homepage, Catalogue, Account, Cart, Blog, Location and Contact – which have been planned with wireframes and a sitemap.  
+The website has seven pages – Homepage, Catalogue, Account, Cart, Blog, Location, and Contact – which have been planned with wireframes and a sitemap.  
 
 ### 3.3 Technical Collaboration  
 A private GitHub repository was created, and team members were working on separate branches, making commits with clear messages and using peer-reviewed pull requests.
@@ -67,113 +67,42 @@ This submission contains:
 - Visual and XML sitemap.
 - README.md file in academic style.
 
-*(Part 2 and Part 3 will follow in future submissions.)*
+ ## Part 2 Details
+This submission contains:
+-External CSS Stylesheets 
+-CSS Selectors 
+-Desktop Styling Techniques
+-Cascading Nature of CSS
+-Developer Tools
+-Responsive Web Design
+
+*(Part 3 will follow in future submissions.)*
 ---
 
 ## 8. Sitemap
 ### 8.1 Visual Sitemap
 
-<img width="1037" height="644" alt="image" src="https://github.com/user-attachments/assets/95e5508e-fbaa-4a0b-a134-fcdda215717d" />
+blob: <https://gemini.google.com/473e2645-831f-4a6b-a410-fb78f1806920>
 
 *Figure 1: Visual representation of the Royal Glam Boutique website structure.*
 
 ### 8.2 HTML Sitemap
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Royal Glam Boutique Sitemap</title>
-</head>
-<body>
-  <h1>Royal Glam Boutique Sitemap</h1>
-
-  <!-- Navigation Menu -->
-  <nav>
-    <a href="index.html">Homepage</a> |
-    <a href="catalog.html">Catalogue</a> |
-    <a href="blog.html">Blog</a> |
-    <a href="contact.html">Contact</a> |
-    <a href="location.html">Location</a> |
-    <a href="account.html">Account</a> |
-    <a href="cart.html">Cart</a>
-  </nav>
-
-  <!-- Sitemap Structure -->
-    <h2>Sitemap</h2>
-    <!--Sitemap for Website-->
-<ul>
-   <li><a href="Assets/about.html">About Us</a></li>
-   <li><a href="Assets/catalog.html">Catalog</a></li>
-   <li><a href="Assets/blog.html">Blog</a></li>
-   <li><a href="Assets/contact.html">Contact</a></li>
-   <li><a href="Assets/account.html">Account</a></li>
-   <li><a href="Assets/cart.html">Cart</a></li>
-</ul>
-
-<h2>Sitemap</h2>
-    <!--Sitemap for Website-->
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="catalog.html">Catalog</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="account.html">Account</a></li>
-        <li><a href="cart.html">Cart</a></li>
+ <!-- Sitemap -->
+    <div class="footer-sitemap">
+      <h5 class="text-warning">Quick Links</h5>
+      <ul class="list-unstyled">
+        <li  class="list-inline-item"><a href="Assets/about.html" class="text-light">About Us</a></li>
+        <li  class="list-inline-item"><a href="Assets/contact.html" class="text-light">Contact Us</a></li>
+        <li  class="list-inline-item"><a href="Assets/size.html" class="text-light">Size</a></li>
+        <li  class="list-inline-item"><a href="Assets/catalog.html" class="text-light">Catalog</a></li>
+        <li  class="list-inline-item"><a href="Assets/cart.html" class="text-light">Cart</a></li>
+        <li  class="list-inline-item"><a href="Assets/checkout.html" class="text-light">Checkout</a></li>
+        <li  class="list-inline-item"><a href="Assets/order-confirmation.html" class="text-light">Order Confirmation</a></li>
+        <li  class="list-inline-item"><a href="Assets/account.html" class="text-light">Account</a></li>
+        <li  class="list-inline-item"><a href="Assets/blog.html" class="text-light">Blog</a></li>
       </ul>
-
-          <h2>Sitemap</h2>
-    <!--Sitemap for Website-->
-     <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="about.html">About-us</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="account.html">Account</a></li>
-        <li><a href="cart.html">Cart</a></li>
-      </ul>
-
-        <h2>Sitemap</h2>
-    <!--Sitemap for Website-->
-     <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="about.html">About-us</a></li>
-        <li><a href="catalog.html">Catalog</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="account.html">Account</a></li>
-        <li><a href="cart.html">Cart</a></li>
-      </ul>
-
-         <h2>Sitemap</h2>
-    <!--Sitemap for Website-->
-     <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="about.html">About-us</a></li>
-        <li><a href="catalog.html">Catalog</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="account.html">Account</a></li>
-        <li><a href="cart.html">Cart</a></li>
-      </ul>
-
-        <h2>Sitemap</h2>
-    <!--Sitemap for Website-->
-     <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="about.html">About-us</a></li>
-        <li><a href="catalog.html">Catalog</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="Contact.html">contact</a></li>
-        <li><a href="cart.html">Cart</a></li>
-      </ul>
-
-         <h2>Sitemap</h2>
-    <!--Sitemap for Website-->
-     <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="about.html">About-us</a></li>
-        <li><a href="catalog.html">Catalog</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="account.html">Account</a></li>
-      </ul>
+    </div>
+  </div>
 ---
 
 ## 9. Changelog
@@ -253,9 +182,10 @@ This submission contains:
  - Added the needed file structure in GitHub consisting of the assets, images, CSS, index.html, and JS.
  - The assets folder has all the HTML files stored in it
  - The images folder has the images used to generate the website
- - The css folder has external styling sheet inside 
+ - The css folder has an external stylesheet inside 
  - I attempted to create a file structure; however, I encountered some errors along the way, which then required me to delete all the unwanted files on the main branch, from the images to the HTML files and the CSS and JS
- 
+ - Updated the sitemap code with inclusion of the new webpages
+ - Updated the sitemap image with inclusion of the new webpages
 ---
 
 ## 10. References
@@ -271,7 +201,7 @@ This submission contains:
 
 -iStock. (2026) iStock. Available at: <https://www.istockphoto.com/> [Accessed: 16 September 2026]
 
---Nicci Boutiques. (2026) Nicci Boutiques. Available at: <https://nicci.co.za/> [Accessed 16 September 2026]
+-Nicci Boutiques. (2026) Nicci Boutiques. Available at: <https://nicci.co.za/> [Accessed 16 September 2026]
 
 -Loeliger, J. & McCullough, M. (2012) Version Control with Git. Sebastopol: O’Reilly Media.
 
