@@ -1,5 +1,3 @@
-<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/8bc3f966-e1f4-4100-b9c7-7b38d088a7b7" /># Royal Glam Boutique 
-
 ## 1. Project Title
 Royal Glam Boutique Website Development 
 
