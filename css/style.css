@@ -1,0 +1,315 @@
+/* =========================
+   GLOBAL BASE
+========================= */
+body {
+  font-family: 'Georgia', serif;
+  padding-top: 70px; /* adjust for fixed navbar */
+  background-color: #fdfdfd;
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+section {
+  padding: 3rem 1rem;
+  margin-bottom: 40px;
+}
+
+/* =========================
+   HERO BANNER
+========================= */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero img {
+  object-fit: cover;
+  height: 100%;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 1rem;
+  max-width: 90%;
+}
+
+.hero-text h1 {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  color: #FFD700; /* gold accent */
+}
+
+.hero-text p {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: #c4cfc7;
+}
+
+
+.hero img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-catalog {
+  object-fit: cover;
+  height: 50%;
+}
+
+.hero-blog {
+  object-fit: cover;
+  height: 40%;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  background-color: #020202;
+  box-shadow: 0 2px 6px rgba(255, 215, 0, 0.3);
+}
+
+.navbar-brand {
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #FFD700 !important;
+}
+
+.nav-link {
+  color: #f8f9fa !important;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #FFD700 !important;
+  transform: scale(1.05);
+}
+
+/* =========================
+   CARDS
+========================= */
+.card {
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.card-img-top {
+  height: 250px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn-primary {
+  background-color: #000;
+  border-color: #FFD700;
+  color: #FFD700;
+}
+
+.btn-primary:hover {
+  background-color: #FFD700;
+  color: #000;
+}
+
+.btn-outline-warning {
+  border-color: #FFD700;
+  color: #FFD700;
+}
+
+.btn-outline-warning:hover {
+  background-color: #FFD700;
+  color: #000;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background-color: #000;
+  color: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: #FFD700;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #00b383; /* turquoise hover */
+}
+
+.footer-sitemap ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+/* =========================
+   SECTION HEADINGS
+========================= */
+.categories h2,
+.sale h2,
+.info-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #FFD700;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+img {
+  max-width: 100%;      /* Image will never overflow its container */
+  height: auto;         /* Keeps aspect ratio */
+  display: block;       /* Removes inline spacing issues */
+  object-fit: contain;  /* Ensures full image is visible */
+}
+
+.card-img-top {
+  width: 100%;              /* Always span the card width */
+  height: 250px;            /* Fixed height for all images */
+  object-fit: contain;      /* Show the full image without cropping */
+  object-position: center;  /* Center the image inside the box */
+}
+
+/* Mobile (up to 768px) */
+@media (max-width: 768px) {
+  .hero {
+    height: 50vh;
+    text-align: center;
+  }
+  .navbar-nav {
+    flex-direction: column;
+  }
+}
+
+/* Tablet (769px–1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero {
+    height: 60vh;
+  }
+}
+
+/* Desktop (1025px+) */
+@media (min-width: 1025px) {
+  .hero {
+    height: 100vh;
+  }
+}
+
+.color-palette {
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.color-box {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.color-box:hover {
+  transform: scale(1.2);
+  border: 2px solid #FFD700; /* gold accent on hover */
+}
+
+a:hover { color:#FFD700; }
+
+/* General background */
+body {
+  background-color: #f8f7f4; /* ivory tone */
+  color: #222; /* dark text for readability */
+  font-family: 'Playfair Display', serif; /* elegant font */
+}
+
+/* Section headers */
+h3, h2 {
+  color: #d4af37; /* gold */
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #d4af37;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Cards */
+.card {
+  background-color: #000; /* black card background */
+  border: 1px solid #d4af37; /* gold border */
+  color: #f8f7f4; /* ivory text */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4); /* gold glow */
+}
+
+/* Card titles & text */
+.card-title {
+  color: #d4af37; /* gold price highlight */
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.card-text {
+  color: #f8f7f4; /* ivory text */
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #d4af37; /* gold button */
+  border: none;
+  color: #000; /* black text */
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #000; /* invert on hover */
+  color: #d4af37;
+  border: 1px solid #d4af37;
+}
+
+/* Images */
+.card-img-top {
+  height: 250px;
+  object-fit: contain; /* show full product */
+  background-color: #f8f7f4; /* ivory frame */
+  border-bottom: 1px solid #d4af37;
+}
+
+
+
+
+
