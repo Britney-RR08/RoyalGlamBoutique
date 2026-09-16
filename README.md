@@ -69,12 +69,12 @@ This submission contains:
 
  ## 7. 2 Part 2 Details
 This submission contains:
--External CSS Stylesheets.
--CSS Selectors. 
--Desktop Styling Techniques.
--Cascading Nature of CSS.
--Developer Tools.
--Responsive Web Design.
+- **External CSS Stylesheets. **
+- **CSS Selectors. ** 
+- **Desktop Styling Techniques. **
+- **Cascading Nature of CSS. **
+-  ** Developer Tools. **
+- **Responsive Web Design. **
 
 *(Part 3 will follow in future submissions.)*
 ---
