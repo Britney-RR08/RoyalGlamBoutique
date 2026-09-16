@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Royal Glam Boutique</title>
+
+  <!--Bootstrap CSS-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"> 
+
+  <!-- Bootstrap icons-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+<body style="min-height:100vh; display:flex; flex-direction:column; font-family:'Segoe UI', sans-serif;">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top" 
+     style="padding:15px; box-shadow:0 4px 12px rgba(0,0,0,0.3);">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold text-warning" href="../index.html" style="font-size:1.4rem;">
+      Royal Glam Boutique
+    </a>
+
+    <div class="collapse navbar-collapse justify-content-end align-items-center">
+      <ul class="navbar-nav flex-row flex-wrap">
+        <li class="nav-item"><a class="nav-link px-3 active" href="../index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="size.html">Size</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="catalog.html">Catalog</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="cart.html">Cart</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="#">Checkout</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="order-confirmation.html">Confirmation</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="account.html">Account</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="blog.html">Blog</a></li>
+      </ul>
+
+      <div class="d-flex align-items-center ms-4" style="gap:20px; font-size:1.6rem;">
+        <a href="account.html" class="text-warning" title="My Account" style="text-decoration:none;">
+          <i class="bi bi-person"></i>
+        </a>
+        <a href="cart.html" class="text-warning" title="Shopping Cart" style="text-decoration:none;">
+          <i class="bi bi-bag"></i>
+        </a>
+      </div>
+
+      <form class="d-flex ms-3" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-warning" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<br>
+
+<!-- HERO -->
+<header class="text-center text-white bg-dark py-5 mt-5" 
+        style="background:linear-gradient(180deg,#000,#333);">
+  <h1 class="fw-bold" style="font-size:2.5rem;">Secure Checkout</h1>
+  <p class="lead" style="color:#FFD700;">Complete your order safely and quickly.</p>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="container my-5" style="flex:1; max-width:900px;">
+  <h1 class="text-center text-warning mb-4" style="font-size:2.2rem; font-weight:bold;">Checkout</h1>
+  <p class="text-center text-muted" style="font-size:1.1rem;">Secure your sparkle today.</p>
+
+  <!-- Billing details -->
+  <section class="card shadow-sm p-4 mb-4">
+    <h2 class="mb-3 text-dark">Billing Details</h2>
+    <form>
+      <div class="mb-3">
+        <label for="fullName" class="form-label">Full Name</label>
+        <input type="text" id="fullName" class="form-control" placeholder="Enter your full name">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" class="form-control" placeholder="Enter your email">
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone</label>
+        <input type="text" id="phone" class="form-control" placeholder="Enter your phone number">
+      </div>
+      <div class="mb-3">
+        <label for="address" class="form-label">Address</label>
+        <textarea id="address" class="form-control" rows="3" placeholder="Enter your address"></textarea>
+      </div>
+    </form>
+  </section>
+
+  <!-- Shipping method -->
+  <section class="card shadow-sm p-4 mb-4">
+    <h2 class="mb-3 text-dark">Shipping Method</h2>
+    <form>
+      <div class="form-check mb-2">
+        <input class="form-check-input" type="radio" name="shipping" id="standard">
+        <label class="form-check-label" for="standard">Standard (3–5 days)</label>
+      </div>
+      <div class="form-check mb-2">
+        <input class="form-check-input" type="radio" name="shipping" id="express">
+        <label class="form-check-label" for="express">Express (1–2 days)</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="shipping" id="sameDay">
+        <label class="form-check-label" for="sameDay">Same-Day Delivery</label>
+      </div>
+    </form>
+  </section>
+
+  <!-- Payment details -->
+  <section class="card shadow-sm p-4 mb-4">
+    <h2 class="mb-3 text-dark">Payment Details</h2>
+    <form>
+      <div class="mb-3">
+        <label for="cardName" class="form-label">Cardholder Name</label>
+        <input type="text" id="cardName" class="form-control" placeholder="Enter name on card" required>
+      </div>
+      <div class="mb-3">
+        <label for="cardNumber" class="form-label">Card Number</label>
+        <input type="text" id="cardNumber" class="form-control" placeholder="Enter card number" required>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="expiryDate" class="form-label">Expiry Date</label>
+          <input type="text" id="expiryDate" class="form-control" placeholder="MM/YY" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="cvv" class="form-label">CVV</label>
+          <input type="text" id="cvv" class="form-control" placeholder="3-digit code" required>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="billingAddress" class="form-label">Billing Address</label>
+        <input type="text" id="billingAddress" class="form-control" placeholder="Street address" required>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="city" class="form-label">City</label>
+          <input type="text" id="city" class="form-control" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="postalCode" class="form-label">Postal Code</label>
+          <input type="text" id="postalCode" class="form-control" required>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="country" class="form-label">Country</label>
+        <input type="text" id="country" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-dark w-100" 
+              style="color:#FFD700; font-weight:bold; padding:12px; border-radius:6px;">
+        Submit Payment
+      </button>
+    </form>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<!-- FOOTER -->
+<footer class="bg-dark text-light py-4" 
+        style="margin-top:auto; position:relative; bottom:0; width:100%; box-shadow:0 -2px 8px rgba(0,0,0,0.3);">
+  <div class="container text-center">
+    <!-- Branding & Security Note -->
+    <p class="mb-3" style="font-size:0.95rem; color:#bbb;">
+      © 2021–2026 Royal Glam Boutique | Secure Checkout
+    </p>
+
+    <!-- Sitemap -->
+    <div class="footer-sitemap">
+      <h5 class="text-warning mb-3" style="font-weight:bold;">Quick Links</h5>
+      <ul class="list-inline">
+        <li class="list-inline-item mx-2"><a href="../index.html" class="text-light" style="text-decoration:none;">Home</a></li>
+        <li class="list-inline-item mx-2"><a href="about.html" class="text-light" style="text-decoration:none;">About Us</a></li>
+        <li class="list-inline-item mx-2"><a href="contact.html" class="text-light" style="text-decoration:none;">Contact</a></li>
+        <li class="list-inline-item mx-2"><a href="size.html" class="text-light" style="text-decoration:none;">Size</a></li>
+        <li class="list-inline-item mx-2"><a href="catalog.html" class="text-light" style="text-decoration:none;">Catalog</a></li>
+        <li class="list-inline-item mx-2"><a href="cart.html" class="text-light" style="text-decoration:none;">Cart</a></li>
+        <li class="list-inline-item mx-2"><a href="checkout.html" class="text-light" style="text-decoration:none;">Checkout</a></li>
+        <li class="list-inline-item mx-2"><a href="order-confirmation.html" class="text-light" style="text-decoration:none;">Confirmation</a></li>
+        <li class="list-inline-item mx-2"><a href="account.html" class="text-light" style="text-decoration:none;">Account</a></li>
+        <li class="list-inline-item mx-2"><a href="blog.html" class="text-light" style="text-decoration:none;">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
