@@ -1,48 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog - Royal Glam Boutique</title>
 
-  <!--Bootstrap CSS-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-   rel="stylesheet">
-
-   <!-- Bootstrap icons-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
-      <!-- Link to external CSS -->
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Link to external CSS -->
   <link rel="stylesheet" href="CSS/style.css">
+
+  <style>
+    :root {
+      --gold-primary: #ffc107;
+      --gold-hover: #e0a800;
+    }
+    .text-gold { color: var(--gold-primary) !important; }
+    .btn-gold { background-color: var(--gold-primary); color: #000; font-weight: 600; border: none; }
+    .btn-gold:hover { background-color: var(--gold-hover); color: #000; }
+    .footer-link { transition: color 0.2s ease-in-out; }
+    .footer-link:hover { color: var(--gold-primary) !important; }
+    .blog-card { transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; }
+    .blog-card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important; }
+
+    #nav-toggle {
+      display: none;
+    }
+    @media (max-width: 991.98px) {
+      #nav-toggle:checked ~ #navContent {
+        display: block !important;
+      }
+    }
+  </style>
 </head>
 
-<body>
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top" 
-     style="padding:15px; box-shadow:0 4px 12px rgba(0,0,0,0.3);">
-  <div class="container-fluid">
+<body class="bg-light text-dark d-flex flex-column min-vh-100">
 
-    <!-- Brand -->
-    <a class="navbar-brand fw-bold text-warning" href="../index.html" style="font-size:1.4rem;">
-      Royal Glam Boutique
-    </a>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow py-3">
+    <div class="container-fluid px-4">
+      
+      <!-- Brand Logo -->
+      <a class="navbar-brand fw-bold text-warning fs-4" href="../index.html">
+        Royal Glam Boutique
+      </a>
 
-    <!-- Menu + Icons + Search -->
-    <div class="collapse navbar-collapse justify-content-end align-items-center">
-      <!-- Menu -->
-      <ul class="navbar-nav flex-row flex-wrap">
-        <li class="nav-item"><a class="nav-link px-3 active" href="../index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link px-3" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link px-3" href="contact.html">Contact</a></li>
-        <li class="nav-item"><a class="nav-link px-3" href="size.html">Size Guide</a></li>
-        <li class="nav-item"><a class="nav-link px-3" href="catalog.html">Catalog</a></li> 
-        <li class="nav-item"><a class="nav-link px-3" href="cart.html">Cart</a></li>
-        <li class="nav-item"><a class="nav-link px-3" href="checkout.html">Checkout</a></li>
-        <li class="nav-item"><a class="nav-link px-3" href="order-confirmation.html">Confirmation</a></li>
-        <li class="nav-item"><a class="nav-link px-3" href="account.html">Account </a></li>
-        <li class="nav-item"><a class="nav-link px-3" href="#">Blog</a></li>
-      </ul>
+      <!-- Hidden Checkbox for Mobile Toggle -->
+      <input type="checkbox" id="nav-toggle">
 
+      <!-- Mobile Toggler Label -->
+      <label for="nav-toggle" class="navbar-toggler border-0 cursor-pointer">
+        <span class="navbar-toggler-icon"></span>
+      </label>
+
+      <!-- Menu + Icons + Search -->
+      <div class="collapse navbar-collapse" id="navContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-3">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="size.html">Size Guide</a></li>
+          <li class="nav-item"><a class="nav-link" href="catalog.html">Catalog</a></li>
+          <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+          <li class="nav-item"><a class="nav-link" href="checkout.html">Checkout</a></li>
+          <li class="nav-item"><a class="nav-link" href="order-confirmation.html">Confirmation</a></li>
+          <li class="nav-item"><a class="nav-link" href="account.html">Account</a></li>
+          <li class="nav-item"><a class="nav-link active text-warning fw-semibold" href="blog.html">Blog</a></li>
+        </ul>
+
+        
       <!-- Icons -->
       <div class="d-flex align-items-center ms-4" style="gap:20px; font-size:1.6rem;">
         <!-- Account Icon -->
@@ -62,116 +90,234 @@
       </form>
     </div>
   </div>
-</nav>
 
-<br>
+ 
+  </nav>
 
-  
-<!-- BLOG PAGE HERO -->
-<header class="text-center text-white bg-dark py-5 mt-5">
-  <h1 class="fw-bold">Fashion Insights</h1>
-  <p class="lead">Read tips, trends, and stories from our style experts.</p>
+<!-- BLOG HERO HEADER -->
+<header class="bg-dark py-5 border-bottom border-warning border-2">
+  <div class="container text-center">
+    <h1 class="display-4 fw-bold text-white mb-2">Fashion Insights</h1>
+    <p class="lead mb-0" style="color:#FFD700;">Read tips, trends, and stories from our style experts.</p>
+  </div>
 </header>
 
-<div class="container my-5" style="max-width:1000px;">
-  <h1 class="text-center text-warning mb-4" style="font-size:2.5rem; font-weight:bold;">Blog</h1>
-  <p class="text-center text-muted" style="font-size:1.1rem;">Trends, tips, and timeless glamour.</p>
 
- <!-- Breaking News Section -->
-<section style="padding:20px; border:1px solid #ccc; border-radius:8px; max-width:900px; margin:20px auto; background-color:#f9f9f9;">
-  <img src="../Images/Newspaper.avif" alt="Fashion Trends" width="400" 
-       style="display:block; margin-bottom:15px; border-radius:6px;">
-  <p style="font-size:1.1rem; line-height:1.6; color:#555; text-align:left;">
-    Welcome to our fashion blog! Stay updated with the latest trends, styling tips, and exclusive insights into the world of luxury fashion. 
-    Our blog is your go-to source for inspiration and advice on how to elevate your style.
-  </p>  
-</section>
+  <!-- MAIN BLOG CONTENT -->
+  <main class="container my-5" style="max-width: 1100px;">
+    
+    <!-- SUBHEADER TITLE -->
+    <div class="text-center mb-5">
+      <h2 class="text-warning fw-bold display-6">Trends, Tips, and Timeless Glamour</h2>
+      <p class="text-muted fs-5">Your go-to source for inspiration and luxury styling advice.</p>
+    </div>
 
-<!-- Blog articles -->
-<h2 style="font-family:'Georgia', serif; font-size:1.8rem; color:#2c3e50; margin-top:20px; text-align:left;">Top 5 Luxury Trends 2026</h2>
-<p style="font-size:1.1rem; color:#555; text-align:left;">Explore the latest fashion trends shaping luxury accessories this year.</p>
-<p style="font-size:1.1rem; color:#555; text-align:left;">Highlights include sustainable materials, oversized statement pieces, and the return of vintage-inspired designs.</p>
+    <!-- FEATURED / BREAKING NEWS CARD -->
+    <div class="card border-0 shadow-sm mb-5 overflow-hidden">
+      <div class="row g-0 align-items-center">
+        <div class="col-md-5">
+          <img src="../Images/Newspaper.avif" class="img-fluid w-100 h-100 object-fit-cover" alt="Fashion Trends" style="min-height: 250px;">
+        </div>
+        <div class="col-md-7">
+          <div class="card-body p-4 p-lg-5">
+            <span class="badge bg-warning text-dark mb-2">Featured Editorial</span>
+            <h3 class="card-title fw-bold text-dark mb-3">Welcome to Our Fashion Blog</h3>
+            <p class="card-text text-secondary lead fs-6">
+              Stay updated with the latest trends, styling tips, and exclusive insights into the world of luxury fashion. Our blog is your premier destination for inspiration to elevate your personal style everyday.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<br>
+    <div class="row g-4">
+      
+      <!-- LEFT COLUMN: ARTICLES -->
+      <div class="col-lg-8">
+        
+        <!-- Article 1 -->
+        <article class="card border-0 shadow-sm mb-4 blog-card">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center gap-2 text-muted small mb-2">
+              <i class="bi bi-calendar3 text-warning"></i> <span>September 2026</span>
+              <span>&bull;</span>
+              <i class="bi bi-tag text-warning"></i> <span>Trends</span>
+            </div>
+            <h3 class="h4 card-title fw-bold text-dark mb-3">Top 5 Luxury Trends 2026</h3>
+            <p class="text-secondary">Explore the latest fashion trends shaping luxury accessories this year.</p>
+            <p class="text-secondary mb-0">Highlights include sustainable materials, oversized statement pieces, and the return of vintage-inspired designs that redefine sophistication.</p>
+          </div>
+        </article>
 
-<h2 style="font-family:'Georgia', serif; font-size:1.8rem; color:#2c3e50; margin-top:20px; text-align:left;">How to Style a Designer Handbag</h2>
-<p style="font-size:1.1rem; color:#555; text-align:left;">Tips for pairing handbags with outfits for maximum elegance.</p>
-<p style="font-size:1.1rem; color:#555; text-align:left;">We cover casual day looks, evening glamour, and professional styling to help you get the most out of your investment piece.</p>
+        <!-- Article 2 -->
+        <article class="card border-0 shadow-sm mb-4 blog-card">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center gap-2 text-muted small mb-2">
+              <i class="bi bi-calendar3 text-warning"></i> <span>August 2026</span>
+              <span>&bull;</span>
+              <i class="bi bi-tag text-warning"></i> <span>Styling</span>
+            </div>
+            <h3 class="h4 card-title fw-bold text-dark mb-3">How to Style a Designer Handbag</h3>
+            <p class="text-secondary">Tips for pairing handbags with outfits for maximum elegance.</p>
+            <p class="text-secondary mb-0">We cover casual day looks, evening glamour, and professional styling to help you get the most out of your investment piece.</p>
+          </div>
+        </article>
 
-<br>
+        <!-- Article 3 -->
+        <article class="card border-0 shadow-sm mb-4 blog-card">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center gap-2 text-muted small mb-2">
+              <i class="bi bi-calendar3 text-warning"></i> <span>August 2026</span>
+              <span>&bull;</span>
+              <i class="bi bi-tag text-warning"></i> <span>Care Guide</span>
+            </div>
+            <h3 class="h4 card-title fw-bold text-dark mb-3">Jewellery Care Tips</h3>
+            <p class="text-secondary">Learn how to maintain the shine and quality of your designer jewellery.</p>
+            <p class="text-secondary mb-0">We share practical advice on polishing, avoiding damage, and keeping your jewellery sparkling for years to come.</p>
+          </div>
+        </article>
 
-<h2 style="font-family:'Georgia', serif; font-size:1.8rem; color:#2c3e50; margin-top:20px; text-align:left;">Jewellery Care Tips</h2>
-<p style="font-size:1.1rem; color:#555; text-align:left;">Learn how to maintain the shine and quality of your designer jewellery.</p>  
-<p style="font-size:1.1rem; color:#555; text-align:left;">We share practical advice on polishing, avoiding damage, and keeping your jewellery sparkling for years to come.</p>
+        <!-- Article 4 -->
+        <article class="card border-0 shadow-sm mb-4 blog-card">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center gap-2 text-muted small mb-2">
+              <i class="bi bi-calendar3 text-warning"></i> <span>July 2026</span>
+              <span>&bull;</span>
+              <i class="bi bi-tag text-warning"></i> <span>Accessories</span>
+            </div>
+            <h3 class="h4 card-title fw-bold text-dark mb-3">The Art of Accessorizing</h3>
+            <p class="text-secondary">Discover how to elevate your look with the perfect accessories.</p>
+            <p class="text-secondary mb-0">We guide you through mixing and matching pieces to create a polished, unique style that reflects your individual personality.</p>
+          </div>
+        </article>
 
-<br>
+        <!-- Article 5: Spotlight -->
+        <article class="card border-0 shadow-sm mb-4 blog-card border-start border-warning border-4">
+          <div class="card-body p-4">
+            <span class="badge bg-dark text-warning mb-2">Designer Spotlight</span>
+            <h3 class="h4 card-title fw-bold text-dark mb-3">Designer Spotlight: Lerato Dlamini</h3>
+            <p class="text-secondary mb-0">Meet Lerato Dlamini, our lead designer who brings creativity and elegance to every collection. Her vision seamlessly combines African heritage with modern luxury, making Royal Glam Boutique stand out in the global fashion scene.</p>
+          </div>
+        </article>
 
-<h2 style="font-family:'Georgia', serif; font-size:1.8rem; color:#2c3e50; margin-top:20px; text-align:left;">The Art of Accessorizing</h2>
-<p style="font-size:1.1rem; color:#555; text-align:left;">Discover how to elevate your look with the perfect accessories.</p>
-<p style="font-size:1.1rem; color:#555; text-align:left;">We guide you through mixing and matching pieces to create a polished, unique style that reflects your personality.</p>  
+        <!-- Article 6: Behind The Scenes -->
+        <article class="card border-0 shadow-sm mb-4 blog-card">
+          <div class="card-body p-4">
+            <span class="badge bg-secondary mb-2">Behind the Scenes</span>
+            <h3 class="h4 card-title fw-bold text-dark mb-3">Crafting Glamour Behind the Scenes</h3>
+            <p class="text-secondary mb-0">Ever wondered how our collections come to life? From sketching original concepts to hand-selecting premium fabrics, our creative team works tirelessly to ensure every piece reflects unmatched sophistication.</p>
+          </div>
+        </article>
 
-<br>
+      </div>
 
-<!-- New Section: Fashion Tips -->
-<h2 style="font-family:'Georgia', serif; font-size:1.8rem; color:#2c3e50; margin-top:20px; text-align:left;">Quick Fashion Tips</h2>
-<ul style="font-size:1.1rem; color:#555; text-align:left; margin-left:20px;">
-  <li>Always balance bold accessories with simple outfits.</li>
-  <li>Invest in timeless pieces that never go out of style.</li>
-  <li>Mix textures like silk and leather for a chic look.</li>
-</ul>
+      <!-- RIGHT COLUMN: SIDEBAR CONTENT -->
+      <div class="col-lg-4">
+        
+        <!-- Fashion Tips Card -->
+        <div class="card border-0 shadow-sm mb-4 bg-dark text-white">
+          <div class="card-body p-4">
+            <h4 class="h5 fw-bold text-warning mb-3"><i class="bi bi-lightbulb me-2"></i>Quick Fashion Tips</h4>
+            <ul class="list-unstyled text-secondary mb-0">
+              <li class="mb-3 d-flex align-items-start">
+                <i class="bi bi-check-circle-fill text-warning me-2 mt-1"></i>
+                <span>Always balance bold accessories with simple, clean outfits.</span>
+              </li>
+              <li class="mb-3 d-flex align-items-start">
+                <i class="bi bi-check-circle-fill text-warning me-2 mt-1"></i>
+                <span>Invest in timeless classic pieces that never go out of style.</span>
+              </li>
+              <li class="d-flex align-items-start">
+                <i class="bi bi-check-circle-fill text-warning me-2 mt-1"></i>
+                <span>Mix contrasting textures like silk and leather for a chic statement.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-<br>
+        <!-- Upcoming Events Card -->
+        <div class="card border-0 shadow-sm mb-4">
+          <div class="card-body p-4">
+            <h4 class="h5 fw-bold text-dark mb-3"><i class="bi bi-calendar-event text-warning me-2"></i>Upcoming Events</h4>
+            <div class="border-start border-warning border-3 ps-3 py-1">
+              <h5 class="h6 fw-bold mb-1">Royal Glam Fashion Show</h5>
+              <p class="small text-muted mb-2"><i class="bi bi-geo-alt"></i> Johannesburg &bull; November 2026</p>
+              <p class="small text-secondary mb-0">Join us for live runway presentations, exclusive luxury product launches, and meet our lead designers in person.</p>
+            </div>
+          </div>
+        </div>
 
-<!-- New Section: Designer Spotlight -->
-<h2 style="font-family:'Georgia', serif; font-size:1.8rem; color:#2c3e50; margin-top:20px; text-align:left;">Designer Spotlight: Lerato Dlamini</h2>
-<p style="font-size:1.1rem; color:#555; text-align:left;">Meet Lerato Dlamini, our lead designer who brings creativity and elegance to every collection. Her vision combines African heritage with modern luxury, making Royal Glam Boutique stand out in the fashion world.</p>
+        <!-- Catalog CTA Card -->
+        <div class="card border-0 shadow-sm text-center p-4 bg-warning text-dark">
+          <i class="bi bi-gem fs-1 mb-2"></i>
+          <h4 class="fw-bold mb-2">Inspired by Our Blog?</h4>
+          <p class="small mb-3">Explore our latest arrivals and bring high-fashion luxury directly to your wardrobe.</p>
+          <a href="catalog.html" class="btn btn-dark fw-bold w-100 py-2">Shop Featured Items</a>
+        </div>
 
-<br>
+      </div>
 
-<!-- New Section: Behind the Scenes -->
-<h2 style="font-family:'Georgia', serif; font-size:1.8rem; color:#2c3e50; margin-top:20px; text-align:left;">Behind the Scenes</h2>
-<p style="font-size:1.1rem; color:#555; text-align:left;">Ever wondered how our collections come to life? From sketching designs to selecting fabrics, our creative team works tirelessly to ensure every piece reflects glamour and sophistication.</p>
+    </div>
 
-<br>
-
-<!-- New Section: Upcoming Events -->
-<h2 style="font-family:'Georgia', serif; font-size:1.8rem; color:#2c3e50; margin-top:20px; text-align:left;">Upcoming Events</h2>
-<p style="font-size:1.1rem; color:#555; text-align:left;">Join us for our annual <strong>Royal Glam Fashion Show</strong> in Johannesburg this November. Experience live runway presentations, exclusive product launches, and meet our designers in person.</p>
-
-<br>
-
-<!-- Call-to-action -->
-<a href="catalog.html" class="btn" 
-   style="display:inline-block; background-color:#000; color:#FFD700; padding:10px 20px; border-radius:4px; text-decoration:none; font-weight:bold; margin-top:10px;">
-   Shop Featured Items
-</a>
-
+  </main>
 
   <!-- FOOTER -->
-<footer class="bg-dark text-light py-4 mt-5" 
-        style="margin-top:auto; width:100%; box-shadow:0 -2px 8px rgba(0,0,0,0.3);">
-  <div class="container-fluid text-center">
-    <p class="mb-2" style="color:#bbb;">© 2021–2026 Royal Glam Boutique | Fashion Redefined</p>
-    <h5 class="text-warning mb-3">Quick Links</h5>
-    <ul class="list-inline">
-      <li class="list-inline-item mx-2"><a href="../index.html" class="text-light">Home</a></li>
-      <li class="list-inline-item mx-2"><a href="about.html" class="text-light">About Us</a></li>
-      <li class="list-inline-item mx-2"><a href="contact.html" class="text-light">Contact</a></li>
-      <li class="list-inline-item mx-2"><a href="size.html" class="text-light">Size</a></li>
-      <li class="list-inline-item mx-2"><a href="catalog.html" class="text-light">Catalog</a></li>
-      <li class="list-inline-item mx-2"><a href="cart.html" class="text-light">Cart</a></li>
-      <li class="list-inline-item mx-2"><a href="checkout.html" class="text-light">Checkout</a></li>
-      <li class="list-inline-item mx-2"><a href="order-confirmation.html" class="text-light">Confirmation</a></li>
-      <li class="list-inline-item mx-2"><a href="account.html" class="text-light">Account</a></li>
-      <li class="list-inline-item mx-2"><a href="blog.html" class="text-light">Blog</a></li>
-    </ul>
-    <!-- Social Media -->
-    <div class="mt-3">
-      <a href="#" class="text-light mx-2"><i class="bi bi-instagram"></i></a>
-      <a href="#" class="text-light mx-2"><i class="bi bi-facebook"></i></a>
-      <a href="#" class="text-light mx-2"><i class="bi bi-tiktok"></i></a>
+  <footer class="bg-dark text-light pt-5 pb-4 mt-auto border-top border-warning border-2">
+    <div class="container">
+      <div class="row gy-4 justify-content-between">
+        
+        <!-- Column 1: Brand & Copyright Info -->
+        <div class="col-lg-4 col-md-12 text-center text-lg-start">
+          <h5 class="text-warning mb-3 fw-bold">Royal Glam Boutique</h5>
+          <p class="small text-secondary mb-2">&copy; 2021–2026 Royal Glam Boutique | Fashion Redefined</p>
+          <p class="small text-secondary"><i class="bi bi-shield-lock text-warning me-1"></i> 100% Secure Checkout</p>
+        </div>
+
+        <!-- Column 2: All Quick Links -->
+        <div class="col-lg-7 col-md-12">
+          <h5 class="text-warning mb-3 text-center text-lg-start">Quick Links</h5>
+          <div class="row g-2 text-center text-lg-start">
+            <div class="col-6 col-sm-4 col-md-3">
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2"><a href="../index.html" class="text-light text-decoration-none footer-link small">Home</a></li>
+                <li class="mb-2"><a href="about.html" class="text-light text-decoration-none footer-link small">About Us</a></li>
+                <li class="mb-2"><a href="contact.html" class="text-light text-decoration-none footer-link small">Contact</a></li>
+              </ul>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2"><a href="size.html" class="text-light text-decoration-none footer-link small">Size</a></li>
+                <li class="mb-2"><a href="catalog.html" class="text-light text-decoration-none footer-link small">Catalog</a></li>
+                <li class="mb-2"><a href="cart.html" class="text-light text-decoration-none footer-link small">Cart</a></li>
+              </ul>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2"><a href="checkout.html" class="text-light text-decoration-none footer-link small">Checkout</a></li>
+                <li class="mb-2"><a href="order-confirmation.html" class="text-light text-decoration-none footer-link small">Order Confirmation</a></li>
+              </ul>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2"><a href="account.html" class="text-light text-decoration-none footer-link small">Account</a></li>
+                <li class="mb-2"><a href="blog.html" class="text-light text-decoration-none footer-link small">Blog</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="border-secondary my-4 opacity-25">
+
+      <!-- Social Media Icons -->
+      <div class="d-flex justify-content-center gap-4 fs-5">
+        <a href="#" class="text-light footer-link" title="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="text-light footer-link" title="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-light footer-link" title="TikTok"><i class="bi bi-tiktok"></i></a>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
+
 </body>
 </html>
