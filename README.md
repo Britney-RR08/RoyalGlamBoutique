@@ -188,6 +188,7 @@ blob: <https://gemini.google.com/473e2645-831f-4a6b-a410-fb78f1806920>
  - I attempted to create a file structure; however, I encountered some errors along the way, which then required me to delete all the unwanted files on the main branch, from the images to the HTML files and the CSS and JS
  - Updated the sitemap code with inclusion of the new webpages
  - Updated the sitemap image with inclusion of the new webpages
+ - Updated the blog and account webpages
 ---
 
 ## 10. References
