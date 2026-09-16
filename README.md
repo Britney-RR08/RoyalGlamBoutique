@@ -181,7 +181,7 @@ This submission contains:
 - **14 Aug 2026:** Edited the sitemap code
 - **14 Aug 2026:** Replace visual sitemap image in README
 - **14 Aug 2026:** Added a section on website goals and objectives
-## 13 Sep 2026
+- **13 Sep 2026:** Working with feedbacl from part 1
 ### Second Attempt – Feedback Integration
 Acknowledged feedback from the first assignment and worked to improve the second attempt. Key updates include:
 
@@ -237,14 +237,28 @@ Acknowledged feedback from the first assignment and worked to improve the second
 - Added loyalty rewards.
 - Included newsletter preferences.
 - Added payment methods and account settings.
+  
+ - **16 Sep 2026:**
+ - Added the needed file structure in GitHub consisting of the assets, images, CSS, index.html, and JS.
+ - I attempted to create a file structure; however, I encountered some errors along the way, which then required me to delete all the unwanted files on the main branch, from the images to the HTML files and the CSS and JS
+ 
+---
 
 ## 10. References
 -Ambrose, G. & Harris, P. (2015) Design Thinking. London: Bloomsbury.
 
+-Bootstrap. (2026) Bootstrap: The most popular HTML, CSS, and JS library in the world. Available at: <https://getbootstrap.com/> [Accessed: 16 September 2026]
+
+-Bootstrap. (2026) Bootstrap Icons. Available at: <https://icons.getbootstrap.com/> [Accessed: 16 September 2026]
+
 -Chacon, S. & Straub, B. (2014) Pro Git. 2nd ed. New York: Apress.
 
--GitHub Docs (2026) Collaborating with pull requests. Available at: <https://docs.github.com/> [Accessed 10 August 2026].
+-GitHub Docs (2026) Collaborating with pull requests. Available at: <https://docs.github.com/> [Accessed 10 August 2026]
+
+--Nicci Boutiques. (2026) Nicci Boutiques. Available at: <https://nicci.co.za/> [Accessed 16 September 2026]
 
 -Loeliger, J. & McCullough, M. (2012) Version Control with Git. Sebastopol: O’Reilly Media.
 
--Sitemaps.org (2026) Sitemap Protocol. Available at: <https://www.sitemaps.org/> [Accessed 10 August 2026].
+-Pinterest. (2026) Pinterest. Available at: <https://www.pinterest.com/> [Accessed: 16 September 2026]
+
+-Sitemaps.org (2026) Sitemap Protocol. Available at: <https://www.sitemaps.org/> [Accessed 10 August 2026]
