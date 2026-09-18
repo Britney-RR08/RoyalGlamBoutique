@@ -37,47 +37,42 @@
 </head>
 
 <body class="bg-light text-dark d-flex flex-column min-vh-100">
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow py-3">
+  <div class="container-fluid px-4">
+    
+    <!-- Brand Logo -->
+    <a class="navbar-brand fw-bold text-warning fs-4" href="../index.html">
+      Royal Glam Boutique
+    </a>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow py-3">
-    <div class="container-fluid px-4">
-      
-      <!-- Brand Logo -->
-      <a class="navbar-brand fw-bold text-warning fs-4" href="../index.html">
-        Royal Glam Boutique
-      </a>
+    <!-- Hamburger Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent"
+            aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <!-- Hidden Checkbox for Mobile Toggle -->
-      <input type="checkbox" id="nav-toggle">
+    <!-- Menu + Icons + Search -->
+    <div class="collapse navbar-collapse" id="navContent">
+      <!-- Menu -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-3">
+        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="size.html">Size Guide</a></li>
+        <li class="nav-item"><a class="nav-link" href="catalog.html">Catalog</a></li>
+        <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+        <li class="nav-item"><a class="nav-link" href="checkout.html">Checkout</a></li>
+        <li class="nav-item"><a class="nav-link" href="order-confirmation.html">Confirmation</a></li>
+        <li class="nav-item"><a class="nav-link" href="account.html">Account</a></li>
+        <li class="nav-item"><a class="nav-link active text-warning fw-semibold" href="blog.html">Blog</a></li>
+      </ul>
 
-      <!-- Mobile Toggler Label -->
-      <label for="nav-toggle" class="navbar-toggler border-0 cursor-pointer">
-        <span class="navbar-toggler-icon"></span>
-      </label>
-
-      <!-- Menu + Icons + Search -->
-      <div class="collapse navbar-collapse" id="navContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-3">
-          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="size.html">Size Guide</a></li>
-          <li class="nav-item"><a class="nav-link" href="catalog.html">Catalog</a></li>
-          <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
-          <li class="nav-item"><a class="nav-link" href="checkout.html">Checkout</a></li>
-          <li class="nav-item"><a class="nav-link" href="order-confirmation.html">Confirmation</a></li>
-          <li class="nav-item"><a class="nav-link" href="account.html">Account</a></li>
-          <li class="nav-item"><a class="nav-link active text-warning fw-semibold" href="blog.html">Blog</a></li>
-        </ul>
-
-        
       <!-- Icons -->
       <div class="d-flex align-items-center ms-4" style="gap:20px; font-size:1.6rem;">
-        <!-- Account Icon -->
         <a href="account.html" class="text-warning" title="My Account" style="text-decoration:none;">
           <i class="bi bi-person"></i>
         </a>
-        <!-- Cart Icon -->
         <a href="cart.html" class="text-warning" title="Shopping Cart" style="text-decoration:none;">
           <i class="bi bi-bag"></i>
         </a>
@@ -90,9 +85,8 @@
       </form>
     </div>
   </div>
+</nav>
 
- 
-  </nav>
 
 <!-- BLOG HERO HEADER -->
 <header class="bg-dark py-5 border-bottom border-warning border-2">
@@ -318,6 +312,7 @@
       </div>
     </div>
   </footer>
-
 </body>
 </html>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
