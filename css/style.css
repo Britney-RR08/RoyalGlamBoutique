@@ -1,6 +1,4 @@
-/* =========================
-   GLOBAL BASE
-========================= */
+/* BASE*/
 body {
   font-family: 'Georgia', serif;
   padding-top: 70px; /* adjust for fixed navbar */
@@ -14,9 +12,7 @@ section {
   margin-bottom: 40px;
 }
 
-/* =========================
-   HERO BANNER
-========================= */
+/*HERO BANNER*/
 .hero {
   position: relative;
   width: 100%;
@@ -65,9 +61,7 @@ section {
   height: 40%;
 }
 
-/* =========================
-   NAVBAR
-========================= */
+/*NAVBAR */
 .navbar {
   background-color: #020202;
   box-shadow: 0 2px 6px rgba(255, 215, 0, 0.3);
@@ -91,9 +85,7 @@ section {
   transform: scale(1.05);
 }
 
-/* =========================
-   CARDS
-========================= */
+/*CARDS*/
 .card {
   border: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -120,9 +112,7 @@ section {
   color: #555;
 }
 
-/* =========================
-   BUTTONS
-========================= */
+/* BUTTONS*/
 .btn-primary {
   background-color: #000;
   border-color: #FFD700;
@@ -144,24 +134,37 @@ section {
   color: #000;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/*FOOTER (Global Styles)*/
 footer {
-  background-color: #000;
-  color: #f8f9fa;
-  padding: 20px;
-  text-align: center;
+  background-color: #000;       /* solid black background */
+  color: #f8f9fa;               /* light text for contrast */
+  padding: 30px 20px;           /* balanced spacing */
+  text-align: center;           /* center text by default */
+  width: 100%;                  /* full width */
+  margin-top: auto;             /* pushes footer to bottom */
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.3); /* subtle separation */
+}
+
+footer h5 {
+  color: #FFD700;               /* gold headings */
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+footer p {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #bbb;                  /* softer text for secondary info */
 }
 
 footer a {
   text-decoration: none;
-  color: #FFD700;
+  color: #FFD700;               /* gold links */
   transition: color 0.3s ease;
 }
 
 footer a:hover {
-  color: #00b383; /* turquoise hover */
+  color: #00b383;               /* turquoise hover */
 }
 
 .footer-sitemap ul {
@@ -169,11 +172,37 @@ footer a:hover {
   flex-wrap: wrap;
   gap: 15px;
   justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-/* =========================
-   SECTION HEADINGS
-========================= */
+.footer-sitemap li {
+  margin: 5px 0;
+}
+
+footer .social-icons a {
+  font-size: 1.2rem;
+  margin: 0 10px;
+  color: #f8f9fa;
+  transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+  color: #FFD700;               /* gold hover for icons */
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  footer {
+    text-align: left;           /* left-align on larger screens */
+  }
+  .footer-sitemap ul {
+    justify-content: flex-start;
+  }
+}
+
+/* SECTION HEADINGS */
 .categories h2,
 .sale h2,
 .info-section h2 {
@@ -300,15 +329,6 @@ h3, h2 {
   color: #d4af37;
   border: 1px solid #d4af37;
 }
-
-/* Images */
-.card-img-top {
-  height: 250px;
-  object-fit: contain; /* show full product */
-  background-color: #f8f7f4; /* ivory frame */
-  border-bottom: 1px solid #d4af37;
-}
-
 
 
 
