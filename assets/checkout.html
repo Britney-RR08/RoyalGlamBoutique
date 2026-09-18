@@ -18,11 +18,20 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top" 
      style="padding:15px; box-shadow:0 4px 12px rgba(0,0,0,0.3);">
   <div class="container-fluid">
+    <!-- Brand -->
     <a class="navbar-brand fw-bold text-warning" href="../index.html" style="font-size:1.4rem;">
       Royal Glam Boutique
     </a>
 
-    <div class="collapse navbar-collapse justify-content-end align-items-center">
+    <!-- Hamburger Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible Menu -->
+    <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarNav">
+      <!-- Menu -->
       <ul class="navbar-nav flex-row flex-wrap">
         <li class="nav-item"><a class="nav-link px-3 active" href="../index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link px-3" href="about.html">About</a></li>
@@ -30,12 +39,13 @@
         <li class="nav-item"><a class="nav-link px-3" href="size.html">Size</a></li>
         <li class="nav-item"><a class="nav-link px-3" href="catalog.html">Catalog</a></li>
         <li class="nav-item"><a class="nav-link px-3" href="cart.html">Cart</a></li>
-        <li class="nav-item"><a class="nav-link px-3" href="#">Checkout</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="checkout.html">Checkout</a></li>
         <li class="nav-item"><a class="nav-link px-3" href="order-confirmation.html">Confirmation</a></li>
         <li class="nav-item"><a class="nav-link px-3" href="account.html">Account</a></li>
         <li class="nav-item"><a class="nav-link px-3" href="blog.html">Blog</a></li>
       </ul>
 
+      <!-- Icons -->
       <div class="d-flex align-items-center ms-4" style="gap:20px; font-size:1.6rem;">
         <a href="account.html" class="text-warning" title="My Account" style="text-decoration:none;">
           <i class="bi bi-person"></i>
@@ -45,6 +55,7 @@
         </a>
       </div>
 
+      <!-- Search -->
       <form class="d-flex ms-3" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
         <button class="btn btn-outline-warning" type="submit">Search</button>
@@ -52,6 +63,7 @@
     </div>
   </div>
 </nav>
+
 
 <br>
 
@@ -158,32 +170,34 @@
 </main>
 
 <!-- FOOTER -->
-<!-- FOOTER -->
-<footer class="bg-dark text-light py-4" 
-        style="margin-top:auto; position:relative; bottom:0; width:100%; box-shadow:0 -2px 8px rgba(0,0,0,0.3);">
+<footer class="bg-dark text-light py-5 mt-auto" style="box-shadow: 0 -2px 8px rgba(0,0,0,0.3);">
   <div class="container text-center">
-    <!-- Branding & Security Note -->
-    <p class="mb-3" style="font-size:0.95rem; color:#bbb;">
-      © 2021–2026 Royal Glam Boutique | Secure Checkout
-    </p>
-
+    
     <!-- Sitemap -->
-    <div class="footer-sitemap">
-      <h5 class="text-warning mb-3" style="font-weight:bold;">Quick Links</h5>
-      <ul class="list-inline">
-        <li class="list-inline-item mx-2"><a href="../index.html" class="text-light" style="text-decoration:none;">Home</a></li>
-        <li class="list-inline-item mx-2"><a href="about.html" class="text-light" style="text-decoration:none;">About Us</a></li>
-        <li class="list-inline-item mx-2"><a href="contact.html" class="text-light" style="text-decoration:none;">Contact</a></li>
-        <li class="list-inline-item mx-2"><a href="size.html" class="text-light" style="text-decoration:none;">Size</a></li>
-        <li class="list-inline-item mx-2"><a href="catalog.html" class="text-light" style="text-decoration:none;">Catalog</a></li>
-        <li class="list-inline-item mx-2"><a href="cart.html" class="text-light" style="text-decoration:none;">Cart</a></li>
-        <li class="list-inline-item mx-2"><a href="checkout.html" class="text-light" style="text-decoration:none;">Checkout</a></li>
-        <li class="list-inline-item mx-2"><a href="order-confirmation.html" class="text-light" style="text-decoration:none;">Confirmation</a></li>
-        <li class="list-inline-item mx-2"><a href="account.html" class="text-light" style="text-decoration:none;">Account</a></li>
-        <li class="list-inline-item mx-2"><a href="blog.html" class="text-light" style="text-decoration:none;">Blog</a></li>
+    <div class="footer-sitemap mb-4">
+      <h5 class="text-warning mb-3 fw-bold">Quick Links</h5>
+      <ul class="list-inline mb-0">
+        <li class="list-inline-item mx-2 mb-2"><a href="../index.html" class="text-light text-decoration-none">Home</a></li>
+        <li class="list-inline-item mx-2 mb-2"><a href="about.html" class="text-light text-decoration-none">About Us</a></li>
+        <li class="list-inline-item mx-2 mb-2"><a href="catalog.html" class="text-light text-decoration-none">Catalog</a></li>
+        <li class="list-inline-item mx-2 mb-2"><a href="size.html" class="text-light text-decoration-none">Size Guide</a></li>
+        <li class="list-inline-item mx-2 mb-2"><a href="cart.html" class="text-light text-decoration-none">Cart</a></li>
+        <li class="list-inline-item mx-2 mb-2"><a href="checkout.html" class="text-light text-decoration-none">Checkout</a></li>
+        <li class="list-inline-item mx-2 mb-2"><a href="order-confirmation.html" class="text-light text-decoration-none">Confirmation</a></li>
+        <li class="list-inline-item mx-2 mb-2"><a href="account.html" class="text-light text-decoration-none">Account</a></li>
+        <li class="list-inline-item mx-2 mb-2"><a href="blog.html" class="text-light text-decoration-none">Blog</a></li>
+        <li class="list-inline-item mx-2 mb-2"><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
       </ul>
     </div>
+
+    <!-- Branding & Security Note -->
+    <p class="small text-secondary mb-0">
+      &copy; 2021–2026 Royal Glam Boutique | Secure Checkout
+    </p>
+
   </div>
 </footer>
 </body>
 </html>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
