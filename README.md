@@ -189,6 +189,11 @@ blob: <https://gemini.google.com/473e2645-831f-4a6b-a410-fb78f1806920>
  - Updated the sitemap code with inclusion of the new webpages
  - Updated the sitemap image with inclusion of the new webpages
  - Updated the blog and account webpages
+
+-**18 Sep 2026:**
+-Added the updated HTML files
+-Added the hamburger button to the website
+
 ---
 
 ## 10. References
