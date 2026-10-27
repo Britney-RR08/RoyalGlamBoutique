@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalog - Royal Glam Boutique</title>
+
+  <!--Bootstrap CSS-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="../CSS/style.css">
+
+  <style>
+    :root { 
+      --gold-primary: #ffc107; 
+    }
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      background-color: #f8f9fa; 
+      color: #333; 
+      min-height: 100vh; 
+      display: flex; 
+      flex-direction: column; 
+    }
+    main { 
+      flex: 1; 
+    }
+    .card { 
+      transition: transform 0.2s ease, box-shadow 0.2s ease; 
+      border: 1px solid #000; 
+      background-color: #fffbea;
+    }
+    .card:hover { 
+      transform: translateY(-4px); 
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12) !important; 
+    }
+    .card-img-top {
+      height: 250px;
+      object-fit: contain;
+      background-color: #fff;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+    .card-img-top:hover { opacity: 0.7; }
+
+    .badge-cart { 
+      font-size: 0.7rem; 
+      position: relative; 
+      top: -8px; 
+      left: -5px; 
+    }
+    footer a:hover {
+      color: #ffc107 !important;
+      text-decoration: underline;
+    }
+    #myInput {
+      width: 100%;
+      font-size: 16px;
+      padding: 12px 20px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      margin-bottom: 6px;
+    }
+
+    /* The Image Modal (background) */
+    .modal-img-container {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1050; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    }
+
+    /* Modal Content (image) */
+    .modal-content-img {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+    }
+
+    /* Caption of Modal Image */
+    #caption {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+      text-align: center;
+      color: #ccc;
+      padding: 10px 0;
+      height: 150px;
+    }
+
+    /* Add Animation */
+    .modal-content-img, #caption {  
+      -webkit-animation-name: zoom;
+      -webkit-animation-duration: 0.6s;
+      animation-name: zoom;
+      animation-duration: 0.6s;
+    }
+
+    @-webkit-keyframes zoom {
+      from {-webkit-transform:scale(0)} 
+      to {-webkit-transform:scale(1)}
+    }
+
+    @keyframes zoom {
+      from {transform:scale(0)} 
+      to {transform:scale(1)}
+    }
+
+    /* The Close Button */
+    .close-modal {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .close-modal:hover,
+    .close-modal:focus {
+      color: #ffc107;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px){
+      .modal-content-img {
+        width: 100%;
+      }
+    }
+
+    /* --- Dark Mode Feature Styles --- */
+    .dark-mode {
+      background-color: #121212 !important;
+      color: #ffffff !important;
+    }
+    .dark-mode .card,
+    .dark-mode section.filters,
+    .dark-mode div.container[style*="background-color:#f8f8f5"] {
+      background-color: #1e1e1e !important;
+      color: #ffffff !important;
+      border-color: #333 !important;
+    }
+    .dark-mode .text-muted,
+    .dark-mode p {
+      color: #b0b0b0 !important;
+    }
+    .dark-mode input.form-control,
+    .dark-mode input#myInput,
+    .dark-mode select.form-select {
+      background-color: #2b2b2b !important;
+      color: #ffffff !important;
+      border-color: #444 !important;
+    }
+  </style>
+</head>
+
+<body>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark sticky-top shadow-sm py-3">
+  <div class="container-fluid">
+
+    <!-- Brand -->
+    <a class="navbar-brand fw-bold text-warning" href="../index.html" style="font-size:0.95rem;">
+      Royal Glam Boutique
+    </a>
+
+    <!-- Hamburger Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu + Icons -->
+    <div class="collapse navbar-collapse justify-content-between align-items-center" id="navbarNav">
+      <!-- Centered Navigation Tabs -->
+      <ul class="navbar-nav mx-auto mb-2 mb-xl-0 text-center">
+        <li class="nav-item"><a class="nav-link px-3" href="../index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="enquiry.html">Enquiry</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="size.html">Size</a></li>
+        <li class="nav-item"><a class="nav-link px-3 active" href="#">Catalog</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="cart.html">Cart</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="checkout.html">Checkout</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="order-confirmation.html">Confirmation</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="account.html">Account</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="blog.html">Blog</a></li>
+      </ul>
+
+      <!-- Right Elements: Account, Cart, Dark Mode -->
+      <div class="d-flex align-items-center justify-content-center" style="gap:20px; font-size:1.6rem;">
+        <a href="account.html" class="text-warning" title="My Account" style="text-decoration:none;">
+          <i class="bi bi-person"></i>
+        </a>
+        <a href="cart.html" class="text-warning position-relative" title="Shopping Cart" style="text-decoration:none;">
+          <i class="bi bi-bag"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark cart-count badge-cart">0</span>
+        </a>
+        <div class="ms-lg-3 mb-2 mb-lg-0">
+          <button onclick="toggleDarkMode()" class="btn btn-outline-warning btn-sm fw-semibold">
+            <i class="bi bi-moon-stars"></i> Toggle Dark Mode
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- CATALOG PAGE HERO -->
+<header class="text-center text-white bg-dark py-5 animated-section" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;">
+  <div class="container py-4">
+    <h1 class="fw-bold text-warning display-5">Explore Our Collection</h1>
+    <p class="lead">Browse the latest styles and timeless pieces curated for you.</p>
+  </div>
+</header>
+
+<main class="container my-5 animated-section">
+  <!-- PRODUCT FILTERS & LIVE SEARCH -->
+  <section class="filters container p-4 rounded shadow-sm mb-5 bg-white border">
+    <h2 class="text-center mb-4" style="font-family:'Georgia', serif; color:#2c3e50;">Search &amp; Filter Products</h2>
+    
+    <!-- Live Search Bar -->
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-6">
+        <label for="myInput" class="form-label fw-semibold">Search Catalog</label>
+        <input type="text" id="myInput" onkeyup="filterProducts()" placeholder="Search by name, description or price (e.g. R4 500).." title="Type in a search term">
+      </div>
+    </div>
+
+    <div class="row g-3 justify-content-center">
+      <div class="col-md-3">
+        <label class="form-label fw-semibold">Category</label>
+        <select id="categoryFilter" class="form-select" onchange="filterProducts()">
+          <option value="All">All</option>
+          <option value="Handbags">Handbags</option>
+          <option value="Jewellery">Jewellery</option>
+          <option value="Shoes">Shoes</option>
+          <option value="Dresses">Dresses</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label class="form-label fw-semibold">Color</label>
+        <select id="colorFilter" class="form-select" onchange="filterProducts()">
+          <option value="All">All</option>
+          <option value="Black">Black</option>
+          <option value="Gold">Gold</option>
+          <option value="Silver">Silver</option>
+          <option value="Turquoise">Turquoise</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <h2 style="font-family:'Georgia', serif; font-size:2rem; color:#2c3e50; margin-bottom:30px; text-align: center;">Our Products</h2>
+
+  <!-- Luxury Handbags -->
+  <div class="container mt-4 mb-5" style="background-color:#f8f8f5; padding:25px; border-radius:8px;">
+    <div class="row">
+      <div class="col-12 text-center mb-4">
+        <h3 style="color:#000; font-family:'Georgia', serif;">Luxury Handbags</h3>
+        <p style="color:#2c2c2c;">Handcrafted leather handbag with gold accents.</p>
+      </div>
+    </div>
+
+    <!-- Product Cards -->
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-3 col-sm-6 product-item" data-category="Handbags" data-color="Gold">
+        <div class="card h-100 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1597633125184-9fd7e54f0ff7?" 
+               class="card-img-top" alt="Elegant Handcrafted Leather Handbag - R4 500">
+          <div class="card-body text-center d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="card-title fw-bold text-warning" style="color:#ffc107;">R4 500</h5>
+              <p class="card-text text-muted">Elegant handcrafted leather handbag.</p>
+            </div>
+            <a href="cart.html" class="btn btn-dark w-100 mt-3" style="background-color:#000; color:#ffc107; font-weight:bold;">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-3 col-sm-6 product-item" data-category="Handbags" data-color="Gold">
+        <div class="card h-100 shadow-sm">
+          <img src="https://i.pinimg.com/1200x/4e/fc/b8/4efcb8a0427a6bf235585f574ee7d402.jpg" 
+               class="card-img-top" alt="Luxury Handbag with Gold Accents - R7 800">
+          <div class="card-body text-center d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="card-title fw-bold text-warning" style="color:#ffc107;">R7 800</h5>
+              <p class="card-text text-muted">Luxury handbag with gold accents.</p>
+            </div>
+            <a href="cart.html" class="btn btn-dark w-100 mt-3" style="background-color:#000; color:#ffc107; font-weight:bold;">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-3 col-sm-6 product-item" data-category="Handbags" data-color="Black">
+        <div class="card h-100 shadow-sm">
+          <img src="https://i.pinimg.com/1200x/81/78/3a/81783a6fb994978015fc5464ae4f7c2a.jpg" 
+               class="card-img-top" alt="Classic Design for Timeless Style - R6 200">
+          <div class="card-body text-center d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="card-title fw-bold text-warning" style="color:#ffc107;">R6 200</h5>
+              <p class="card-text text-muted">Classic design for timeless style.</p>
+            </div>
+            <a href="cart.html" class="btn btn-dark w-100 mt-3" style="background-color:#000; color:#ffc107; font-weight:bold;">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-3 col-sm-6 product-item" data-category="Handbags" data-color="Black">
+        <div class="card h-100 shadow-sm">
+          <img src="https://i.pinimg.com/1200x/1d/51/5f/1d515fa461803aabf393803cbdeda0c0.jpg" 
+               class="card-img-top" alt="Premium Leather with Elegant Finish - R8 500">
+          <div class="card-body text-center d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="card-title fw-bold text-warning" style="color:#ffc107;">R8 500</h5>
+              <p class="card-text text-muted">Premium leather with elegant finish.</p>
+            </div>
+            <a href="cart.html" class="btn btn-dark w-100 mt-3" style="background-color:#000; color:#ffc107; font-weight:bold;">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="my-5">
+
+  <!-- Designer Jewellery -->
+  <div class="container mt-4 mb-5" style="background-color:#f8f8f5; padding:25px; border-radius:8px;">
+    <div class="row">
+      <div class="col-12 text-center mb-4">
+        <h3 style="color:#000; font-family:'Georgia', serif;">Designer Jewellery</h3>
+        <p style="color:#2c2c2c;">Elegant pieces inspired by timeless beauty.</p>
+      </div>
+    </div>
+
+    <!-- Product Cards -->
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-3 col-sm-6 product-item" data-category="Jewellery" data-color="Silver">
+        <div class="card h-100 shadow-sm">
+          <img src="https://media.istockphoto.com/id/1149107324/photo/many-fashionable-womens-jewelry-necklace-pearl-brooch-and-bracelets-for-hand.jpg?s=612x612&w=0&k=20&c=vA39BN7PL40B4ymEozVO5beqaWdOMVBBJ77Cfp_7DVA=" 
+               class="card-img-top" alt="Elegant Handcrafted Necklace and Bracelets - R3 800">
+          <div class="card-body text-center d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="fw-bold" style="color:#ffc107;">R3 800</h5>
+              <p class="text-muted">Elegant handcrafted necklace and bracelets.</p>
+            </div>
+            <a href="cart.html" class="btn btn-dark w-100 mt-3" style="background-color:#000; color:#ffc107; font-weight:bold;">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-3 col-sm-6 product-item" data-category="Jewellery" data-color="Gold">
+        <div class="card h-100 shadow-sm">
+          <img src="https://i.pinimg.com/1200x/7f/fe/a1/7ffea1f8b04c465ba619b059c1b71db9.jpg" 
+               class="card-img-top" alt="Timeless Design with Sparkling Accents - R6 500">
+          <div class="card-body text-center d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="fw-bold" style="color:#ffc107;">R6 500</h5>
+              <p class="text-muted">Timeless design with sparkling accents.</p>
+            </div>
+            <a href="cart.html" class="btn btn-dark w-100 mt-3" style="background-color:#000; color:#ffc107; font-weight:bold;">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-3 col-sm-6 product-item" data-category="Jewellery" data-color="Gold">
+        <div class="card h-100 shadow-sm">
+          <img src="https://i.pinimg.com/1200x/95/9d/20/959d20787fd5a8a0862fcb1668c7d646.jpg" 
+               class="card-img-top" alt="Luxury Earrings Crafted for Elegance - R5 200">
+          <div class="card-body text-center d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="fw-bold" style="color:#ffc107;">R5 200</h5>
+              <p class="text-muted">Luxury earrings crafted for elegance.</p>
+            </div>
+            <a href="cart.html" class="btn btn-dark w-100 mt-3" style="background-color:#000; color:#ffc107; font-weight:bold;">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-3 col-sm-6 product-item" data-category="Jewellery" data-color="Silver">
+        <div class="card h-100 shadow-sm">
+          <img src="https://i.pinimg.com/1200x/99/b3/27/99b32799cf3d63ff16563b2ae3e1040b.jpg" 
+               class="card-img-top" alt="Classic Jewellery with Modern Flair - R4 700">
+          <div class="card-body text-center d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="fw-bold" style="color:#ffc107;">R4 700</h5>
+              <p class="text-muted">Classic jewellery with modern flair.</p>
+            </div>
+            <a href="cart.html" class="btn btn-dark w-100 mt-3" style="background-color:#000; color:#ffc107; font-weight:bold;">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="my-5">
+
+  <!-- Designer Shoes -->
+  <div class="container mt-4 mb-5" style="background-color:#f8f8f5; padding:25px; border-radius:8px;">
+    <div class="row">
+      <div class="col-12 text-center mb-4">
+        <h3 style="color:#000; font-family:'Georgia', serif;">Designer Shoes</h3>
+        <p style="color:#2c2c2c;">Stylish footwear for every occasion.</p>
+      </div>
+    </div>
+
+    <!-- Product Cards -->
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-3 col-sm-6 product-item" data-category="Shoes" data-color="Black">
+        <div class="card h-100 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1573100925118-870b8efc799d?w=1000&auto=format&fit=crop&q=60" 
+               class="card-img-top" alt="Premium Leather Shoes for Everyday Wear - R4 200">
+          <div class="card-body text-center d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="fw-bold" style="color:#ffc107;">R4 200</h5>
+              <p class="text-muted">Premium leather shoes for everyday wear.</p>
+            </div>
+            <a href="cart.html" class="btn btn-dark w-100 mt-3" style="background-color:#000; color:#ffc107; font-weight:bold;">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-3 col-sm-6 product-item" data-category="Shoes" data-color="Gold">
+        <div class="card h-100 shadow-sm">
+          <img src="https://i.pinimg.com/1200x/f9/30/52/f930528aca8ae5225f01b051a6df205f.jpg" 
+               class="card-img-top" alt="Elegant Footwear with Timeless Design - R3 800">
+          <div class="card-body text-center d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="fw-bold" style="color:#ffc107;">R3 800</h5>
+              <p class="text-muted">Elegant footwear with timeless design.</p>
+            </div>
+            <a href="cart.html" class="btn btn-dark w-100 mt-3" style="background-color:#000; color:#ffc107; font-weight:bold;">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-3 col-sm-6 product-item" data-category="Shoes" data-color="Black">
+        <div class="card h-100 shadow-sm">
+          <img src="https://i.pinimg.com/1200x/99/c9/6f/99c96f1edaeccfa9c59989c15b5b70dc.jpg" 
+               class="card-img-top" alt="Stylish Heels for Special Occasions - R5 500">
+          <div class="card-body text-center d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="fw-bold" style="color:#ffc107;">R5 500</h5>
+              <p class="text-muted">Stylish heels for special occasions.</p>
+            </div>
+            <a href="cart.html" class="btn btn-dark w-100 mt-3" style="background-color:#000; color:#ffc107; font-weight:bold;">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-3 col-sm-6 product-item" data-category="Shoes" data-color="Turquoise">
+        <div class="card h-100 shadow-sm">
+          <img src="https://i.pinimg.com/1200x/a7/5a/57/a75a57edf804a1b64d0f3789ea221afc.jpg" 
+               class="card-img-top" alt="Modern Design with Comfort Fit - R4 700">
+          <div class="card-body text-center d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="fw-bold" style="color:#ffc107;">R4 700</h5>
+              <p class="text-muted">Modern design with comfort fit.</p>
+            </div>
+            <a href="cart.html" class="btn btn-dark w-100 mt-3" style="background-color:#000; color:#ffc107; font-weight:bold;">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="my-5">
+
+  <!-- Elegant Dresses -->
+  <div class="container mt-4 mb-5" style="background-color:#f8f8f5; padding:25px; border-radius:8px;">
+    <div class="row">
+      <div class="col-12 text-center mb-4">
+        <h3 style="color:#000; font-family:'Georgia', serif;">Elegant Dresses</h3>
+        <p style="color:#2c2c2c;">Chic dresses for special events.</p>
+      </div>
+    </div>
+
+    <!-- Product Cards -->
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-3 col-sm-6 product-item" data-category="Dresses" data-color="Black">
+        <div class="card h-100 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?w=1000&auto=format&fit=crop&q=60" 
+               class="card-img-top" alt="Elegant Evening Dress - R12 500">
+          <div class="card-body text-center d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="fw-bold" style="color:#ffc107;">R12 500</h5>
+              <p class="text-muted">Elegant evening dress with chic design.</p>
+            </div>
+            <a href="cart.html" class="btn btn-dark w-100 mt-3" style="background-color:#000; color:#ffc107; font-weight:bold;">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-3 col-sm-6 product-item" data-category="Dresses" data-color="Gold">
+        <div class="card h-100 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1733324961705-97bd6cd7f4ba?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0" 
+               class="card-img-top" alt="Formal Occasion Dress - R15 000">
+          <div class="card-body text-center d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="fw-bold" style="color:#ffc107;">R15 000</h5>
+              <p class="text-muted">Stylish dress perfect for formal occasions.</p>
+            </div>
+            <a href="cart.html" class="btn btn-dark w-100 mt-3" style="background-color:#000; color:#ffc107; font-weight:bold;">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-3 col-sm-6 product-item" data-category="Dresses" data-color="Turquoise">
+        <div class="card h-100 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1782528013685-812fbcd20085?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0" 
+               class="card-img-top" alt="Classic Design with a Modern Twist - R9 800">
+          <div class="card-body text-center d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="fw-bold" style="color:#ffc107;">R9 800</h5>
+              <p class="text-muted">Classic design with a modern twist.</p>
+            </div>
+            <a href="cart.html" class="btn btn-dark w-100 mt-3" style="background-color:#000; color:#ffc107; font-weight:bold;">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-3 col-sm-6 product-item" data-category="Dresses" data-color="Gold">
+        <div class="card h-100 shadow-sm">
+          <img src="https://i.pinimg.com/736x/cf/10/7c/cf107cfeb7f74ec192a4010db67a9b47.jpg" 
+               class="card-img-top" alt="Premium Fabric Crafted for Elegance - R18 000">
+          <div class="card-body text-center d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="fw-bold" style="color:#ffc107;">R18 000</h5>
+              <p class="text-muted">Premium fabric crafted for elegance.</p>
+            </div>
+            <a href="cart.html" class="btn btn-dark w-100 mt-3" style="background-color:#000; color:#ffc107; font-weight:bold;">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- IMAGE MODAL CONTAINER -->
+<div id="imageModal" class="modal-img-container">
+  <span class="close-modal">&times;</span>
+  <img class="modal-content-img" id="modalImageElement">
+  <div id="caption"></div>
+</div>
+
+<!-- Scroll to Top Button -->
+<button id="scrollToTopBtn" class="scroll-to-top-btn" title="Back to Top">
+  <i class="bi bi-arrow-up"></i>
+</button>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-light pt-5 pb-4 mt-auto border-top border-warning border-2">
+  <div class="container">
+    <div class="row gy-4 justify-content-between">
+      
+      <!-- Column 1: Brand & Copyright Info -->
+      <div class="col-lg-4 col-md-12 text-center text-lg-start">
+        <h5 class="text-warning mb-3 fw-bold">Royal Glam Boutique</h5>
+        <p class="small text-secondary mb-2">&copy; 2021–2026 Royal Glam Boutique | Fashion Redefined</p>
+        <p class="small text-secondary"><i class="bi bi-shield-lock text-warning me-1"></i> 100% Secure Checkout</p>
+      </div>
+
+      <!-- Column 2: All Quick Links -->
+      <div class="col-lg-7 col-md-12">
+        <h5 class="text-warning mb-3 text-center text-lg-start">Quick Links</h5>
+        <div class="row g-2 text-center text-lg-start">
+          <div class="col-6 col-sm-4 col-md-3">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><a href="../index.html" class="text-light text-decoration-none footer-link small">Home</a></li>
+              <li class="mb-2"><a href="about.html" class="text-light text-decoration-none footer-link small">About Us</a></li>
+              <li class="mb-2"><a href="contact.html" class="text-light text-decoration-none footer-link small">Contact</a></li>
+              <li class="mb-2"><a href="enquiry.html" class="text-light text-decoration-none footer-link small">Enquiry</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><a href="size.html" class="text-light text-decoration-none footer-link small">Size</a></li>
+              <li class="mb-2"><a href="catalog.html" class="text-light text-decoration-none footer-link small">Catalog</a></li>
+              <li class="mb-2"><a href="cart.html" class="text-light text-decoration-none footer-link small">Cart</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><a href="checkout.html" class="text-light text-decoration-none footer-link small">Checkout</a></li>
+              <li class="mb-2"><a href="order-confirmation.html" class="text-light text-decoration-none footer-link small">Order Confirmation</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><a href="account.html" class="text-light text-decoration-none footer-link small">Account</a></li>
+              <li class="mb-2"><a href="blog.html" class="text-light text-decoration-none footer-link small">Blog</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary my-4 opacity-25">
+
+    <!-- Social Media Icons -->
+    <div class="d-flex justify-content-center gap-4 fs-5">
+      <a href="#" class="text-light footer-link" title="Instagram"><i class="bi bi-instagram"></i></a>
+      <a href="#" class="text-light footer-link" title="Facebook"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="text-light footer-link" title="TikTok"><i class="bi bi-tiktok"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../Javascript/script.js"></script>
+</body>
+</html>
+
+<!-- JavaScript for Live Filtering & Image Modal -->
+<script>
+  // Check saved dark mode preference on page load
+  if (localStorage.getItem('darkMode') === 'enabled') {
+      document.body.classList.add('dark-mode');
+  }
+
+  // Dark Mode Toggle Function
+  function toggleDarkMode() {
+     var element = document.body;
+     element.classList.toggle("dark-mode");
+     
+     if (element.classList.contains("dark-mode")) {
+         localStorage.setItem('darkMode', 'enabled');
+     } else {
+         localStorage.setItem('darkMode', 'disabled');
+     }
+  }
+
+  // Combined Search, Category, and Color Filter Function
+  function filterProducts() {
+    const searchInput = document.getElementById("myInput").value.toUpperCase();
+    const selectedCategory = document.getElementById("categoryFilter").value;
+    const selectedColor = document.getElementById("colorFilter").value;
+    const items = document.getElementsByClassName("product-item");
+
+    for (let i = 0; i < items.length; i++) {
+      const card = items[i];
+      const category = card.getAttribute("data-category");
+      const color = card.getAttribute("data-color");
+      const textValue = card.textContent || card.innerText;
+
+      const matchesSearch = textValue.toUpperCase().indexOf(searchInput) > -1;
+      const matchesCategory = (selectedCategory === "All" || category === selectedCategory);
+      const matchesColor = (selectedColor === "All" || color === selectedColor);
+
+      if (matchesSearch && matchesCategory && matchesColor) {
+        card.style.display = "";
+      } else {
+        card.style.display = "none";
+      }
+    }
+  }
+
+  // Image Modal Functionality
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImageElement");
+  const captionText = document.getElementById("caption");
+  const closeBtn = document.getElementsByClassName("close-modal")[0];
+
+  const catalogImages = document.querySelectorAll(".card-img-top");
+
+  catalogImages.forEach(img => {
+    img.addEventListener("click", function() {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+    });
+  });
+
+  closeBtn.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  modal.onclick = function(event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
