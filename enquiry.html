@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product & Service Enquiry - Royal Glam Boutique</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+ <!-- Bootstrap icons-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="../CSS/style.css">
+  
+  <style>
+    :root { --gold-primary: #ffc107; }
+    .badge-cart { font-size: 0.7rem; position: relative; top: -8px; left: -5px; }
+
+    /* Match form font for validation error messages */
+    .invalid-feedback {
+      font-family: inherit;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
+
+    /* --- Dark Mode Feature Styles --- */
+    .dark-mode {
+      background-color: #121212 !important;
+      color: #ffffff !important;
+    }
+    .dark-mode main.container,
+    .dark-mode form {
+      background-color: #1e1e1e !important;
+      color: #ffffff !important;
+      border-color: #333 !important;
+    }
+    .dark-mode .text-dark {
+      color: #ffffff !important;
+    }
+    .dark-mode .text-muted,
+    .dark-mode p {
+      color: #b0b0b0 !important;
+    }
+    .dark-mode input.form-control,
+    .dark-mode select.form-select,
+    .dark-mode textarea.form-control {
+      background-color: #2b2b2b !important;
+      color: #ffffff !important;
+      border-color: #444 !important;
+    }
+
+    .dark-mode input.form-control,
+    .dark-mode textarea.form-control {
+      background-color: #2b2b2b !important;
+      color: #ffffff !important;
+      border-color: #444 !important;
+    }
+
+    /* --- Make Form Placeholders Readable in Dark Mode --- */
+    .dark-mode input.form-control::placeholder,
+    .dark-mode textarea.form-control::placeholder {
+      color: #a0a0a0 !important;
+      opacity: 1 !important;
+    }
+  </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-xl navbar-dark bg-dark sticky-top shadow-sm py-3">
+    <div class="container-fluid px-4">
+      <!-- Brand -->
+      <a class="navbar-brand fw-bold text-warning" href="../index.html" style="font-size:0.95rem;">
+        Royal Glam Boutique
+      </a>
+
+      <!-- Hamburger Button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse justify-content-between align-items-center" id="navbarNav">
+        <!-- Centered Navigation Tabs -->
+        <ul class="navbar-nav mx-auto mb-2 mb-xl-0 text-center">
+          <li class="nav-item"><a class="nav-link px-3" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link px-3 active" href="#">Enquiry</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="size.html">Size</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="catalog.html">Catalog</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="cart.html">Cart</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="checkout.html">Checkout</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="order-confirmation.html">Confirmation</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="account.html">Account</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="blog.html">Blog</a></li>
+        </ul>
+       
+        <!-- Right Elements: Account, Cart, Dark Mode -->
+        <div class="d-flex align-items-center justify-content-center" style="gap:20px; font-size:1.6rem;">
+          <a href="account.html" class="text-warning" title="My Account" style="text-decoration:none;">
+            <i class="bi bi-person"></i>
+          </a>
+          <a href="cart.html" class="text-warning position-relative" title="Shopping Cart" style="text-decoration:none;">
+            <i class="bi bi-bag"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark cart-count badge-cart">0</span>
+          </a>
+          <div class="ms-lg-3 mb-2 mb-lg-0">
+            <button onclick="myFunction()" class="btn btn-outline-warning btn-sm fw-semibold">
+              <i class="bi bi-moon-stars"></i> Toggle Dark Mode
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ENQUIRY HERO SECTION -->
+  <header class="text-center text-white bg-dark py-5 animated-section" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;">
+    <div class="container py-4">
+      <h1 class="fw-bold text-warning display-5">Product & Service Enquiry</h1>
+      <p class="lead">Use this guide to choose the right size with confidence.</p>
+    </div>
+  </header> 
+
+  <!-- ENQUIRY GUIDE CONTENT (Functional Formspree Integration with Interactive Validation) -->
+  <main class="container my-5 p-4 bg-white rounded shadow animated-section" style="max-width:1000px;">
+      <h2 class="h3 text-dark text-center mb-4 border-bottom border-warning pb-2">Submit a Bespoke Custom Enquiry</h2>
+      
+      <form id="enquiryForm" action="https://formspree.io/f/xkjjjlvl" method="POST" class="needs-validation" novalidate>
+        
+        <h4 class="fw-bold text-dark border-bottom pb-3 mb-4"><i class="bi bi-pencil-square text-warning me-2"></i>Garment Specifications</h4>
+        <div class="row g-3 mb-4">
+          
+          <!-- Full Name -->
+          <div class="col-md-6">
+            <label for="enquiryName" class="form-label fw-semibold">Client Full Name</label>
+            <input type="text" id="enquiryName" name="name" class="form-control" required minlength="3" placeholder="Jane Doe">
+            <div class="invalid-feedback">
+              Please enter your full name (minimum 3 characters).
+            </div>
+          </div>
+
+          <!-- Phone Number -->
+          <div class="col-md-6">
+            <label for="enquiryPhone" class="form-label fw-semibold">Phone Number / WhatsApp</label>
+            <input type="tel" id="enquiryPhone" name="phone" class="form-control" required pattern="^\+?[0-9\s\-]{7,15}$" placeholder="+27 82 123 4567">
+            <div class="invalid-feedback">
+              Please enter a valid phone number format (e.g., +27 82 123 4567).
+            </div>
+          </div>
+
+          <!-- Email Address -->
+          <div class="col-md-6">
+            <label for="enquiryEmail" class="form-label fw-semibold">Email Address</label>
+            <input type="email" id="enquiryEmail" name="email" class="form-control" required placeholder="jane@example.com">
+            <div class="invalid-feedback">
+              Please enter a valid email address (e.g., name@domain.com).
+            </div>
+          </div>
+
+          <!-- Garment Category -->
+          <div class="col-md-6">
+            <label for="garmentCategory" class="form-label fw-semibold">Garment Category</label>
+            <select id="garmentCategory" name="category" class="form-select" required>
+              <option value="">Select Category</option>
+              <option value="Couture Evening Gown">Couture Evening Gown</option>
+              <option value="Bridal & Wedding Dress">Bridal & Wedding Dress</option>
+              <option value="Red Carpet Gala Dress">Red Carpet Gala Dress</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a garment category from the list.
+            </div>
+          </div>
+
+          <!-- Required Event Date -->
+          <div class="col-md-12">
+            <label for="eventDate" class="form-label fw-semibold">Required Event Date</label>
+            <input type="date" id="eventDate" name="event_date" class="form-control" required>
+            <div class="invalid-feedback">
+              Please select your required event date.
+            </div>
+          </div>
+        </div>
+
+        <h4 class="fw-bold text-dark border-bottom pb-3 mb-4"><i class="bi bi-rulers text-warning me-2"></i>Measurements & Fit (Optional)</h4>
+        <div class="row g-3 mb-4">
+          <div class="col-md-3">
+            <label class="form-label small">Bust (cm)</label>
+            <input type="number" name="bust_cm" class="form-control" min="30" max="250" placeholder="90">
+            <div class="invalid-feedback">
+              Enter a valid measurement in cm.
+            </div>
+          </div>
+          <div class="col-md-3">
+            <label class="form-label small">Waist (cm)</label>
+            <input type="number" name="waist_cm" class="form-control" min="30" max="250" placeholder="70">
+            <div class="invalid-feedback">
+              Enter a valid measurement in cm.
+            </div>
+          </div>
+          <div class="col-md-3">
+            <label class="form-label small">Hips (cm)</label>
+            <input type="number" name="hips_cm" class="form-control" min="30" max="250" placeholder="98">
+            <div class="invalid-feedback">
+              Enter a valid measurement in cm.
+            </div>
+          </div>
+          <div class="col-md-3">
+            <label class="form-label small">Height (cm)</label>
+            <input type="number" name="height_cm" class="form-control" min="50" max="250" placeholder="175">
+            <div class="invalid-feedback">
+              Enter a valid measurement in cm.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 text-center mt-4">
+          <button type="submit" class="btn btn-dark text-warning btn-lg fw-bold w-100">Submit Custom Enquiry</button>
+        </div>
+      </form>
+  </main>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTopBtn" class="scroll-to-top-btn" title="Back to Top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-light pt-5 pb-4 mt-auto border-top border-warning border-2">
+    <div class="container">
+      <div class="row gy-4 justify-content-between">
+        
+        <!-- Column 1: Brand & Copyright Info -->
+        <div class="col-lg-4 col-md-12 text-center text-lg-start">
+          <h5 class="text-warning mb-3 fw-bold">Royal Glam Boutique</h5>
+          <p class="small text-secondary mb-2">&copy; 2021–2026 Royal Glam Boutique | Fashion Redefined</p>
+          <p class="small text-secondary"><i class="bi bi-shield-lock text-warning me-1"></i> 100% Secure Checkout</p>
+        </div>
+
+        <!-- Column 2: All Quick Links -->
+        <div class="col-lg-7 col-md-12">
+          <h5 class="text-warning mb-3 text-center text-lg-start">Quick Links</h5>
+          <div class="row g-2 text-center text-lg-start">
+            <div class="col-6 col-sm-4 col-md-3">
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2"><a href="../index.html" class="text-light text-decoration-none footer-link small">Home</a></li>
+                <li class="mb-2"><a href="about.html" class="text-light text-decoration-none footer-link small">About Us</a></li>
+                <li class="mb-2"><a href="contact.html" class="text-light text-decoration-none footer-link small">Contact</a></li>
+                <li class="mb-2"><a href="enquiry.html" class="text-light text-decoration-none footer-link small">Enquiry</a></li>
+              </ul>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2"><a href="size.html" class="text-light text-decoration-none footer-link small">Size</a></li>
+                <li class="mb-2"><a href="catalog.html" class="text-light text-decoration-none footer-link small">Catalog</a></li>
+                <li class="mb-2"><a href="cart.html" class="text-light text-decoration-none footer-link small">Cart</a></li>
+              </ul>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2"><a href="checkout.html" class="text-light text-decoration-none footer-link small">Checkout</a></li>
+                <li class="mb-2"><a href="order-confirmation.html" class="text-light text-decoration-none footer-link small">Order Confirmation</a></li>
+              </ul>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2"><a href="account.html" class="text-light text-decoration-none footer-link small">Account</a></li>
+                <li class="mb-2"><a href="blog.html" class="text-light text-decoration-none footer-link small">Blog</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="border-secondary my-4 opacity-25">
+
+      <!-- Social Media Icons -->
+      <div class="d-flex justify-content-center gap-4 fs-5">
+        <a href="javascript:void(0)" onclick="openSocialModal('instagram')" class="text-light footer-link" title="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="javascript:void(0)" onclick="openSocialModal('facebook')" class="text-light footer-link" title="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="javascript:void(0)" onclick="openSocialModal('tiktok')" class="text-light footer-link" title="TikTok"><i class="bi bi-tiktok"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SOCIAL MEDIA IFRAME MODAL STRUCTURE -->
+  <div id="socialIframeModal" class="modal-social-container">
+    <div class="modal-social-content border border-warning shadow-lg">
+      <div class="modal-social-header bg-dark text-warning px-3 py-2 d-flex justify-content-between align-items-center border-bottom border-warning">
+        <h5 class="mb-0 fw-bold" id="socialModalTitle"><i class="bi bi-globe me-2"></i>Social Preview</h5>
+        <span class="close-social-modal" onclick="closeSocialModal()">&times;</span>
+      </div>
+      <div class="modal-social-body">
+        <iframe id="socialIframe" src="" width="100%" height="500" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom Master Script for Interactivity, Cart & Theme Toggle -->
+  <script src="../Javascript/script.js"></script>
+
+
+</body>
+</html>
+
+<!-- JavaScript Form Validation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('enquiryForm');
+
+      if (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          } else {
+            alert('Custom Enquiry submitted! A stylist will contact you soon.');
+          }
+
+          form.classList.add('was-validated');
+        }, false);
+      }
+    });
+
+    // Dark Mode Toggle Script & Persistence
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+    }
+
+    function myFunction() {
+       var element = document.body;
+       element.classList.toggle("dark-mode");
+       
+       if (element.classList.contains("dark-mode")) {
+           localStorage.setItem('darkMode', 'enabled');
+       } else {
+           localStorage.setItem('darkMode', 'disabled');
+       }
+    }
+  </script>
