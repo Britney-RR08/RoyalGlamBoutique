@@ -229,9 +229,9 @@
         <div class="mb-3 mb-md-0">
           <span class="badge bg-warning text-dark mb-2">VIP Member</span>
           <h3 class="h4 text-warning mb-1"><i class="bi bi-stars me-2"></i>Loyalty Rewards</h3>
-          <p class="text-secondary mb-0">You have <strong class="text-light">250 points</strong> available for redemption.</p>
+          <p class="text-secondary mb-0">You have <strong class="text-light" id="loyaltyPointsDisplay">250 points</strong> available for redemption.</p>
         </div>
-        <button class="btn btn-gold btn-lg px-4"><i class="bi bi-gift me-2"></i>Redeem Points</button>
+        <button class="btn btn-gold btn-lg px-4" id="redeemPointsBtn"><i class="bi bi-gift me-2"></i>Redeem Points</button>
       </div>
     </div>
 
@@ -276,12 +276,12 @@
           <div class="card border-0 shadow-sm p-4">
             <h3 class="h4 fw-bold mb-4">Order History</h3>
             
-            <form class="row g-3 mb-4">
+            <form class="row g-3 mb-4" id="orderSearchForm" onsubmit="event.preventDefault(); filterOrders();">
               <div class="col-md-5">
-                <input type="text" class="form-control" placeholder="Search by Order Number">
+                <input type="text" id="orderSearchInput" class="form-control" placeholder="Search by Order Number">
               </div>
               <div class="col-md-4">
-                <input type="date" class="form-control">
+                <input type="date" id="orderDateInput" class="form-control">
               </div>
               <div class="col-md-3">
                 <button type="submit" class="btn btn-dark w-100">Search Orders</button>
@@ -308,7 +308,7 @@
                     <td>26 Oct 2026</td>
                     <td>R9,300</td>
                     <td><span class="badge bg-info text-dark">Processing</span></td>
-                    <td class="text-end"><a href="#" class="btn btn-sm btn-outline-dark">View Details</a></td>
+                    <td class="text-end"><button class="btn btn-sm btn-outline-dark view-order-btn" data-order="#RGB-89412">View Details</button></td>
                   </tr>
                 </tbody>
               </table>
@@ -360,7 +360,7 @@
           <div class="card border-0 shadow-sm p-4">
             <div class="d-flex justify-content-between align-items-center mb-4">
               <h3 class="h4 fw-bold mb-0">Recorded Payment Methods</h3>
-              <button class="btn btn-sm btn-dark"><i class="bi bi-credit-card-plus me-1"></i> Add Payment Method</button>
+              <button class="btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#addPaymentModal"><i class="bi bi-credit-card-plus me-1"></i> Add Payment Method</button>
             </div>
             <div id="savedPaymentMethodsList" class="list-group list-group-flush border-top border-bottom mb-3">
               <!-- Dynamically populated from checkout -->
@@ -430,7 +430,7 @@
 
           <div class="card border-0 shadow-sm p-4">
             <h3 class="h4 fw-bold mb-3">Newsletter Preferences</h3>
-            <form>
+            <form id="newsletterForm">
               <div class="form-check mb-2">
                 <input class="form-check-input" type="checkbox" id="weeklyUpdates" checked>
                 <label class="form-check-label" for="weeklyUpdates">Subscribe to weekly updates</label>
@@ -468,7 +468,7 @@
                       <input class="form-check-input" type="checkbox" id="rememberMe" checked>
                       <label class="form-check-label small" for="rememberMe">Remember me</label>
                     </div>
-                    <a href="#" class="small text-decoration-none text-muted">Forgot password?</a>
+                    <a href="#" class="small text-decoration-none text-muted" id="forgotPasswordLink">Forgot password?</a>
                   </div>
                   <button type="submit" class="btn btn-dark w-100">Login</button>
                 </form>
@@ -514,6 +514,88 @@
       </div>
     </div>
   </main>
+
+  <!-- ADD ADDRESS MODAL -->
+  <div class="modal fade" id="addAddressModal" tabindex="-1" aria-labelledby="addAddressModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-warning">
+          <h5 class="modal-title fw-bold" id="addAddressModalLabel"><i class="bi bi-geo-alt me-2"></i>Add New Address</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="newAddressForm">
+            <div class="mb-3">
+              <label for="addrFullName" class="form-label">Full Name</label>
+              <input type="text" id="addrFullName" class="form-control" required placeholder="Recipient name">
+            </div>
+            <div class="mb-3">
+              <label for="addrEmail" class="form-label">Contact Email</label>
+              <input type="email" id="addrEmail" class="form-control" required placeholder="Email address">
+            </div>
+            <div class="mb-3">
+              <label for="addrStreet" class="form-label">Street Address &amp; City</label>
+              <input type="text" id="addrStreet" class="form-control" required placeholder="e.g. 45 Rose Avenue, Nelspruit">
+            </div>
+            <button type="submit" class="btn btn-gold w-100">Save Address</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADD PAYMENT MODAL -->
+  <div class="modal fade" id="addPaymentModal" tabindex="-1" aria-labelledby="addPaymentModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-warning">
+          <h5 class="modal-title fw-bold" id="addPaymentModalLabel"><i class="bi bi-credit-card me-2"></i>Add Payment Method</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="newPaymentForm">
+            <div class="mb-3">
+              <label for="cardHolder" class="form-label">Cardholder Name</label>
+              <input type="text" id="cardHolder" class="form-control" required placeholder="Name on card">
+            </div>
+            <div class="mb-3">
+              <label for="cardNumber" class="form-label">Card Number</label>
+              <input type="text" id="cardNumber" class="form-control" maxlength="19" required placeholder="16-digit card number">
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="cardExpiry" class="form-label">Expiry Date</label>
+                <input type="text" id="cardExpiry" class="form-control" maxlength="5" required placeholder="MM/YY">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="cardCvv" class="form-label">CVV</label>
+                <input type="password" id="cardCvv" class="form-control" maxlength="4" required placeholder="CVV">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-gold w-100">Save Card</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ORDER DETAILS MODAL -->
+  <div class="modal fade" id="orderDetailsModal" tabindex="-1" aria-labelledby="orderDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-warning">
+          <h5 class="modal-title fw-bold" id="orderDetailsModalLabel"><i class="bi bi-box-seam me-2"></i>Order Details</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="orderDetailsBody">
+          <!-- Populated dynamically -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Scroll to Top Button -->
   <button id="scrollToTopBtn" class="scroll-to-top-btn" title="Back to Top">
@@ -580,28 +662,297 @@
   </footer>
 
   <!-- SOCIAL MEDIA IFRAME MODAL STRUCTURE -->
-  <div id="socialIframeModal" class="modal-social-container">
-    <div class="modal-social-content border border-warning shadow-lg">
-      <div class="modal-social-header bg-dark text-warning px-3 py-2 d-flex justify-content-between align-items-center border-bottom border-warning">
-        <h5 class="mb-0 fw-bold" id="socialModalTitle"><i class="bi bi-globe me-2"></i>Social Preview</h5>
-        <span class="close-social-modal" onclick="closeSocialModal()">&times;</span>
+  <div id="socialIframeModal" class="modal-social-container" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:1050; align-items:center; justify-content:center;">
+    <div class="modal-social-content border border-warning shadow-lg bg-dark text-white p-4 rounded" style="width:90%; max-width:650px;">
+      <div class="d-flex justify-content-between align-items-center mb-3 border-bottom border-warning pb-2">
+        <h5 class="mb-0 fw-bold text-warning" id="socialModalTitle"><i class="bi bi-globe me-2"></i>Social Preview</h5>
+        <span class="close-social-modal fs-3 text-warning" style="cursor:pointer;" onclick="closeSocialModal()">&times;</span>
       </div>
-      <div class="modal-social-body">
-        <iframe id="socialIframe" src="" width="100%" height="500" frameborder="0" allowfullscreen></iframe>
+      <div class="modal-social-body text-center">
+        <p class="lead">Connecting you to official Royal Glam Boutique social channels...</p>
+        <button class="btn btn-warning fw-bold px-4 mt-3" onclick="closeSocialModal()">Close</button>
       </div>
     </div>
   </div>
 
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  
-  <script src="../Javascript/script.js"></script>
 
-</body>
-</html>
-
-<!-- Password Validation Script -->
+  <!-- Complete Functional JavaScript -->
   <script>
+    // Initialize state from localStorage or defaults
+    let currentUser = JSON.parse(localStorage.getItem('royalGlamUser')) || {
+      name: "Britney Rikhotso",
+      email: "britney@example.com",
+      points: 250
+    };
+
+    let savedAddresses = JSON.parse(localStorage.getItem('royalGlamAddresses')) || [
+      { name: "Britney Rikhotso", email: "britney@example.com", street: "123 Luxury Lane, Johannesburg" }
+    ];
+
+    let savedPayments = JSON.parse(localStorage.getItem('royalGlamPayments')) || [
+      { holder: "Britney Rikhotso", last4: "1234", expiry: "12/28" }
+    ];
+
+    let orderHistory = JSON.parse(localStorage.getItem('royalGlamOrders')) || [
+      { id: "#RGB-89412", details: "Classic Leather Tote & Necklace", date: "2026-10-26", amount: "R9,300", status: "Processing" },
+      { id: "#RGB-88210", details: "Gold Luxe Statement Ring", date: "2026-09-15", amount: "R1,450", status: "Delivered" }
+    ];
+
+    document.addEventListener("DOMContentLoaded", function() {
+      // Cart Count Sync
+      const cartCount = localStorage.getItem('royalGlamCartCount') || '0';
+      document.querySelectorAll('.cart-count').forEach(el => el.innerText = cartCount);
+
+      // Dark mode check
+      if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+      }
+
+      updateUIState();
+      renderOrders(orderHistory);
+      renderAddresses();
+      renderPayments();
+
+      // Setup Password Validation
+      setupPasswordValidation("registerPassword", "message-register", "letter-register", "capital-register", "number-register", "length-register");
+      setupPasswordValidation("newPassword", "message-settings", "letter-settings", "capital-settings", "number-settings", "length-settings");
+
+      // Scroll to Top logic
+      const scrollBtn = document.getElementById('scrollToTopBtn');
+      window.onscroll = function() {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+          scrollBtn.classList.add('show');
+        } else {
+          scrollBtn.classList.remove('show');
+        }
+      };
+      scrollBtn.onclick = function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
+
+      // Form Event Listeners
+      document.getElementById('loginForm').addEventListener('submit', handleLogin);
+      document.getElementById('registerForm').addEventListener('submit', handleRegister);
+      document.getElementById('changePasswordForm').addEventListener('submit', handleChangePassword);
+      document.getElementById('changeEmailForm').addEventListener('submit', handleChangeEmail);
+      document.getElementById('newsletterForm').addEventListener('submit', handleNewsletter);
+      document.getElementById('newAddressForm').addEventListener('submit', handleAddAddress);
+      document.getElementById('newPaymentForm').addEventListener('submit', handleAddPayment);
+      document.getElementById('signOutBtn').addEventListener('click', handleSignOut);
+      document.getElementById('redeemPointsBtn').addEventListener('click', handleRedeemPoints);
+      document.getElementById('forgotPasswordLink').addEventListener('click', (e) => {
+        e.preventDefault();
+        alert("Password reset instructions have been sent to your email.");
+      });
+
+      // View details delegates
+      document.addEventListener('click', function(e) {
+        if (e.target && e.target.classList.contains('view-order-btn')) {
+          const orderId = e.target.getAttribute('data-order');
+          showOrderDetails(orderId);
+        }
+      });
+    });
+
+    function updateUIState() {
+      document.getElementById('profileDisplayName').innerText = currentUser.name;
+      document.getElementById('profileDetailsName').innerText = currentUser.name;
+      document.getElementById('profileDetailsEmail').innerText = currentUser.email;
+      document.getElementById('loyaltyPointsDisplay').innerText = currentUser.points + " points";
+      
+      // Initials badge
+      const initials = currentUser.name.split(' ').map(n => n[0]).join('').substring(0,2).toUpperCase();
+      document.getElementById('profileAvatarBadge').innerText = initials;
+    }
+
+    function renderOrders(orders) {
+      const tbody = document.getElementById('dynamicOrderHistoryTable');
+      tbody.innerHTML = '';
+      if (orders.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="6" class="text-center text-muted py-4">No matching orders found.</td></tr>`;
+        return;
+      }
+      orders.forEach(ord => {
+        const badgeClass = ord.status === 'Delivered' ? 'bg-success text-white' : 'bg-info text-dark';
+        tbody.innerHTML += `
+          <tr>
+            <td class="fw-bold">${ord.id}</td>
+            <td>${ord.details}</td>
+            <td>${ord.date}</td>
+            <td>${ord.amount}</td>
+            <td><span class="badge ${badgeClass}">${ord.status}</span></td>
+            <td class="text-end"><button class="btn btn-sm btn-outline-dark view-order-btn" data-order="${ord.id}">View Details</button></td>
+          </tr>
+        `;
+      });
+    }
+
+    function renderAddresses() {
+      const container = document.getElementById('savedProfilesList');
+      container.innerHTML = '';
+      savedAddresses.forEach((addr, idx) => {
+        container.innerHTML += `
+          <div class="col-md-6">
+            <div class="border rounded p-3 bg-light">
+              <span class="badge bg-secondary mb-2">${idx === 0 ? 'Primary Account' : 'Saved Address'}</span>
+              <p class="mb-1 fw-bold">${addr.name}</p>
+              <p class="mb-0 text-secondary small">${addr.email}</p>
+              <p class="mb-0 text-secondary small">${addr.street}</p>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    function renderPayments() {
+      const container = document.getElementById('savedPaymentMethodsList');
+      container.innerHTML = '';
+      savedPayments.forEach((pay, idx) => {
+        container.innerHTML += `
+          <div class="list-group-item d-flex justify-content-between align-items-center py-3">
+            <div>
+              <i class="bi bi-credit-card-2-front fs-4 text-primary me-3"></i>
+              Visa ending in <span class="font-monospace fw-bold">${pay.last4}</span> (${pay.holder})
+            </div>
+            <span class="badge bg-light text-dark border">${idx === 0 ? 'Default' : 'Saved'}</span>
+          </div>
+        `;
+      });
+    }
+
+    function filterOrders() {
+      const query = document.getElementById('orderSearchInput').value.toLowerCase();
+      const dateVal = document.getElementById('orderDateInput').value;
+
+      const filtered = orderHistory.filter(ord => {
+        const matchesId = ord.id.toLowerCase().includes(query) || ord.details.toLowerCase().includes(query);
+        const matchesDate = dateVal ? ord.date === dateVal : true;
+        return matchesId && matchesDate;
+      });
+      renderOrders(filtered);
+    }
+
+    function showOrderDetails(orderId) {
+      const ord = orderHistory.find(o => o.id === orderId);
+      const body = document.getElementById('orderDetailsBody');
+      if (ord) {
+        body.innerHTML = `
+          <div class="p-2">
+            <h5 class="text-warning fw-bold">Order Reference: ${ord.id}</h5>
+            <p><strong>Items:</strong> ${ord.details}</p>
+            <p><strong>Date Placed:</strong> ${ord.date}</p>
+            <p><strong>Total Amount:</strong> ${ord.amount}</p>
+            <p><strong>Current Status:</strong> <span class="badge bg-info text-dark">${ord.status}</span></p>
+            <hr>
+            <p class="text-muted small mb-0"><i class="bi bi-shield-check text-success me-1"></i> Covered under Royal Glam Boutique Buyer Protection Policy.</p>
+          </div>
+        `;
+      } else {
+        body.innerHTML = `<p class="text-danger">Order details not found.</p>`;
+      }
+      const modal = new bootstrap.Modal(document.getElementById('orderDetailsModal'));
+      modal.show();
+    }
+
+    function handleLogin(e) {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value;
+      currentUser.email = email;
+      currentUser.name = email.split('@')[0].charAt(0).toUpperCase() + email.split('@')[0].slice(1);
+      localStorage.setItem('royalGlamUser', JSON.stringify(currentUser));
+      updateUIState();
+      alert("Successfully logged in!");
+      document.getElementById('tab-radio-profile').checked = true;
+    }
+
+    function handleRegister(e) {
+      e.preventDefault();
+      const name = document.getElementById('registerName').value;
+      const email = document.getElementById('registerEmail').value;
+      currentUser.name = name;
+      currentUser.email = email;
+      currentUser.points = 300; // Welcome bonus
+      localStorage.setItem('royalGlamUser', JSON.stringify(currentUser));
+      updateUIState();
+      alert("Account successfully created! Welcome bonus of 50 points added.");
+      document.getElementById('tab-radio-profile').checked = true;
+    }
+
+    function handleChangePassword(e) {
+      e.preventDefault();
+      alert("Password successfully updated!");
+      document.getElementById('changePasswordForm').reset();
+    }
+
+    function handleChangeEmail(e) {
+      e.preventDefault();
+      const newEmail = document.getElementById('newEmail').value;
+      currentUser.email = newEmail;
+      localStorage.setItem('royalGlamUser', JSON.stringify(currentUser));
+      updateUIState();
+      alert("Email address updated successfully to " + newEmail);
+      document.getElementById('changeEmailForm').reset();
+    }
+
+    function handleNewsletter(e) {
+      e.preventDefault();
+      alert("Newsletter preferences saved successfully!");
+    }
+
+    function handleAddAddress(e) {
+      e.preventDefault();
+      const name = document.getElementById('addrFullName').value;
+      const email = document.getElementById('addrEmail').value;
+      const street = document.getElementById('addrStreet').value;
+
+      savedAddresses.push({ name, email, street });
+      localStorage.setItem('royalGlamAddresses', JSON.stringify(savedAddresses));
+      renderAddresses();
+
+      const modalEl = document.getElementById('addAddressModal');
+      const modal = bootstrap.Modal.getInstance(modalEl);
+      modal.hide();
+      document.getElementById('newAddressForm').reset();
+      alert("New address added successfully!");
+    }
+
+    function handleAddPayment(e) {
+      e.preventDefault();
+      const holder = document.getElementById('cardHolder').value;
+      const num = document.getElementById('cardNumber').value;
+      const last4 = num.slice(-4) || "9999";
+
+      savedPayments.push({ holder, last4, expiry: "12/28" });
+      localStorage.setItem('royalGlamPayments', JSON.stringify(savedPayments));
+      renderPayments();
+
+      const modalEl = document.getElementById('addPaymentModal');
+      const modal = bootstrap.Modal.getInstance(modalEl);
+      modal.hide();
+      document.getElementById('newPaymentForm').reset();
+      alert("Payment method added successfully!");
+    }
+
+    function handleSignOut() {
+      if (confirm("Are you sure you want to sign out?")) {
+        document.getElementById('tab-radio-auth').checked = true;
+        alert("Signed out successfully.");
+      }
+    }
+
+    function handleRedeemPoints() {
+      if (currentUser.points >= 100) {
+        currentUser.points -= 100;
+        localStorage.setItem('royalGlamUser', JSON.stringify(currentUser));
+        updateUIState();
+        alert("Successfully redeemed 100 points for a R100 voucher code: ROYAL100!");
+      } else {
+        alert("You need at least 100 points to redeem a voucher.");
+      }
+    }
+
     function setupPasswordValidation(inputId, messageId, letterId, capitalId, numberId, lengthId) {
       const input = document.getElementById(inputId);
       const message = document.getElementById(messageId);
@@ -612,65 +963,42 @@
 
       if (!input) return;
 
-      input.onfocus = function() {
-        message.style.display = "block";
-      }
-
-      input.onblur = function() {
-        message.style.display = "none";
-      }
-
+      input.onfocus = function() { message.style.display = "block"; };
+      input.onblur = function() { message.style.display = "none"; };
       input.onkeyup = function() {
-        if (input.value.match(/[a-z]/g)) {
-          letter.classList.remove("invalid");
-          letter.classList.add("valid");
-        } else {
-          letter.classList.remove("valid");
-          letter.classList.add("invalid");
-        }
+        if (input.value.match(/[a-z]/g)) { letter.classList.remove("invalid"); letter.classList.add("valid"); }
+        else { letter.classList.remove("valid"); letter.classList.add("invalid"); }
         
-        if (input.value.match(/[A-Z]/g)) {
-          capital.classList.remove("invalid");
-          capital.classList.add("valid");
-        } else {
-          capital.classList.remove("valid");
-          capital.classList.add("invalid");
-        }
+        if (input.value.match(/[A-Z]/g)) { capital.classList.remove("invalid"); capital.classList.add("valid"); }
+        else { capital.classList.remove("valid"); capital.classList.add("invalid"); }
 
-        if (input.value.match(/[0-9]/g)) {
-          number.classList.remove("invalid");
-          number.classList.add("valid");
-        } else {
-          number.classList.remove("valid");
-          number.classList.add("invalid");
-        }
+        if (input.value.match(/[0-9]/g)) { number.classList.remove("invalid"); number.classList.add("valid"); }
+        else { number.classList.remove("valid"); number.classList.add("invalid"); }
         
-        if (input.value.length >= 8) {
-          length.classList.remove("invalid");
-          length.classList.add("valid");
-        } else {
-          length.classList.remove("valid");
-          length.classList.add("invalid");
-        }
+        if (input.value.length >= 8) { length.classList.remove("invalid"); length.classList.add("valid"); }
+        else { length.classList.remove("valid"); length.classList.add("invalid"); }
       }
-    }
-
-    setupPasswordValidation("registerPassword", "message-register", "letter-register", "capital-register", "number-register", "length-register");
-    setupPasswordValidation("newPassword", "message-settings", "letter-settings", "capital-settings", "number-settings", "length-settings");
-
-    //Dark Mode Toggle Script & Persistence
-    if (localStorage.getItem('darkMode') === 'enabled') {
-        document.body.classList.add('dark-mode');
     }
 
     function myFunction() {
-       var element = document.body;
-       element.classList.toggle("dark-mode");
-       
-       if (element.classList.contains("dark-mode")) {
-           localStorage.setItem('darkMode', 'enabled');
-       } else {
-           localStorage.setItem('darkMode', 'disabled');
-       }
+      var element = document.body;
+      element.classList.toggle("dark-mode");
+      if (element.classList.contains("dark-mode")) {
+          localStorage.setItem('darkMode', 'enabled');
+      } else {
+          localStorage.setItem('darkMode', 'disabled');
+      }
+    }
+
+    function openSocialModal(platform) {
+      document.getElementById('socialModalTitle').innerHTML = `<i class="bi bi-${platform} me-2"></i>Royal Glam ${platform.charAt(0).toUpperCase() + platform.slice(1)}`;
+      document.getElementById('socialIframeModal').style.display = 'flex';
+    }
+
+    function closeSocialModal() {
+      document.getElementById('socialIframeModal').style.display = 'none';
     }
   </script>
+
+</body>
+</html>
