@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account - Royal Glam Boutique</title>
+ 
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+   <!-- Link to external CSS -->
+  <link rel="stylesheet" href="../CSS/style.css">
+  
+  <style>
+    /* Gold & Dark Theme Styling */
+    :root {
+      --gold-primary: #ffc107;
+      --gold-hover: #e0a800;
+    }
+    .text-gold { color: var(--gold-primary) !important; }
+    .btn-gold { 
+      background-color: var(--gold-primary); 
+      color: #000; 
+      font-weight: 600; 
+      border: none; 
+      transition: background-color 0.2s ease-in-out;
+    }
+    .btn-gold:hover { 
+      background-color: var(--gold-hover); 
+      color: #000; 
+    }
+    .footer-link { transition: color 0.2s ease-in-out; }
+    .footer-link:hover { color: var(--gold-primary) !important; }
+
+    /* Pure CSS Tab Switching Mechanics */
+    .account-tab-radio { display: none; }
+    .tab-content-panel { display: none; }
+    
+    .tab-btn {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 0.75rem 1rem;
+      color: #495057;
+      text-decoration: none;
+      border-radius: 0.375rem;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s ease-in-out;
+    }
+    .tab-btn:hover { background-color: #f8f9fa; color: #000; }
+
+    #tab-radio-orders:checked ~ .row #btn-orders,
+    #tab-radio-profile:checked ~ .row #btn-profile,
+    #tab-radio-payment:checked ~ .row #btn-payment,
+    #tab-radio-settings:checked ~ .row #btn-settings,
+    #tab-radio-auth:checked ~ .row #btn-auth {
+      background-color: var(--gold-primary);
+      color: #000;
+      font-weight: 700;
+    }
+
+    #tab-radio-orders:checked ~ .row #content-orders,
+    #tab-radio-profile:checked ~ .row #content-profile,
+    #tab-radio-payment:checked ~ .row #content-payment,
+    #tab-radio-settings:checked ~ .row #content-settings,
+    #tab-radio-auth:checked ~ .row #content-auth {
+      display: block !important;
+    }
+
+    /* Accordion Custom Mechanics */
+    .css-accordion-checkbox { display: none; }
+    .css-accordion-body { display: none; }
+    .css-accordion-checkbox:checked ~ .css-accordion-body { display: block; }
+    .cursor-pointer { cursor: pointer; }
+
+    /* Password Validation Styling */
+    .password-message {
+      display: none;
+      background: #f8f9fa;
+      color: #000;
+      position: relative;
+      padding: 15px;
+      margin-top: 10px;
+      border-radius: 0.375rem;
+      border: 1px solid #dee2e6;
+    }
+    .password-message p {
+      padding: 5px 0 5px 30px;
+      font-size: 0.875rem;
+      margin-bottom: 5px;
+    }
+    .valid { color: #198754; }
+    .valid:before {
+      position: absolute;
+      left: 10px;
+      content: "✔";
+    }
+    .invalid { color: #dc3545; }
+    .invalid:before {
+      position: absolute;
+      left: 10px;
+      content: "✖";
+    }
+
+    /* --- Dark Mode Feature Styles --- */
+    .dark-mode {
+      background-color: #121212 !important;
+      color: #ffffff !important;
+    }
+    .dark-mode .card,
+    .dark-mode .list-group-item,
+    .dark-mode .bg-light {
+      background-color: #1e1e1e !important;
+      color: #ffffff !important;
+      border-color: #333 !important;
+    }
+    .dark-mode .table {
+      color: #ffffff !important;
+    }
+    .dark-mode .table-hover tbody tr:hover {
+      background-color: #2b2b2b !important;
+      color: #ffffff !important;
+    }
+    .dark-mode .tab-btn {
+      color: #e0e0e0 !important;
+    }
+    .dark-mode .tab-btn:hover {
+      background-color: #2b2b2b !important;
+      color: #ffffff !important;
+    }
+    .dark-mode .text-muted,
+    .dark-mode p {
+      color: #b0b0b0 !important;
+    }
+    .dark-mode input.form-control {
+      background-color: #2b2b2b !important;
+      color: #ffffff !important;
+      border-color: #444 !important;
+    }
+    .dark-mode .password-message {
+      background: #1e1e1e !important;
+      color: #ffffff !important;
+      border-color: #444 !important;
+    }
+  </style>
+</head>
+
+<body class="bg-light text-dark d-flex flex-column min-vh-100">
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-xl navbar-dark bg-dark sticky-top shadow-sm py-3">
+    <div class="container-fluid px-4">
+      <!-- Brand -->
+      <a class="navbar-brand fw-bold text-warning" href="../index.html" style="font-size:0.95rem;">
+        Royal Glam Boutique
+      </a>
+    
+      <!-- Hamburger Button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent"
+              aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible Content -->
+      <div class="collapse navbar-collapse justify-content-between align-items-center" id="navContent">
+        <!-- Centered Navigation Tabs -->
+        <ul class="navbar-nav mx-auto mb-2 mb-xl-0 text-center">
+          <li class="nav-item"><a class="nav-link px-3" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="enquiry.html">Enquiry</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="size.html">Size</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="catalog.html">Catalog</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="cart.html">Cart</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="checkout.html">Checkout</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="order-confirmation.html">Confirmation</a></li>
+          <li class="nav-item"><a class="nav-link px-3 active" href="account.html">Account</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="blog.html">Blog</a></li>
+        </ul>
+
+        <!-- Right Elements: Cart, Dark Mode -->
+        <div class="d-flex align-items-center justify-content-center" style="gap:20px; font-size:1.6rem;">
+          <a href="cart.html" class="text-warning position-relative" title="Shopping Cart" style="text-decoration:none;">
+            <i class="bi bi-bag"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark cart-count badge-cart">0</span>
+          </a>
+          <div class="ms-lg-3 mb-2 mb-lg-0">
+            <button onclick="myFunction()" class="btn btn-outline-warning btn-sm fw-semibold">
+              <i class="bi bi-moon-stars"></i> Toggle Dark Mode
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO BANNER -->
+  <header class="bg-dark py-5 animated-section" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;">
+    <div class="container text-center py-4">
+      <h1 class="display-5 fw-bold text-warning mb-2">Your Account</h1>
+      <p class="lead mb-0 text-white">Manage your profile, orders, and preferences in one place.</p>
+    </div>
+  </header>
+
+  <!-- MAIN ACCOUNT DASHBOARD -->
+  <main class="container my-5 animated-section">
+    
+    <!-- LOYALTY REWARDS BANNER -->
+    <div class="card bg-dark text-white border-warning mb-5 shadow">
+      <div class="card-body p-4 d-flex flex-column flex-md-row align-items-center justify-content-between text-center text-md-start">
+        <div class="mb-3 mb-md-0">
+          <span class="badge bg-warning text-dark mb-2">VIP Member</span>
+          <h3 class="h4 text-warning mb-1"><i class="bi bi-stars me-2"></i>Loyalty Rewards</h3>
+          <p class="text-secondary mb-0">You have <strong class="text-light">250 points</strong> available for redemption.</p>
+        </div>
+        <button class="btn btn-gold btn-lg px-4"><i class="bi bi-gift me-2"></i>Redeem Points</button>
+      </div>
+    </div>
+
+    <!-- PURE CSS DASHBOARD CONTROLLERS (Hidden Radio Inputs) -->
+    <input type="radio" name="account_tabs" id="tab-radio-orders" class="account-tab-radio" checked>
+    <input type="radio" name="account_tabs" id="tab-radio-profile" class="account-tab-radio">
+    <input type="radio" name="account_tabs" id="tab-radio-payment" class="account-tab-radio">
+    <input type="radio" name="account_tabs" id="tab-radio-settings" class="account-tab-radio">
+    <input type="radio" name="account_tabs" id="tab-radio-auth" class="account-tab-radio">
+
+    <!-- DASHBOARD LAYOUT -->
+    <div class="row g-4">
+      
+      <!-- LEFT SIDE NAVIGATION & PROFILE CARD -->
+      <div class="col-lg-3">
+        <!-- VIP Profile Summary Widget -->
+        <div class="card border-0 shadow-sm p-4 mb-4 text-center">
+          <div id="profileAvatarBadge" class="rounded-circle bg-dark text-warning fw-bold d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px; font-size: 1.4rem;">
+            BR
+          </div>
+          <h5 id="profileDisplayName" class="fw-bold mb-1">Britney Rikhotso</h5>
+          <p class="text-muted small mb-3">VIP Gold Member</p>
+          <button id="signOutBtn" class="btn btn-outline-danger btn-sm w-100">Sign Out</button>
+        </div>
+
+        <div class="card border-0 shadow-sm p-3">
+          <div class="d-flex flex-column gap-1">
+            <label for="tab-radio-orders" class="tab-btn" id="btn-orders"><i class="bi bi-bag-check me-2"></i> Order History</label>
+            <label for="tab-radio-profile" class="tab-btn" id="btn-profile"><i class="bi bi-person-badge me-2"></i> Profile &amp; Addresses</label>
+            <label for="tab-radio-payment" class="tab-btn" id="btn-payment"><i class="bi bi-credit-card me-2"></i> Payment Methods</label>
+            <label for="tab-radio-settings" class="tab-btn" id="btn-settings"><i class="bi bi-gear me-2"></i> Account Settings</label>
+            <label for="tab-radio-auth" class="tab-btn" id="btn-auth"><i class="bi bi-box-arrow-in-right me-2"></i> Login / Register</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE TAB CONTENT PANELS -->
+      <div class="col-lg-9">
+
+        <!-- 1. ORDER HISTORY PANEL -->
+        <div class="tab-content-panel" id="content-orders">
+          <div class="card border-0 shadow-sm p-4">
+            <h3 class="h4 fw-bold mb-4">Order History</h3>
+            
+            <form class="row g-3 mb-4">
+              <div class="col-md-5">
+                <input type="text" class="form-control" placeholder="Search by Order Number">
+              </div>
+              <div class="col-md-4">
+                <input type="date" class="form-control">
+              </div>
+              <div class="col-md-3">
+                <button type="submit" class="btn btn-dark w-100">Search Orders</button>
+              </div>
+            </form>
+
+            <div class="table-responsive">
+              <table class="table table-hover align-middle mb-0">
+                <thead class="table-dark">
+                  <tr>
+                    <th>Order #</th>
+                    <th>Product / Details</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th class="text-end">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="dynamicOrderHistoryTable">
+                  <!-- Dynamically populated via script -->
+                  <tr>
+                    <td class="fw-bold">#RGB-89412</td>
+                    <td>Classic Leather Tote &amp; Necklace</td>
+                    <td>26 Oct 2026</td>
+                    <td>R9,300</td>
+                    <td><span class="badge bg-info text-dark">Processing</span></td>
+                    <td class="text-end"><a href="#" class="btn btn-sm btn-outline-dark">View Details</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. PROFILE & ADDRESSES PANEL -->
+        <div class="tab-content-panel" id="content-profile">
+          <div class="card border-0 shadow-sm p-4 mb-4">
+            <h3 class="h4 fw-bold mb-3">My Profile</h3>
+            <div class="row g-3">
+              <div class="col-md-4">
+                <p class="mb-1 text-muted small">Name</p>
+                <p id="profileDetailsName" class="fw-bold mb-0">Britney Rikhotso</p>
+              </div>
+              <div class="col-md-4">
+                <p class="mb-1 text-muted small">Email</p>
+                <p id="profileDetailsEmail" class="fw-bold mb-0">britney@example.com</p>
+              </div>
+              <div class="col-md-4">
+                <p class="mb-1 text-muted small">Member Since</p>
+                <p class="fw-bold mb-0">2026</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card border-0 shadow-sm p-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="h4 fw-bold mb-0">Saved Profiles &amp; Addresses</h3>
+              <button class="btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#addAddressModal"><i class="bi bi-plus-lg me-1"></i> Add New Profile/Address</button>
+            </div>
+            <div id="savedProfilesList" class="row g-3">
+              <!-- Dynamically populated from registered profiles -->
+              <div class="col-md-6">
+                <div class="border rounded p-3 bg-light">
+                  <span class="badge bg-secondary mb-2">Primary Account</span>
+                  <p class="mb-1 fw-bold">Britney Rikhotso</p>
+                  <p class="mb-0 text-secondary small">britney@example.com</p>
+                  <p class="mb-0 text-secondary small">123 Luxury Lane, Johannesburg</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. PAYMENT METHODS PANEL -->
+        <div class="tab-content-panel" id="content-payment">
+          <div class="card border-0 shadow-sm p-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h3 class="h4 fw-bold mb-0">Recorded Payment Methods</h3>
+              <button class="btn btn-sm btn-dark"><i class="bi bi-credit-card-plus me-1"></i> Add Payment Method</button>
+            </div>
+            <div id="savedPaymentMethodsList" class="list-group list-group-flush border-top border-bottom mb-3">
+              <!-- Dynamically populated from checkout -->
+              <div class="list-group-item d-flex justify-content-between align-items-center py-3">
+                <div>
+                  <i class="bi bi-credit-card-2-front fs-4 text-primary me-3"></i>
+                  Visa ending in <span class="font-monospace fw-bold">1234</span>
+                </div>
+                <span class="badge bg-light text-dark border">Default</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. ACCOUNT SETTINGS PANEL -->
+        <div class="tab-content-panel" id="content-settings">
+          <div class="card border-0 shadow-sm p-4 mb-4">
+            <h3 class="h4 fw-bold mb-3">Account Settings</h3>
+            
+            <!-- Password Accordion (Pure CSS) -->
+            <div class="border rounded mb-3">
+              <input type="checkbox" id="acc-pass" class="css-accordion-checkbox">
+              <label for="acc-pass" class="d-flex justify-content-between align-items-center p-3 w-100 bg-white border-0 fw-semibold cursor-pointer text-dark">
+                <span>Change Password</span> <i class="bi bi-chevron-down"></i>
+              </label>
+              <div class="css-accordion-body p-3 bg-light border-top">
+                <form id="changePasswordForm">
+                  <div class="mb-3">
+                    <label for="currentPassword" class="form-label">Current Password</label>
+                    <input type="password" id="currentPassword" class="form-control" required placeholder="Enter current password">
+                  </div>
+                  <div class="mb-3">
+                    <label for="newPassword" class="form-label">New Password</label>
+                    <input type="password" id="newPassword" class="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required placeholder="Enter new password">
+                    
+                    <!-- Password Validation Requirements Box -->
+                    <div id="message-settings" class="password-message">
+                      <p class="fw-bold mb-1 text-dark ps-0" style="padding-left:0 !important;">Password must contain:</p>
+                      <p id="letter-settings" class="invalid">A <b>lowercase</b> letter</p>
+                      <p id="capital-settings" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                      <p id="number-settings" class="invalid">A <b>number</b></p>
+                      <p id="length-settings" class="invalid">Minimum <b>8 characters</b></p>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-warning">Update Password</button>
+                </form>
+              </div>
+            </div>
+
+            <!-- Email Accordion (Pure CSS) -->
+            <div class="border rounded">
+              <input type="checkbox" id="acc-email" class="css-accordion-checkbox">
+              <label for="acc-email" class="d-flex justify-content-between align-items-center p-3 w-100 bg-white border-0 fw-semibold cursor-pointer text-dark">
+                <span>Update Email</span> <i class="bi bi-chevron-down"></i>
+              </label>
+              <div class="css-accordion-body p-3 bg-light border-top">
+                <form id="changeEmailForm">
+                  <div class="mb-3">
+                    <label for="newEmail" class="form-label">New Email Address</label>
+                    <input type="email" id="newEmail" class="form-control" required placeholder="Enter new email address">
+                  </div>
+                  <button type="submit" class="btn btn-warning">Update Email</button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="card border-0 shadow-sm p-4">
+            <h3 class="h4 fw-bold mb-3">Newsletter Preferences</h3>
+            <form>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="weeklyUpdates" checked>
+                <label class="form-check-label" for="weeklyUpdates">Subscribe to weekly updates</label>
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="promoOffers" checked>
+                <label class="form-check-label" for="promoOffers">Receive promotional offers</label>
+              </div>
+              <button type="submit" class="btn btn-dark">Save Preferences</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- 5. LOGIN / REGISTER PANEL -->
+        <div class="tab-content-panel" id="content-auth">
+          <div class="row g-4">
+            <!-- Login Card -->
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm p-4 h-100">
+                <div class="text-center mb-3">
+                  <i class="bi bi-person-circle fs-1 text-warning"></i>
+                  <h3 class="h4 fw-bold mt-2">Login</h3>
+                </div>
+                <form id="loginForm">
+                  <div class="mb-3">
+                    <label for="loginEmail" class="form-label">Email Address</label>
+                    <input type="email" id="loginEmail" class="form-control" required placeholder="Enter your email">
+                  </div>
+                  <div class="mb-3">
+                    <label for="loginPassword" class="form-label">Password</label>
+                    <input type="password" id="loginPassword" class="form-control" required placeholder="Enter your password">
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="rememberMe" checked>
+                      <label class="form-check-label small" for="rememberMe">Remember me</label>
+                    </div>
+                    <a href="#" class="small text-decoration-none text-muted">Forgot password?</a>
+                  </div>
+                  <button type="submit" class="btn btn-dark w-100">Login</button>
+                </form>
+              </div>
+            </div>
+
+            <!-- Register Card -->
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm p-4 h-100">
+                <div class="text-center mb-3">
+                  <i class="bi bi-person-plus-fill fs-1 text-warning"></i>
+                  <h3 class="h4 fw-bold mt-2">Register</h3>
+                </div>
+                <form id="registerForm">
+                  <div class="mb-3">
+                    <label for="registerName" class="form-label">Full Name</label>
+                    <input type="text" id="registerName" class="form-control" required placeholder="Enter your full name">
+                  </div>
+                  <div class="mb-3">
+                    <label for="registerEmail" class="form-label">Email Address</label>
+                    <input type="email" id="registerEmail" class="form-control" required placeholder="Enter your email">
+                  </div>
+                  <div class="mb-3">
+                    <label for="registerPassword" class="form-label">Password</label>
+                    <input type="password" id="registerPassword" class="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required placeholder="Create a password">
+                    
+                    <!-- Password Validation Requirements Box -->
+                    <div id="message-register" class="password-message">
+                      <p class="fw-bold mb-1 text-dark ps-0" style="padding-left:0 !important;">Password must contain:</p>
+                      <p id="letter-register" class="invalid">A <b>lowercase</b> letter</p>
+                      <p id="capital-register" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                      <p id="number-register" class="invalid">A <b>number</b></p>
+                      <p id="length-register" class="invalid">Minimum <b>8 characters</b></p>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-gold w-100">Create Account</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTopBtn" class="scroll-to-top-btn" title="Back to Top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-light pt-5 pb-4 mt-auto border-top border-warning border-2">
+    <div class="container">
+      <div class="row gy-4 justify-content-between">
+        
+        <!-- Column 1: Brand & Copyright Info -->
+        <div class="col-lg-4 col-md-12 text-center text-lg-start">
+          <h5 class="text-warning mb-3 fw-bold">Royal Glam Boutique</h5>
+          <p class="small text-secondary mb-2">&copy; 2021–2026 Royal Glam Boutique. All rights reserved.</p>
+          <p class="small text-secondary"><i class="bi bi-shield-lock text-warning me-1"></i> 100% Secure Checkout</p>
+        </div>
+
+        <!-- Column 2: All Quick Links -->
+        <div class="col-lg-7 col-md-12">
+          <h5 class="text-warning mb-3 text-center text-lg-start">Quick Links</h5>
+          <div class="row g-2 text-center text-lg-start">
+            <div class="col-6 col-sm-4 col-md-3">
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2"><a href="../index.html" class="text-light text-decoration-none footer-link small">Home</a></li>
+                <li class="mb-2"><a href="about.html" class="text-light text-decoration-none footer-link small">About Us</a></li>
+                <li class="mb-2"><a href="contact.html" class="text-light text-decoration-none footer-link small">Contact</a></li>
+                <li class="mb-2"><a href="enquiry.html" class="text-light text-decoration-none footer-link small">Enquiry</a></li>
+              </ul>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2"><a href="size.html" class="text-light text-decoration-none footer-link small">Size</a></li>
+                <li class="mb-2"><a href="catalog.html" class="text-light text-decoration-none footer-link small">Catalog</a></li>
+                <li class="mb-2"><a href="cart.html" class="text-light text-decoration-none footer-link small">Cart</a></li>
+              </ul>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2"><a href="checkout.html" class="text-light text-decoration-none footer-link small">Checkout</a></li>
+                <li class="mb-2"><a href="order-confirmation.html" class="text-light text-decoration-none footer-link small">Order Confirmation</a></li>
+              </ul>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3">
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2"><a href="account.html" class="text-light text-decoration-none footer-link small">Account</a></li>
+                <li class="mb-2"><a href="blog.html" class="text-light text-decoration-none footer-link small">Blog</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="border-secondary my-4 opacity-25">
+
+      <!-- Social Media Icons -->
+      <div class="d-flex justify-content-center gap-4 fs-5">
+        <a href="javascript:void(0)" onclick="openSocialModal('instagram')" class="text-light footer-link" title="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="javascript:void(0)" onclick="openSocialModal('facebook')" class="text-light footer-link" title="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="javascript:void(0)" onclick="openSocialModal('tiktok')" class="text-light footer-link" title="TikTok"><i class="bi bi-tiktok"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SOCIAL MEDIA IFRAME MODAL STRUCTURE -->
+  <div id="socialIframeModal" class="modal-social-container">
+    <div class="modal-social-content border border-warning shadow-lg">
+      <div class="modal-social-header bg-dark text-warning px-3 py-2 d-flex justify-content-between align-items-center border-bottom border-warning">
+        <h5 class="mb-0 fw-bold" id="socialModalTitle"><i class="bi bi-globe me-2"></i>Social Preview</h5>
+        <span class="close-social-modal" onclick="closeSocialModal()">&times;</span>
+      </div>
+      <div class="modal-social-body">
+        <iframe id="socialIframe" src="" width="100%" height="500" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script src="../Javascript/script.js"></script>
+
+</body>
+</html>
+
+<!-- Password Validation Script -->
+  <script>
+    function setupPasswordValidation(inputId, messageId, letterId, capitalId, numberId, lengthId) {
+      const input = document.getElementById(inputId);
+      const message = document.getElementById(messageId);
+      const letter = document.getElementById(letterId);
+      const capital = document.getElementById(capitalId);
+      const number = document.getElementById(numberId);
+      const length = document.getElementById(lengthId);
+
+      if (!input) return;
+
+      input.onfocus = function() {
+        message.style.display = "block";
+      }
+
+      input.onblur = function() {
+        message.style.display = "none";
+      }
+
+      input.onkeyup = function() {
+        if (input.value.match(/[a-z]/g)) {
+          letter.classList.remove("invalid");
+          letter.classList.add("valid");
+        } else {
+          letter.classList.remove("valid");
+          letter.classList.add("invalid");
+        }
+        
+        if (input.value.match(/[A-Z]/g)) {
+          capital.classList.remove("invalid");
+          capital.classList.add("valid");
+        } else {
+          capital.classList.remove("valid");
+          capital.classList.add("invalid");
+        }
+
+        if (input.value.match(/[0-9]/g)) {
+          number.classList.remove("invalid");
+          number.classList.add("valid");
+        } else {
+          number.classList.remove("valid");
+          number.classList.add("invalid");
+        }
+        
+        if (input.value.length >= 8) {
+          length.classList.remove("invalid");
+          length.classList.add("valid");
+        } else {
+          length.classList.remove("valid");
+          length.classList.add("invalid");
+        }
+      }
+    }
+
+    setupPasswordValidation("registerPassword", "message-register", "letter-register", "capital-register", "number-register", "length-register");
+    setupPasswordValidation("newPassword", "message-settings", "letter-settings", "capital-settings", "number-settings", "length-settings");
+
+    //Dark Mode Toggle Script & Persistence
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+    }
+
+    function myFunction() {
+       var element = document.body;
+       element.classList.toggle("dark-mode");
+       
+       if (element.classList.contains("dark-mode")) {
+           localStorage.setItem('darkMode', 'enabled');
+       } else {
+           localStorage.setItem('darkMode', 'disabled');
+       }
+    }
+  </script>
