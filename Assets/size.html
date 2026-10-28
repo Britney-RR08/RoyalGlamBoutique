@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Size Guide - Royal Glam Boutique</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="../CSS/style.css">
+  <style>
+    :root { 
+      --gold-primary: #ffc107; 
+    }
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      background-color: #f8f9fa; 
+      color: #333; 
+      min-height: 100vh; 
+      display: flex; 
+      flex-direction: column; 
+    }
+    main { 
+      flex: 1; 
+    }
+    .badge-cart { 
+      font-size: 0.7rem; 
+      position: relative; 
+      top: -8px; 
+      left: -5px; 
+    }
+    section.about-block {
+      margin-bottom: 40px;
+      padding: 30px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border: 1px solid #dee2e6;
+    }
+    section.about-block h2 {
+      font-family: 'Georgia', serif;
+      font-size: 2rem;
+      color: #2c3e50;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #ffc107;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    footer {
+      width: 100%;
+    }
+    footer a:hover {
+      color: #ffc107 !important;
+      text-decoration: underline;
+    }
+
+    /* --- Dark Mode Feature Styles --- */
+    .dark-mode {
+      background-color: #121212 !important;
+      color: #ffffff !important;
+    }
+    .dark-mode section,
+    .dark-mode .card,
+    .dark-mode .table {
+      background-color: #1e1e1e !important;
+      color: #ffffff !important;
+      border-color: #333 !important;
+    }
+    .dark-mode .table-hover tbody tr:hover {
+      color: #ffffff !important;
+      background-color: #2b2b2b !important;
+    }
+    .dark-mode .text-dark,
+    .dark-mode h1,
+    .dark-mode h2,
+    .dark-mode h3 {
+      color: #ffffff !important;
+    }
+    .dark-mode .text-muted,
+    .dark-mode p {
+      color: #e0e0e0 !important;
+    }
+    .dark-mode input.form-control {
+      background-color: #2b2b2b !important;
+      color: #ffffff !important;
+      border-color: #444 !important;
+    }
+    .dark-mode input.form-control::placeholder {
+      color: #a0a0a0 !important;
+      opacity: 1 !important;
+    }
+  </style>
+</head>
+
+<body>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark sticky-top shadow-sm py-3">
+  <div class="container-fluid">
+    <!-- Brand -->
+    <a class="navbar-brand fw-bold text-warning" href="../index.html" style="font-size:0.95rem;">
+      Royal Glam Boutique
+    </a>
+
+    <!-- Hamburger Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible Menu -->
+    <div class="collapse navbar-collapse justify-content-between align-items-center" id="navbarNav">
+      <!-- Centered Navigation Tabs -->
+      <ul class="navbar-nav mx-auto mb-2 mb-xl-0 text-center">
+        <li class="nav-item"><a class="nav-link px-3" href="../index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="enquiry.html">Enquiry</a></li>
+        <li class="nav-item"><a class="nav-link px-3 active" href="#">Size</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="catalog.html">Catalog</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="cart.html">Cart</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="checkout.html">Checkout</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="order-confirmation.html">Confirmation</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="account.html">Account</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="blog.html">Blog</a></li>
+      </ul>
+
+      <!-- Right Icons & Dark Mode Toggle -->
+      <div class="d-flex align-items-center justify-content-center" style="gap:20px; font-size:1.6rem;">
+        <a href="account.html" class="text-warning" title="My Account" style="text-decoration:none;">
+          <i class="bi bi-person"></i>
+        </a>
+        <a href="cart.html" class="text-warning position-relative" title="Shopping Cart" style="text-decoration:none;">
+          <i class="bi bi-bag"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark cart-count badge-cart">0</span>
+        </a>
+        <div class="ms-lg-3 mb-2 mb-lg-0">
+          <button onclick="myFunction()" class="btn btn-outline-warning btn-sm fw-semibold">
+            <i class="bi bi-moon-stars"></i> Toggle Dark Mode
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="text-center text-white bg-dark py-5 animated-section" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;">
+  <div class="container py-4">
+    <h1 class="fw-bold text-warning display-5">Find Your Perfect Fit</h1>
+    <p class="lead">Use this guide to choose the right size with confidence.</p>
+  </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="container my-5 animated-section" style="max-width:1100px;">
+  <h1 class="text-center text-dark fw-bold mb-2" style="font-size:2.5rem;">Royal Glam Size Guide & Fitting</h1>
+  <p class="text-center text-muted mb-4" style="font-size:1.1rem;">Use this guide to find your perfect fit and compare international standards before adding items to your cart.</p>
+
+  <!-- In-Page Filter Search Bar -->
+  <div class="row justify-content-center mb-5">
+    <div class="col-md-8">
+      <div class="input-group shadow-sm">
+        <span class="input-group-text bg-warning border-warning text-dark"><i class="bi bi-search"></i></span>
+        <input type="text" id="sizeBlockSearch" class="form-control form-control-lg border-warning" placeholder="Search size charts (e.g., Women's, Footwear, Rings, Bust)...">
+      </div>
+    </div>
+  </div>
+
+  <div id="noSizeResults" class="alert alert-warning text-center fw-semibold shadow-sm" style="display: none;">
+    No matching size guide sections found for your query.
+  </div>
+
+  <!-- Women’s Clothing Section -->
+  <section class="about-block size-block">
+    <h2>Women’s Clothing Sizing</h2>
+    <div class="table-responsive mt-3">
+      <table class="table table-hover table-bordered align-middle text-center mb-0" style="width:100%;">
+        <thead class="table-dark">
+          <tr>
+            <th>Royal Size</th>
+            <th>SA / UK</th>
+            <th>US</th>
+            <th>EU</th>
+            <th>Bust (cm)</th>
+            <th>Waist (cm)</th>
+            <th>Hips (cm)</th>
+          </tr>
+        </thead>
+        <tbody id="womens-size-tbody">
+          <tr><td><span class="badge bg-warning text-dark">XS</span></td><td>30 / 6</td><td>2</td><td>34</td><td>78–82</td><td>60–64</td><td>84–88</td></tr>
+          <tr><td><span class="badge bg-warning text-dark">S</span></td><td>32 / 8</td><td>4</td><td>36</td><td>83–87</td><td>65–69</td><td>89–93</td></tr>
+          <tr><td><span class="badge bg-warning text-dark">M</span></td><td>34 / 10</td><td>6</td><td>38</td><td>88–92</td><td>70–74</td><td>94–98</td></tr>
+          <tr><td><span class="badge bg-warning text-dark">L</span></td><td>36 / 12</td><td>8</td><td>40</td><td>93–97</td><td>75–79</td><td>99–103</td></tr>
+          <tr><td><span class="badge bg-warning text-dark">XL</span></td><td>38 / 14</td><td>10</td><td>42</td><td>98–102</td><td>80–84</td><td>104–108</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-muted mt-3 mb-0" style="font-size:0.95rem;">
+      <strong>Explanation:</strong> Bust is measured around the fullest part of your chest, waist around the narrowest part, and hips around the widest part. Choose the size that matches your largest measurement for the best fit.
+    </p>
+  </section>
+
+  <!-- Shoes Section -->
+  <section class="about-block size-block">
+    <h2>Footwear Sizing</h2>
+    <div class="table-responsive mt-3">
+      <table class="table table-hover table-bordered align-middle text-center mb-0" style="width:100%;">
+        <thead class="table-dark">
+          <tr>
+            <th>SA Size</th>
+            <th>UK Size</th>
+            <th>EU Size</th>
+            <th>US Size</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>3</td><td>3</td><td>36</td><td>5</td></tr>
+          <tr><td>4</td><td>4</td><td>37</td><td>6</td></tr>
+          <tr><td>5</td><td>5</td><td>38</td><td>7</td></tr>
+          <tr><td>6</td><td>6</td><td>39</td><td>8</td></tr>
+          <tr><td>7</td><td>7</td><td>40</td><td>9</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-muted mt-3 mb-0" style="font-size:0.95rem;">
+      <strong>Explanation:</strong> Shoe sizes vary across regions. This chart converts South African sizes to UK, EU, and US equivalents. If you are between sizes, choose the larger one for comfort.
+    </p>
+  </section>
+
+  <!-- Jewellery Section -->
+  <section class="about-block size-block">
+    <h2>Jewellery (Rings) Sizing</h2>
+    <div class="table-responsive mt-3">
+      <table class="table table-hover table-bordered align-middle text-center mb-0" style="width:100%;">
+        <thead class="table-dark">
+          <tr>
+            <th>Ring Size</th>
+            <th>Diameter (mm)</th>
+            <th>Circumference (mm)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Small</td><td>15.7</td><td>49.3</td></tr>
+          <tr><td>Medium</td><td>16.5</td><td>51.8</td></tr>
+          <tr><td>Large</td><td>17.3</td><td>54.4</td></tr>
+          <tr><td>X-Large</td><td>18.1</td><td>56.9</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-muted mt-3 mb-0" style="font-size:0.95rem;">
+      <strong>Explanation:</strong> Diameter measures the inside width of the ring, while circumference measures the distance around your finger. Wrap a soft measuring tape around your finger or measure an existing ring to find your size.
+    </p>
+  </section>
+</main>
+
+<!-- Scroll to Top Button -->
+<button id="scrollToTopBtn" class="scroll-to-top-btn" title="Back to Top">
+  <i class="bi bi-arrow-up"></i>
+</button>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-light pt-5 pb-4 mt-auto border-top border-warning border-2">
+  <div class="container">
+    <div class="row gy-4 justify-content-between">
+      
+      <!-- Column 1: Brand & Copyright Info -->
+      <div class="col-lg-4 col-md-12 text-center text-lg-start">
+        <h5 class="text-warning mb-3 fw-bold">Royal Glam Boutique</h5>
+        <p class="small text-secondary mb-2">&copy; 2021–2026 Royal Glam Boutique | Fashion Redefined</p>
+        <p class="small text-secondary"><i class="bi bi-shield-lock text-warning me-1"></i> 100% Secure Checkout</p>
+      </div>
+
+      <!-- Column 2: All Quick Links -->
+      <div class="col-lg-7 col-md-12">
+        <h5 class="text-warning mb-3 text-center text-lg-start">Quick Links</h5>
+        <div class="row g-2 text-center text-lg-start">
+          <div class="col-6 col-sm-4 col-md-3">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><a href="../index.html" class="text-light text-decoration-none footer-link small">Home</a></li>
+              <li class="mb-2"><a href="about.html" class="text-light text-decoration-none footer-link small">About Us</a></li>
+              <li class="mb-2"><a href="contact.html" class="text-light text-decoration-none footer-link small">Contact</a></li>
+              <li class="mb-2"><a href="enquiry.html" class="text-light text-decoration-none footer-link small">Enquiry</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><a href="size.html" class="text-light text-decoration-none footer-link small">Size</a></li>
+              <li class="mb-2"><a href="catalog.html" class="text-light text-decoration-none footer-link small">Catalog</a></li>
+              <li class="mb-2"><a href="cart.html" class="text-light text-decoration-none footer-link small">Cart</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><a href="checkout.html" class="text-light text-decoration-none footer-link small">Checkout</a></li>
+              <li class="mb-2"><a href="order-confirmation.html" class="text-light text-decoration-none footer-link small">Order Confirmation</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><a href="account.html" class="text-light text-decoration-none footer-link small">Account</a></li>
+              <li class="mb-2"><a href="blog.html" class="text-light text-decoration-none footer-link small">Blog</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary my-4 opacity-25">
+
+    <!-- Social Media Icons -->
+    <div class="d-flex justify-content-center gap-4 fs-5">
+      <a href="javascript:void(0)" onclick="openSocialModal('instagram')" class="text-light footer-link" title="Instagram"><i class="bi bi-instagram"></i></a>
+      <a href="javascript:void(0)" onclick="openSocialModal('facebook')" class="text-light footer-link" title="Facebook"><i class="bi bi-facebook"></i></a>
+      <a href="javascript:void(0)" onclick="openSocialModal('tiktok')" class="text-light footer-link" title="TikTok"><i class="bi bi-tiktok"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- SOCIAL MEDIA IFRAME MODAL STRUCTURE -->
+<div id="socialIframeModal" class="modal-social-container">
+  <div class="modal-social-content border border-warning shadow-lg">
+    <div class="modal-social-header bg-dark text-warning px-3 py-2 d-flex justify-content-between align-items-center border-bottom border-warning">
+      <h5 class="mb-0 fw-bold" id="socialModalTitle"><i class="bi bi-globe me-2"></i>Social Preview</h5>
+      <span class="close-social-modal" onclick="closeSocialModal()">&times;</span>
+    </div>
+    <div class="modal-social-body">
+      <iframe id="socialIframe" src="" width="100%" height="500" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../Javascript/script.js"></script>
+
+<script>
+  // Check saved dark mode preference on page load
+  if (localStorage.getItem('darkMode') === 'enabled') {
+      document.body.classList.add('dark-mode');
+  }
+
+  function myFunction() {
+     var element = document.body;
+     element.classList.toggle("dark-mode");
+     
+     if (element.classList.contains("dark-mode")) {
+         localStorage.setItem('darkMode', 'enabled');
+     } else {
+         localStorage.setItem('darkMode', 'disabled');
+     }
+  }
+
+  // Filter Size Page Sections by Input
+  document.addEventListener('DOMContentLoaded', () => {
+    const sizeSearchInput = document.getElementById('sizeBlockSearch');
+    const sizeBlocks = document.querySelectorAll('section.size-block');
+    const noResultsAlert = document.getElementById('noSizeResults');
+
+    if (sizeSearchInput && sizeBlocks.length) {
+      sizeSearchInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase().trim();
+        let visibleCount = 0;
+
+        sizeBlocks.forEach(block => {
+          const text = block.textContent.toLowerCase();
+          if (text.includes(query)) {
+            block.style.display = 'block';
+            visibleCount++;
+          } else {
+            block.style.display = 'none';
+          }
+        });
+
+        if (visibleCount === 0 && query !== '') {
+          noResultsAlert.style.display = 'block';
+        } else {
+          noResultsAlert.style.display = 'none';
+        }
+      });
+    }
+  });
+</script>
+</body>
+</html>
