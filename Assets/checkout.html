@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Title & Meta Description -->
+  <title>Secure Checkout | Royal Glam Boutique</title>
+  <meta name="description" content="Learn about Royal Glam Boutique's story, mission, and dedication to timeless luxury fashion, designer accessories, and sustainable elegance since 2021.">
+  <meta name="keywords" content="secure checkout Royal Glam, buy luxury fashion online, payment gateway, Visa Mastercard boutique, order processing">
+
+  <!--Bootstrap CSS-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"> 
+
+  <!-- Bootstrap icons-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="../CSS/style.css">
+
+  <style>
+    :root { --gold-primary: #ffc107; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; color: #333; min-height: 100vh; display: flex; flex-direction: column; }
+    main { flex: 1; }
+    .badge-cart { font-size: 0.7rem; position: relative; top: -8px; left: -5px; }
+    footer a:hover { color: #ffc107 !important; text-decoration: underline; }
+
+    /* Match form font for validation error messages */
+    .invalid-feedback {
+      font-family: inherit;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
+
+    /* --- Dark Mode Feature Styles --- */
+    .dark-mode {
+      background-color: #121212 !important;
+      color: #ffffff !important;
+    }
+    .dark-mode .bg-white {
+      background-color: #1e1e1e !important;
+      color: #ffffff !important;
+      border-color: #333 !important;
+    }
+    .dark-mode .text-dark {
+      color: #ffffff !important;
+    }
+    .dark-mode .text-muted,
+    .dark-mode p {
+      color: #b0b0b0 !important;
+    }
+    .dark-mode input.form-control,
+    .dark-mode textarea.form-control {
+      background-color: #2b2b2b !important;
+      color: #ffffff !important;
+      border-color: #444 !important;
+    }
+    .dark-mode .form-check-label {
+      color: #ffffff !important;
+    }
+
+    .dark-mode input.form-control,
+    .dark-mode textarea.form-control {
+      background-color: #2b2b2b !important;
+      color: #ffffff !important;
+      border-color: #444 !important;
+    }
+
+    /* --- Make Form Placeholders Readable in Dark Mode --- */
+    .dark-mode input.form-control::placeholder,
+    .dark-mode textarea.form-control::placeholder {
+      color: #a0a0a0 !important;
+      opacity: 1 !important;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark sticky-top shadow-sm py-3">
+  <div class="container-fluid">
+    <!-- Brand -->
+    <a class="navbar-brand fw-bold text-warning" href="../index.html" style="font-size:0.95rem;">
+      Royal Glam Boutique
+    </a>
+
+    <!-- Hamburger Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible Menu -->
+    <div class="collapse navbar-collapse justify-content-between align-items-center" id="navbarNav">
+      <!-- Centered Navigation Tabs -->
+      <ul class="navbar-nav mx-auto mb-2 mb-xl-0 text-center">
+        <li class="nav-item"><a class="nav-link px-3" href="../index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="enquiry.html">Enquiry</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="size.html">Size</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="catalog.html">Catalog</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="cart.html">Cart</a></li>
+        <li class="nav-item"><a class="nav-link px-3 active" href="checkout.html">Checkout</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="order-confirmation.html">Confirmation</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="account.html">Account</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="blog.html">Blog</a></li>
+      </ul>
+
+      <!-- Right Elements: Account, Cart, Dark Mode -->
+      <div class="d-flex align-items-center justify-content-center" style="gap:20px; font-size:1.6rem;">
+        <a href="account.html" class="text-warning" title="My Account" style="text-decoration:none;">
+          <i class="bi bi-person"></i>
+        </a>
+        <a href="cart.html" class="text-warning position-relative" title="Shopping Cart" style="text-decoration:none;">
+          <i class="bi bi-bag"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark cart-count badge-cart">0</span>
+        </a>
+        <div class="ms-lg-3 mb-2 mb-lg-0">
+          <button onclick="myFunction()" class="btn btn-outline-warning btn-sm fw-semibold">
+            <i class="bi bi-moon-stars"></i> Toggle Dark Mode
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="text-center text-white bg-dark py-5 animated-section" 
+        style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;">
+  <div class="container py-4">
+    <h1 class="fw-bold text-warning display-5">Secure Checkout</h1>
+    <p class="lead">Complete your order safely and quickly.</p>
+  </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="container my-5 animated-section">
+  <h1 class="fw-bold mb-4"><i class="bi bi-credit-card text-warning me-2"></i>Secure Checkout</h1>
+
+  <form id="checkoutForm" class="needs-validation" novalidate>
+    <div class="row g-4">
+      <div class="col-lg-7">
+        <!-- Billing / Shipping details -->
+        <div class="bg-white p-4 rounded shadow-sm border mb-4">
+          <h4 class="fw-bold mb-3">1. Shipping &amp; Billing Address</h4>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="fullName" class="form-label">Full Name</label>
+              <input type="text" id="fullName" class="form-control" placeholder="Enter your full name" required minlength="3">
+              <div class="invalid-feedback">Please enter your full name (minimum 3 characters).</div>
+            </div>
+            <div class="col-md-6">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+              <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+            <div class="col-12">
+              <label for="address" class="form-label">Street Address</label>
+              <textarea id="address" class="form-control" rows="2" placeholder="Enter your address" required></textarea>
+              <div class="invalid-feedback">Please enter your street address.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="city" class="form-label">City</label>
+              <input type="text" id="city" class="form-control" placeholder="Enter your city" required>
+              <div class="invalid-feedback">Please enter your city.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="postalCode" class="form-label">Postal Code</label>
+              <input type="text" id="postalCode" class="form-control" placeholder="Enter your postal code" pattern="[0-9]{4}" required>
+              <div class="invalid-feedback">Please enter a valid 4-digit postal code.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment details -->
+        <div class="bg-white p-4 rounded shadow-sm border">
+          <h4 class="fw-bold mb-3">2. Payment Method</h4>
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="radio" name="payment" id="payCard" checked>
+            <label class="form-check-label fw-bold" for="payCard">Credit / Debit Card (Visa, Mastercard)</label>
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="radio" name="payment" id="payEFT">
+            <label class="form-check-label fw-bold" for="payEFT">Instant EFT / Ozow</label>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-12">
+              <label for="cardName" class="form-label">Cardholder Name</label>
+              <input type="text" id="cardName" class="form-control" placeholder="Enter name on card" required>
+              <div class="invalid-feedback">Please enter the cardholder name.</div>
+            </div>
+            <div class="col-md-8">
+              <label for="cardNumber" class="form-label">Card Number</label>
+              <input type="text" id="cardNumber" class="form-control" placeholder="4532123456788910" required pattern="[0-9]{13,19}">
+              <div class="invalid-feedback">Please enter a valid card number (13 to 19 digits).</div>
+            </div>
+            <div class="col-md-4">
+              <label for="cvv" class="form-label">CVV *</label>
+              <input type="text" id="cvv" class="form-control" placeholder="3-digit code" required pattern="[0-9]{3,4}">
+              <div class="invalid-feedback">Please enter a valid 3 or 4-digit CVV.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Order Summary Column -->
+      <div class="col-lg-5">
+        <div class="bg-white p-4 rounded shadow-sm border">
+          <!-- Dynamically populated via script.js -->
+        </div>
+      </div>
+    </div>
+  </form>
+</main>
+
+<!-- Scroll to Top Button -->
+<button id="scrollToTopBtn" class="scroll-to-top-btn" title="Back to Top">
+  <i class="bi bi-arrow-up"></i>
+</button>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-light pt-5 pb-4 mt-auto border-top border-warning border-2">
+  <div class="container">
+    <div class="row gy-4 justify-content-between">
+      
+      <!-- Column 1: Brand & Copyright Info -->
+      <div class="col-lg-4 col-md-12 text-center text-lg-start">
+        <h5 class="text-warning mb-3 fw-bold">Royal Glam Boutique</h5>
+        <p class="small text-secondary mb-2">&copy; 2021–2026 Royal Glam Boutique | Fashion Redefined</p>
+        <p class="small text-secondary"><i class="bi bi-shield-lock text-warning me-1"></i> 100% Secure Checkout</p>
+      </div>
+
+      <!-- Column 2: All Quick Links -->
+      <div class="col-lg-7 col-md-12">
+        <h5 class="text-warning mb-3 text-center text-lg-start">Quick Links</h5>
+        <div class="row g-2 text-center text-lg-start">
+          <div class="col-6 col-sm-4 col-md-3">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><a href="../index.html" class="text-light text-decoration-none footer-link small">Home</a></li>
+              <li class="mb-2"><a href="about.html" class="text-light text-decoration-none footer-link small">About Us</a></li>
+              <li class="mb-2"><a href="contact.html" class="text-light text-decoration-none footer-link small">Contact</a></li>
+              <li class="mb-2"><a href="enquiry.html" class="text-light text-decoration-none footer-link small">Enquiry</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><a href="size.html" class="text-light text-decoration-none footer-link small">Size</a></li>
+              <li class="mb-2"><a href="catalog.html" class="text-light text-decoration-none footer-link small">Catalog</a></li>
+              <li class="mb-2"><a href="cart.html" class="text-light text-decoration-none footer-link small">Cart</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><a href="checkout.html" class="text-light text-decoration-none footer-link small">Checkout</a></li>
+              <li class="mb-2"><a href="order-confirmation.html" class="text-light text-decoration-none footer-link small">Order Confirmation</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><a href="account.html" class="text-light text-decoration-none footer-link small">Account</a></li>
+              <li class="mb-2"><a href="blog.html" class="text-light text-decoration-none footer-link small">Blog</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary my-4 opacity-25">
+
+    <!-- Social Media Icons -->
+    <div class="d-flex justify-content-center gap-4 fs-5">
+      <a href="javascript:void(0)" onclick="openSocialModal('instagram')" class="text-light footer-link" title="Instagram"><i class="bi bi-instagram"></i></a>
+      <a href="javascript:void(0)" onclick="openSocialModal('facebook')" class="text-light footer-link" title="Facebook"><i class="bi bi-facebook"></i></a>
+      <a href="javascript:void(0)" onclick="openSocialModal('tiktok')" class="text-light footer-link" title="TikTok"><i class="bi bi-tiktok"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- SOCIAL MEDIA IFRAME MODAL STRUCTURE -->
+<div id="socialIframeModal" class="modal-social-container">
+  <div class="modal-social-content border border-warning shadow-lg">
+    <div class="modal-social-header bg-dark text-warning px-3 py-2 d-flex justify-content-between align-items-center border-bottom border-warning">
+      <h5 class="mb-0 fw-bold" id="socialModalTitle"><i class="bi bi-globe me-2"></i>Social Preview</h5>
+      <span class="close-social-modal" onclick="closeSocialModal()">&times;</span>
+    </div>
+    <div class="modal-social-body">
+      <iframe id="socialIframe" src="" width="100%" height="500" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../Javascript/script.js"></script>
+
+</body>
+</html>
+
+<!-- Form Validation & Dark Mode Toggle Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('checkoutForm');
+
+    if (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        } else {
+          event.preventDefault();
+          window.location.href = 'order-confirmation.html';
+        }
+
+        form.classList.add('was-validated');
+      }, false);
+    }
+  });
+
+  if (localStorage.getItem('darkMode') === 'enabled') {
+      document.body.classList.add('dark-mode');
+  }
+
+  function myFunction() {
+     var element = document.body;
+     element.classList.toggle("dark-mode");
+     
+     if (element.classList.contains("dark-mode")) {
+         localStorage.setItem('darkMode', 'enabled');
+     } else {
+         localStorage.setItem('darkMode', 'disabled');
+     }
+  }
+</script>

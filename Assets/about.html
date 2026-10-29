@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+ <!-- SEO Title & Meta Description -->
+ <title>About Us | Royal Glam Boutique - Luxury Fashion &amp; Brand Story</title>
+ <meta name="description" content="Learn about Royal Glam Boutique's story, mission, and dedication to timeless luxury fashion, designer accessories, and sustainable elegance since 2021.">
+ <meta name="keywords" content="About Royal Glam Boutique, luxury fashion brand story, designer accessories, boutique team, fashion sustainability">
+
+ <!-- Bootstrap CSS -->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+ <!-- Bootstrap Icons -->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+ <!-- External CSS -->
+ <link rel="stylesheet" href="../CSS/style.css">
+ <style>
+   :root { 
+     --gold-primary: #ffc107; 
+   }
+   body {
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     background-color: #f8f9fa;
+     color: #333;
+     min-height: 100vh;
+     display: flex;
+     flex-direction: column;
+   }
+   main { 
+     flex: 1; 
+   }
+   .badge-cart { 
+     font-size: 0.7rem; 
+     position: relative; 
+     top: -8px; 
+     left: -5px; 
+   }
+   section.about-block {
+     margin-bottom: 40px;
+     padding: 30px;
+     background: #fff;
+     border-radius: 10px;
+     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+     border: 1px solid #dee2e6;
+   }
+   section.about-block h2 {
+     font-family: 'Georgia', serif;
+     font-size: 2rem;
+     color: #2c3e50;
+     margin-bottom: 15px;
+     border-bottom: 2px solid #ffc107;
+     display: inline-block;
+     padding-bottom: 5px;
+   }
+   footer {
+     width: 100%;
+   }
+   footer a:hover {
+     color: #ffc107 !important;
+     text-decoration: underline;
+   }
+
+   /* --- Custom Team Card Grid Styles --- */
+   .team-container-custom {
+     box-sizing: border-box;
+   }
+   .team-container-custom *, .team-container-custom *:before, .team-container-custom *:after {
+     box-sizing: inherit;
+   }
+   .team-container-custom .column {
+     float: left;
+     width: 25%;
+     margin-bottom: 16px;
+     padding: 0 8px;
+   }
+   @media screen and (max-width: 992px) {
+     .team-container-custom .column {
+       width: 50%;
+       display: block;
+     }
+   }
+   @media screen and (max-width: 576px) {
+     .team-container-custom .column {
+       width: 100%;
+       display: block;
+     }
+   }
+   .team-container-custom .card {
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+     background-color: #fff;
+     border-radius: 6px;
+     overflow: hidden;
+     border: 1px solid rgba(0,0,0,0.12);
+     height: 100%;
+   }
+   .team-container-custom .team-info-container {
+     padding: 0 16px 16px 16px;
+   }
+   .team-container-custom .team-info-container::after, .team-container-custom .row::after {
+     content: "";
+     clear: both;
+     display: table;
+   }
+   .team-container-custom .title {
+     color: grey;
+     font-size: 0.95rem;
+     margin-bottom: 10px;
+   }
+   .team-container-custom .button {
+     border: none;
+     outline: 0;
+     display: inline-block;
+     padding: 8px;
+     color: white;
+     background-color: #000;
+     text-align: center;
+     cursor: pointer;
+     width: 100%;
+     border-radius: 4px;
+     transition: background-color 0.2s ease;
+   }
+   .team-container-custom .button:hover {
+     background-color: #ffc107;
+     color: #000;
+   }
+
+   /* --- Dark Mode Feature Styles --- */
+   .dark-mode {
+     background-color: #121212 !important;
+     color: #ffffff !important;
+   }
+   .dark-mode header h1 {
+     color: #ffc107 !important;
+   }
+   .dark-mode section,
+   .dark-mode .card {
+     background-color: #1e1e1e !important;
+     color: #ffffff !important;
+     border-color: #333 !important;
+   }
+   .dark-mode .text-muted,
+   .dark-mode p,
+   .dark-mode .title,
+   .dark-mode h1,
+   .dark-mode h2,
+   .dark-mode h3,
+   .dark-mode legend {
+     color: #e0e0e0 !important;
+   }
+   .dark-mode fieldset {
+     border-color: #444 !important;
+   }
+   .dark-mode input.form-control,
+   .dark-mode textarea.form-control {
+     background-color: #2b2b2b !important;
+     color: #ffffff !important;
+     border-color: #444 !important;
+   }
+
+   /* --- Make Placeholder Text Readable in Dark Mode --- */
+   .dark-mode input.form-control::placeholder,
+   .dark-mode textarea.form-control::placeholder {
+     color: #a0a0a0 !important;
+     opacity: 1 !important;
+   }
+ </style>
+</head>
+
+<body>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark sticky-top shadow-sm py-3">
+  <div class="container-fluid">
+    <!-- Brand -->
+    <a class="navbar-brand fw-bold text-warning" href="../index.html" style="font-size:0.95rem;">
+      Royal Glam Boutique
+    </a>
+
+    <!-- Hamburger Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible Menu -->
+    <div class="collapse navbar-collapse justify-content-between align-items-center" id="navbarNav">
+      <!-- Centered Navigation Tabs -->
+      <ul class="navbar-nav mx-auto mb-2 mb-xl-0 text-center">
+        <li class="nav-item"><a class="nav-link px-3" href="../index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link px-3 active" href="#">About</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="enquiry.html">Enquiry</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="size.html">Size</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="catalog.html">Catalog</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="cart.html">Cart</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="checkout.html">Checkout</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="order-confirmation.html">Confirmation</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="account.html">Account</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="blog.html">Blog</a></li>
+      </ul>
+      
+      <!-- Right Icons & Dark Mode Toggle -->
+      <div class="d-flex align-items-center justify-content-center" style="gap:20px; font-size:1.6rem;">
+        <a href="account.html" class="text-warning" title="My Account" style="text-decoration:none;">
+          <i class="bi bi-person"></i>
+        </a>
+        <a href="cart.html" class="text-warning position-relative" title="Shopping Cart" style="text-decoration:none;">
+          <i class="bi bi-bag"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark cart-count badge-cart">0</span>
+        </a>
+        <div class="ms-lg-3 mb-2 mb-lg-0">
+          <button onclick="myFunction()" class="btn btn-outline-warning btn-sm fw-semibold">
+            <i class="bi bi-moon-stars"></i> Toggle Dark Mode
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="text-center text-white bg-dark py-5 animated-section" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;">
+  <div class="container py-4">
+    <h1 class="fw-bold text-warning display-5">Our Story of Glamour</h1>
+    <p class="lead">Founded in 2021, we bring elegance and sophistication to everyday fashion.</p>
+  </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="container my-5 animated-section" style="max-width:1100px;">
+  <h2 class="text-center text-dark fw-bold mb-2" style="font-size:2.5rem;">About Royal Glam Boutique</h2>
+  <p class="text-center text-muted mb-4" style="font-size:1.1rem;">Discover the story behind the glamour and luxury craftsmanship.</p>
+
+  <!-- In-Page Filter Search Bar for About Page Sections -->
+  <div class="row justify-content-center mb-5">
+    <div class="col-md-8">
+      <div class="input-group shadow-sm">
+        <span class="input-group-text bg-warning border-warning text-dark"><i class="bi bi-search"></i></span>
+        <input type="text" id="aboutBlockSearch" class="form-control form-control-lg border-warning" placeholder="Search About section content (e.g., Mission, Team, Sustainability, Returns)...">
+      </div>
+    </div>
+  </div>
+
+  <div id="noAboutResults" class="alert alert-warning text-center fw-semibold shadow-sm" style="display: none;">
+    No matching sections found for your query.
+  </div>
+
+  <!-- Filterable Sections -->
+  <section class="about-block">
+    <h2>About Royal Glam Boutique</h2>
+    <p>Royal Glam Boutique is a modern luxury brand dedicated to bringing elegance, confidence, and style to every customer. Founded in 2021, our boutique offers a curated selection of designer handbags, jewellery, and premium accessories that reflect sophistication and timeless beauty.</p>
+  </section>
+
+  <section class="about-block">
+    <h2>Our Mission</h2>
+    <p>Our mission is to empower individuals to express their unique style through high-quality fashion pieces. We believe that glamour is not just about appearance—it’s about confidence, creativity, and authenticity.</p>
+  </section>
+
+  <section class="about-block">
+    <h2>Our Vision</h2>
+    <p>To become a leading name in luxury fashion, known for exceptional craftsmanship, customer care, and sustainable practices. We aim to inspire elegance and confidence in every person who chooses Royal Glam Boutique.</p>
+  </section>
+
+  <section class="about-block">
+    <h2>Why Choose Us?</h2>
+    <ul>
+      <li>Exclusive designer collections</li>
+      <li>Personalized shopping experience</li>
+      <li>Commitment to quality and authenticity</li>
+      <li>Secure online shopping and fast delivery</li>
+    </ul>
+  </section>
+
+  <!-- MEET THE TEAM SECTION -->
+  <section class="about-block">
+    <h2 class="mb-4">Meet the Team</h2>
+    <div class="team-container-custom">
+      <div class="row">
+        
+        <!-- Team Member 1 -->
+        <div class="column">
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Bridget Rikhotso - Founder and Creative Director at Royal Glam Boutique" style="width:100%; height:220px; object-fit:cover;">
+            <div class="team-info-container">
+              <h3 class="h5 fw-bold mt-3">Bridget Rikhotso</h3>
+              <p class="title">Founder &amp; Creative Director</p>
+              <p class="small text-muted">Visionary leader driving the creative and strategic direction of Royal Glam.</p>
+              <p class="small">bridget@royalglam.com</p>
+              <p><button class="button" onclick="window.location.href='contact.html'">Contact</button></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="column">
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="David Johnson - Head of Marketing at Royal Glam Boutique" style="width:100%; height:220px; object-fit:cover;">
+            <div class="team-info-container">
+              <h3 class="h5 fw-bold mt-3">David Johnson</h3>
+              <p class="title">Head of Marketing</p>
+              <p class="small text-muted">Expert in brand positioning, digital growth, and luxury fashion engagement.</p>
+              <p class="small">david@royalglam.com</p>
+              <p><button class="button" onclick="window.location.href='contact.html'">Contact</button></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="column">
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" alt="Lerato Dlamini - Lead Designer at Royal Glam Boutique" style="width:100%; height:220px; object-fit:cover;">
+            <div class="team-info-container">
+              <h3 class="h5 fw-bold mt-3">Lerato Dlamini</h3>
+              <p class="title">Lead Designer</p>
+              <p class="small text-muted">Passionate creator designing exquisite collections that define modern elegance.</p>
+              <p class="small">lerato@royalglam.com</p>
+              <p><button class="button" onclick="window.location.href='contact.html'">Contact</button></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 4 -->
+        <div class="column">
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80" alt="Emily Brown - Customer Experience Lead at Royal Glam Boutique" style="width:100%; height:220px; object-fit:cover;">
+            <div class="team-info-container">
+              <h3 class="h5 fw-bold mt-3">Emily Brown</h3>
+              <p class="title">Customer Experience</p>
+              <p class="small text-muted">Dedicated to ensuring every client receives personalized care and flawless service.</p>
+              <p class="small">emily@royalglam.com</p>
+              <p><button class="button" onclick="window.location.href='contact.html'">Contact</button></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="about-block">
+    <h2>Our Commitment to Sustainability</h2>
+    <p>We believe in responsible fashion. Our boutique partners with ethical suppliers, uses eco-friendly packaging, and supports initiatives that reduce environmental impact while maintaining luxury standards.</p>
+  </section>
+
+  <section class="about-block">
+    <h2>Shipping, Returns &amp; Payments</h2>
+    <p><strong>Shipping:</strong> We ship worldwide. Delivery times vary by location.</p>
+    <p><strong>Returns:</strong> Accepted within 14 days of purchase.</p>
+    <p><strong>Payments:</strong> Visa, Mastercard, PayPal, and Bank Transfer accepted.</p>
+    <p><strong>Gift Wrapping:</strong> Available for an additional R100 per order.</p>
+  </section>
+
+  <section class="about-block">
+    <h2>Return Process</h2>
+    <ol>
+      <li>Fill out the return form below.</li>
+      <li>Ship the item back to our boutique.</li>
+      <li>Refunds processed within 7 business days.</li>
+    </ol>
+    <form class="mt-3" onsubmit="event.preventDefault(); alert('Return request submitted successfully!'); this.reset();">
+      <fieldset class="border p-3 rounded">
+        <legend class="fw-bold text-dark fs-6">Return Request Form</legend>
+        <div class="mb-3">
+          <label for="orderNumber" class="form-label">Order Number</label>
+          <input type="text" id="orderNumber" class="form-control" placeholder="Enter your order number" required>
+        </div>
+        <div class="mb-3">
+          <label for="returnReason" class="form-label">Reason for Return</label>
+          <textarea id="returnReason" class="form-control" rows="3" placeholder="Describe the reason" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-dark">Submit Return Request</button>
+      </fieldset>
+    </form>
+  </section>
+
+  <section class="about-block">
+    <h2>Privacy &amp; Data Protection</h2>
+    <p>Royal Glam Boutique values your privacy. We collect only necessary information to process orders and improve your shopping experience.</p>
+    <h3 class="fs-5 fw-bold text-secondary mt-3">Data Collection</h3>
+    <p>We collect name, email, address, and payment details securely.</p>
+    <h3 class="fs-5 fw-bold text-secondary mt-3">Data Usage</h3>
+    <p>Your information is used for order processing, customer support, and promotional updates (if subscribed).</p>
+    <h3 class="fs-5 fw-bold text-secondary mt-3">Security</h3>
+    <p>We use SSL encryption and secure servers to protect your data.</p>
+  </section>
+</main>
+
+<!-- Scroll to Top Button -->
+<button id="scrollToTopBtn" class="scroll-to-top-btn" title="Back to Top">
+  <i class="bi bi-arrow-up"></i>
+</button>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-light pt-5 pb-4 mt-auto border-top border-warning border-2">
+  <div class="container">
+    <div class="row gy-4 justify-content-between">
+      
+      <!-- Column 1: Brand & Copyright Info -->
+      <div class="col-lg-4 col-md-12 text-center text-lg-start">
+        <h5 class="text-warning mb-3 fw-bold">Royal Glam Boutique</h5>
+        <p class="small text-secondary mb-2">&copy; 2021–2026 Royal Glam Boutique | Fashion Redefined</p>
+        <p class="small text-secondary"><i class="bi bi-shield-lock text-warning me-1"></i> 100% Secure Checkout</p>
+      </div>
+
+      <!-- Column 2: All Quick Links -->
+      <div class="col-lg-7 col-md-12">
+        <h5 class="text-warning mb-3 text-center text-lg-start">Quick Links</h5>
+        <div class="row g-2 text-center text-lg-start">
+          <div class="col-6 col-sm-4 col-md-3">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><a href="../index.html" class="text-light text-decoration-none footer-link small">Home</a></li>
+              <li class="mb-2"><a href="about.html" class="text-light text-decoration-none footer-link small">About Us</a></li>
+              <li class="mb-2"><a href="contact.html" class="text-light text-decoration-none footer-link small">Contact</a></li>
+              <li class="mb-2"><a href="enquiry.html" class="text-light text-decoration-none footer-link small">Enquiry</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><a href="size.html" class="text-light text-decoration-none footer-link small">Size</a></li>
+              <li class="mb-2"><a href="catalog.html" class="text-light text-decoration-none footer-link small">Catalog</a></li>
+              <li class="mb-2"><a href="cart.html" class="text-light text-decoration-none footer-link small">Cart</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><a href="checkout.html" class="text-light text-decoration-none footer-link small">Checkout</a></li>
+              <li class="mb-2"><a href="order-confirmation.html" class="text-light text-decoration-none footer-link small">Order Confirmation</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><a href="account.html" class="text-light text-decoration-none footer-link small">Account</a></li>
+              <li class="mb-2"><a href="blog.html" class="text-light text-decoration-none footer-link small">Blog</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary my-4 opacity-25">
+
+    <!-- Social Media Icons -->
+    <div class="d-flex justify-content-center gap-4 fs-5">
+      <a href="javascript:void(0)" onclick="openSocialModal('instagram')" class="text-light footer-link" title="Instagram"><i class="bi bi-instagram"></i></a>
+      <a href="javascript:void(0)" onclick="openSocialModal('facebook')" class="text-light footer-link" title="Facebook"><i class="bi bi-facebook"></i></a>
+      <a href="javascript:void(0)" onclick="openSocialModal('tiktok')" class="text-light footer-link" title="TikTok"><i class="bi bi-tiktok"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- SOCIAL MEDIA IFRAME MODAL STRUCTURE -->
+<div id="socialIframeModal" class="modal-social-container">
+  <div class="modal-social-content border border-warning shadow-lg">
+    <div class="modal-social-header bg-dark text-warning px-3 py-2 d-flex justify-content-between align-items-center border-bottom border-warning">
+      <h5 class="mb-0 fw-bold" id="socialModalTitle"><i class="bi bi-globe me-2"></i>Social Preview</h5>
+      <span class="close-social-modal" onclick="closeSocialModal()">&times;</span>
+    </div>
+    <div class="modal-social-body">
+      <iframe id="socialIframe" src="" width="100%" height="500" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../Javascript/script.js"></script>
+
+<script>
+  // Check saved dark mode preference on page load
+  if (localStorage.getItem('darkMode') === 'enabled') {
+      document.body.classList.add('dark-mode');
+  }
+
+  function myFunction() {
+     var element = document.body;
+     element.classList.toggle("dark-mode");
+     
+     if (element.classList.contains("dark-mode")) {
+         localStorage.setItem('darkMode', 'enabled');
+     } else {
+         localStorage.setItem('darkMode', 'disabled');
+     }
+  }
+
+  // Filter About Page Sections by Input
+  document.addEventListener('DOMContentLoaded', () => {
+    const aboutSearchInput = document.getElementById('aboutBlockSearch');
+    const aboutBlocks = document.querySelectorAll('section.about-block');
+    const noResultsAlert = document.getElementById('noAboutResults');
+
+    if (aboutSearchInput && aboutBlocks.length) {
+      aboutSearchInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase().trim();
+        let visibleCount = 0;
+
+        aboutBlocks.forEach(block => {
+          const text = block.textContent.toLowerCase();
+          if (text.includes(query)) {
+            block.style.display = 'block';
+            visibleCount++;
+          } else {
+            block.style.display = 'none';
+          }
+        });
+
+        if (visibleCount === 0 && query !== '') {
+          noResultsAlert.style.display = 'block';
+        } else {
+          noResultsAlert.style.display = 'none';
+        }
+      });
+    }
+  });
+</script>
+</body>
+</html>
