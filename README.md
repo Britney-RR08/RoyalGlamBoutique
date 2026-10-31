@@ -137,6 +137,7 @@ blob: <https://gemini.google.com/473e2645-831f-4a6b-a410-fb78f1806920>
 - General Updates:
 - Added more content across webpages.
 - Increased total webpage count by 3: **Size Guide**, **Checkout**, and **Order Confirmation**.
+
   
 - **13 Sep 2026:**
 - Size Guide Page:
@@ -144,11 +145,13 @@ blob: <https://gemini.google.com/473e2645-831f-4a6b-a410-fb78f1806920>
 -Clothing, shoe, and jewellery size charts with explanations.
 -Reduces returns and increases customer satisfaction by ensuring accurate sizing.
 
+
 - **13 Sep 2026:**
 -  Order Confirmation Page:
 -Confirms successful purchases.
 -Order summary and confirmation message.
 -Provides closure and reassurance that the order has been processed.
+
 
 - **13 Sep 2026:**
 -  Checkout Page:
@@ -156,16 +159,19 @@ blob: <https://gemini.google.com/473e2645-831f-4a6b-a410-fb78f1806920>
 -Billing details, shipping methods, and payment details.
 -Ensures smooth transactions and gives customers confidence in secure payment handling.
 
+
 - **13 Sep 2026:**
 -  Home Page:
 - Added more images and boutique store information.
 - Included product prices with references to an existing website.
+
 
 - **13 Sep 2026:**
 - About Page:
 - Listed team members of Royal Glam Boutique with their roles.
 - Added insight on shipping, returns, and payment processes.
 - Expanded policy and data protection details.
+
 
 - **13 Sep 2026:**
 - Contact Page:
@@ -174,16 +180,19 @@ blob: <https://gemini.google.com/473e2645-831f-4a6b-a410-fb78f1806920>
 - Added apps for boutique connectivity.
 - Integrated FAQs, customer support, and partnership opportunities.
 
+
 - **13 Sep 2026:**
 - Catalog Page:
 - Implemented product filters (category, price range, colour, size).
 - Added product pricing and descriptions.
 - Included ratings for each item.
 
+
 - **13 Sep 2026:**
 -  Cart Page:
 - Added a checkout form with payment options.
 - Included an order summary.
+
 
 - **13 Sep 2026:**
 -  Checkout Page:
@@ -191,11 +200,13 @@ blob: <https://gemini.google.com/473e2645-831f-4a6b-a410-fb78f1806920>
 - Added shipping methods.
 - Added payment details.
 
+
 - **13 Sep 2026:**
 - Account Page:
 - Added loyalty rewards.
 - Included newsletter preferences.
 - Added payment methods and account settings.
+
   
  - **16 Sep 2026:**
  - Added the needed file structure in GitHub consisting of the assets, images, CSS, index.html, and JS.
@@ -207,9 +218,11 @@ blob: <https://gemini.google.com/473e2645-831f-4a6b-a410-fb78f1806920>
  - Updated the sitemap image with the inclusion of the new webpages
  - Updated the blog and account webpages
 
+
 -**18 Sep 2026:**
 -Added the updated HTML files
 -Added the hamburger button to the website
+
 
 -**31 Oct 2026:**
 - General updates:
@@ -219,7 +232,7 @@ blob: <https://gemini.google.com/473e2645-831f-4a6b-a410-fb78f1806920>
 - Added dynamic Enhancements & Customer Engagement.
 - Added SEO & Semantic Structure.
 - Added all references used to complete task 3
-- Added a toggle button that changes modes of themes on the site
+- Added a toggle button that changes theme modes of themes on the site
   
 - 1. Home Page 
 - Added a lightbox effect
