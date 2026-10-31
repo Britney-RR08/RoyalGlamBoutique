@@ -32,7 +32,7 @@ The project reflects best practices of information systems, project management, 
 ## 4. Website Goals and Objectives
  To present luxury items in a professional environment.
 - To offer navigation and good design.
-- To allow users to manage their accounts and do checkout.
+- To allow users to manage their accounts and check out.
 - To share news via a blog.
 - To show the location of the boutique on the map.
 - To provide various means of contact. 
@@ -62,21 +62,38 @@ The project reflects best practices of information systems, project management, 
 
 ## 7. 1 Part 1 Details
 This submission contains:
-- Private GitHub repository.
-- Wireframes for all seven pages.
-- Visual and XML sitemap.
-- README.md file in academic style.
+- **Private GitHub repository.**
+- **Wireframes for all seven pages.**
+- **Visual and XML sitemap.**
+- **README.md file in academic style.**
 
  ## 7. 2 Part 2 Details
 This submission contains:
-- **External CSS Stylesheets. **
-- **CSS Selectors. ** 
-- **Desktop Styling Techniques. **
-- **Cascading Nature of CSS. **
--  ** Developer Tools. **
-- **Responsive Web Design. **
+- **External CSS Stylesheets.**
+- **CSS Selectors.** 
+- **Desktop Styling Techniques.**
+- **Cascading Nature of CSS.**
+-  **Developer Tools.**
+- **Responsive Web Design.**
 
-*(Part 3 will follow in future submissions.)*
+ ## 7. 3 Part 3 Details
+
+This submission contains:
+
+- **JavaScript Enhancements.**
+- **Interactive UI.**
+- **Interactive Maps.**
+- **Dynamic Gallery & Lightbox.**
+- **Dynamic Content Loading.**
+- **Search & Filter.**
+- **Animations.**
+- **Form Functionality & Validation.**
+- **enquiry.html.**
+- **contact.html.**
+- **Search Engine Optimization (SEO) & Performance.**
+- **On-Page SEO.**
+- **Technical & Off-Page SEO.**
+
 ---
 
 ## 8. Sitemap
@@ -186,7 +203,7 @@ blob: <https://gemini.google.com/473e2645-831f-4a6b-a410-fb78f1806920>
  - The images folder has the images used to generate the website
  - The css folder has an external stylesheet inside 
  - I attempted to create a file structure; however, I encountered some errors along the way, which then required me to delete all the unwanted files on the main branch, from the images to the HTML files and the CSS and JS
- - Updated the sitemap code with inclusion of the new webpages
+ - Updated the sitemap code with the inclusion of the new webpages
  - Updated the sitemap image with the inclusion of the new webpages
  - Updated the blog and account webpages
 
@@ -194,7 +211,61 @@ blob: <https://gemini.google.com/473e2645-831f-4a6b-a410-fb78f1806920>
 -Added the updated HTML files
 -Added the hamburger button to the website
 
----
+-**31 Oct 2026:**
+- General updates:
+- Added interactive Elements & UI Features.
+- Added featured Product Catalogs.
+- Added comprehensive Navigation & Internal Links.
+- Added dynamic Enhancements & Customer Engagement.
+- Added SEO & Semantic Structure.
+- Added all references used to complete task 3
+- Added a toggle button that changes modes of themes on the site
+  
+- 1. Home Page 
+- Added a lightbox effect
+- Added hovering buttons showing the prices of items 
+- Added a functional subscribe now form
+- Added an enhancement to the customer reviews
+- Added a JavaScript photo viewer that enlarges images and lets users click through a slideshow.
+
+
+- 2. About Page 
+- Added images of the employees
+- Added a search button to help users search for what they are looking for 
+
+- 3. Contact Page
+- Added a  functional form where customers can type their contact details and message.
+- Added JavaScript to check for errors before submitting.
+- Added zoom in and out features on the map
+- Added more common questions customers ask in general 
+
+- 4. Enquiry Page 
+- Added a form used for asking about specific items, services, or sponsorship options.
+
+- 5. Size Guide Page
+- Added clear measurement guides for dresses, shoes, and rings.
+
+
+- 6. Product Catalog Page
+- Added a search bar and filter controls so users can sort items by price, name, or category.
+
+- 7. Shopping Cart Page
+- Added a function that calculates totals and provides a direct link to pay.
+
+- 8. Checkout Page 
+- Added features that allow the following to work: collecting shipping addresses, billing info, and payment methods.
+- Added a feature that makes sure all required information is correctly filled out before completing the order.
+
+- 9. Order Confirmation Page 
+- Added a page that displays a thank-you message, an order tracking number, and a list of bought items.
+- Added a customer feedback questionnaire form
+
+- 10. Account Page 
+- **User Profile:** Allows users to log in, create accounts, and update personal details.
+- **Order Tracking:** Shows past purchases and saved delivery addresses.
+
+- 11. Blog Page
+- Added more images on the blog page 
 
 ## 10. References
 -Ambrose, G. & Harris, P. (2015) Design Thinking. London: Bloomsbury.
@@ -205,14 +276,20 @@ blob: <https://gemini.google.com/473e2645-831f-4a6b-a410-fb78f1806920>
 
 -Chacon, S. & Straub, B. (2014) Pro Git. 2nd ed. New York: Apress.
 
--GitHub Docs (2026) Collaborating with pull requests. Available at: <https://docs.github.com/> [Accessed 10 August 2026]
+-Formspree. (2026) Formspree: Contact form backend for HTML forms [online]. Available at: https://formspree.io/ [Accessed: 31 October 2026].
+
+-GitHub Docs (2026) Collaborating with pull requests. Available at: <https://docs.github.com/> [Accessed: 10 August 2026]
+
+-Google. (2026) Google Forms: Online form creator [online]. Available at: https://www.google.com/forms/about/ [Accessed: 31 October 2026].
 
 -iStock. (2026) iStock. Available at: <https://www.istockphoto.com/> [Accessed: 16 September 2026]
 
--Nicci Boutiques. (2026) Nicci Boutiques. Available at: <https://nicci.co.za/> [Accessed 16 September 2026]
+-Nicci Boutiques. (2026) Nicci Boutiques. Available at: <https://nicci.co.za/> [Accessed: 16 September 2026]
 
 -Loeliger, J. & McCullough, M. (2012) Version Control with Git. Sebastopol: O’Reilly Media.
 
 -Pinterest. (2026) Pinterest. Available at: <https://www.pinterest.com/> [Accessed: 16 September 2026]
 
--Sitemaps.org (2026) Sitemap Protocol. Available at: <https://www.sitemaps.org/> [Accessed 10 August 2026]
+-Sitemaps.org (2026) Sitemap Protocol. Available at: <https://www.sitemaps.org/> [Accessed: 10 August 2026]
+
+-W3Schools. (2026) Python tutorial [online]. Available at: https://www.w3schools.com/python/ [Accessed: 31 October 2026].
