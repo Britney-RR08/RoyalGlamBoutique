@@ -167,10 +167,12 @@ This submission contains:
 
 ## 8. Sitemap
 ### 8.1 Visual Sitemap
-<img width="1024" height="559" alt="image" src="https://raw.githubusercontent.com/Britney-RR08/RoyalGlamBoutique/main/Images/RoyalGlamBoutique-Sitemap.png" /># Royal Glam Boutique
+<img width="1024" height="559" alt="Royal Glam Boutique Sitemap" src="https://raw.githubusercontent.com/Britney-RR08/RoyalGlamBoutique/main/Images/RoyalGlamBoutique-Sitemap.png" />
 
-image link 
-blob: <https://raw.githubusercontent.com/Britney-RR08/RoyalGlamBoutique/main/Images/RoyalGlamBoutique-Sitemap.png>
+Image link 
+blob:![Royal Glam Boutique Sitemap](https://raw.githubusercontent.com/Britney-RR08/RoyalGlamBoutique/main/Images/RoyalGlamBoutique-Sitemap.png)
+
+# Royal Glam Boutique
 
 *Figure 1: Visual representation of the Royal Glam Boutique website structure.*
 
@@ -286,6 +288,7 @@ blob: <https://raw.githubusercontent.com/Britney-RR08/RoyalGlamBoutique/main/Ima
 - Added SEO and semantic structure.
 - Added all references used to complete task 3
 - Added a toggle button that changes theme modes of themes on the site
+- Updated the sitemap with all existing webpages on the website 
   
 - 1. Home Page 
 - Added a lightbox effect
