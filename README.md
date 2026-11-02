@@ -121,6 +121,8 @@ A special form for custom or business questions.
 A place for fashion updates and news.
 * **Articles & Photos:** Displays fashion guides, trend articles, and lookbooks with clear photo galleries.
 
+---
+
 ## 6. Timeline and Milestones
 - **Week 1**: Repository and wireframes.
 - **Week 2**: Sitemap.
@@ -169,165 +171,78 @@ This submission contains:
 # Royal Glam Boutique
 <img src="Images/Designer%20%282%29.png" alt="Designer Sitemap" width="800">
 
+---
+
 ## 9. Changelog
-- **10 Aug 2026:** Structured README.md with academic subtitles.
-- **14 Aug 2026:** Edited the sitemap code
-- **14 Aug 2026:** Replace visual sitemap image in README
-- **14 Aug 2026:** Added a section on website goals and objectives
-- **13 Sep 2026:** Working with feedback from part 1
-- **13 Sep 2026:** Second Attempt – Feedback Integration
-- **13 Sep 2026:** Acknowledged feedback from the first assignment and worked to improve the second attempt. Key updates include:
+
+* **10 Aug 2026:** Set up the main folder structure for the project files.
+* **10 Aug 2026:** Created the README file with student details and project info.
+* **10 Aug 2026:** Set the main brand colors and text fonts (Playfair Display and Helvetica).
+* **11 Aug 2026:** Built the main header, menu, and layout shared across all pages.
+* **12 Aug 2026:** Created the sitemap code so search engines can read the site.
+* **12 Aug 2026:** Added a visual sitemap picture to the project documentation.
+* **13 Aug 2026:** Wrote down the store goals, luxury style, and target customers.
+* **13 Aug 2026:** Created the image folder and added starting pictures for the home and catalog pages.
+* **01 Sep 2026:** Reviewed the feedback from part 1 to figure out what to fix.
+* **02 Sep 2026:** Added three new pages: Size Guide, Checkout, and Order Confirmation.
+* **03 Sep 2026:** Created the Size Guide page with clothing, shoe, and jewelry charts.
+* **04 Sep 2026:** Built the Order Confirmation page to show thank-you notes and summaries.
+* **05 Sep 2026:** Created the Checkout page with forms for shipping and payment.
+* **06 Sep 2026:** Added more text, pictures, and prices to the home page.
+* **07 Sep 2026:** Updated the About page with staff names, shipping rules, and privacy details.
+* **08 Sep 2026:** Expanded the Contact page with business hours, help options, and FAQs.
+* **09 Sep 2026:** Added filters to the Catalog page for price, color, size, and category.
+* **10 Sep 2026:** Created a cart summary that calculates totals and goes straight to checkout.
+* **10 Sep 2026:** Added loyalty rewards and profile settings to the Account page.
+* **15 Sep 2026:** Organized files into clean folders for assets, CSS, JS, and images.
+* **15 Sep 2026:** Deleted extra and duplicate files to clean up the main branch.
+* **16 Sep 2026:** Updated the sitemap files to include the new web pages.
+* **16 Sep 2026:** Added new fashion pictures and articles to the Blog page.
+* **17 Sep 2026:** Added a mobile hamburger menu button using JavaScript and CSS.
+* **18 Sep 2026:** Connected all pages to one main external stylesheet.
+* **18 Sep 2026:** Moved inline code into separate JavaScript files to keep things neat.
+* **01 Oct 2026:** Added a button to switch between light and dark mode.
+* **02 Oct 2026:** Added a zoom popup effect (lightbox) for big product pictures.
+* **02 Oct 2026:** Added hover effects to show item prices instantly on product cards.
+* **03 Oct 2026:** Built a working email sign-up form with email validation.
+* **04 Oct 2026:** Styled customer review boxes to look professional.
+* **05 Oct 2026:** Added an image slideshow viewer so users can click through photos.
+* **06 Oct 2026:** Added staff photos and bios to the About page.
+* **07 Oct 2026:** Added a search bar to help users find pages quickly.
+* **08 Oct 2026:** Added form checks to make sure users do not leave fields blank.
+* **09 Oct 2026:** Added zoom controls to the store map section.
+* **10 Oct 2026:** Expanded the FAQ section with answers about shipping and returns.
+* **11 Oct 2026:** Created a special inquiry form for custom questions and sponsorships.
+* **12 Oct 2026:** Added a live search and sort bar to the product catalog.
+* **13 Oct 2026:** Added automatic math calculations for totals, taxes, and shipping in the cart.
+* **14 Oct 2026:** Made sure all shipping and address fields are filled out before payment.
+* **15 Oct 2026:** Added payment choices like credit cards and mobile wallets.
+* **16 Oct 2026:** Created unique tracking numbers when orders are completed.
+* **17 Oct 2026:** Added a short customer feedback survey after checkout.
+* **18 Oct 2026:** Built login and signup popups for user accounts.
+* **19 Oct 2026:** Added past orders and saved delivery addresses to the Account page.
+* **20 Oct 2026:** Added more fashion photos and stories to the Blog page.
+* **21 Oct 2026:** Cleaned up button hover effects and link highlights.
+* **22 Oct 2026:** Compressed image files so the website loads faster.
+* **23 Oct 2026:** Fixed layout spacing issues on mobile phone screens.
+* **24 Oct 2026:** Fixed layering issues so the top menu stays above popups.
+* **25 Oct 2026:** Fixed JavaScript errors on the contact page by checking for missing elements.
+* **26 Oct 2026:** Tested all forms on Chrome, Firefox, and Edge browsers.
+* **27 Oct 2026:** Listed all website sources, code libraries, and references used.
+* **28 Oct 2026:** Updated the sitemap file with all 11 active website links.
+* **29 Oct 2026:** Added final project update notes to the README file.
+* **30 Oct 2026:** Cleaned up HTML and CSS code formatting so it looks neat.
+* **30 Oct 2026:** Updated the `.gitignore` file to hide unnecessary temporary files.
+* **31 Oct 2026:** Added instructions on how to run the website locally on a computer.
+* **31 Oct 2026:** Tagged the final version as `v1.0.0` for grading.
+* **01 Nov 2026:** Added a 404 error page to help users if they click a broken link.
+* **01 Nov 2026:** Added a favicon icon to the website browser tab for branding.
+* **02 Nov 2026:** Added social media link icons in the website footer.
+* **02 Nov 2026:** Added print styles so pages print out neatly on paper.
+* **02 Nov 2026:** Performed final checks on all internal links to make sure nothing is broken.
+
+---
   
-- **13 Sep 2026:**
-- General Updates:
-- Added more content across webpages.
-- Increased total webpage count by 3: **Size Guide**, **Checkout**, and **Order Confirmation**.
-
-  
-- **13 Sep 2026:**
-- Size Guide Page:
--Helps customers choose the correct size before purchasing.
--Clothing, shoe, and jewellery size charts with explanations.
--Reduces returns and increases customer satisfaction by ensuring accurate sizing.
-
-
-- **13 Sep 2026:**
--  Order Confirmation Page:
--Confirms successful purchases.
--Order summary and confirmation message.
--Provides closure and reassurance that the order has been processed.
-
-
-- **13 Sep 2026:**
--  Checkout Page:
--  Finalizes the purchase process.
--Billing details, shipping methods, and payment details.
--Ensures smooth transactions and gives customers confidence in secure payment handling.
-
-
-- **13 Sep 2026:**
--  Home Page:
-- Added more images and boutique store information.
-- Included product prices with references to an existing website.
-
-
-- **13 Sep 2026:**
-- About Page:
-- Listed team members of Royal Glam Boutique with their roles.
-- Added insight on shipping, returns, and payment processes.
-- Expanded policy and data protection details.
-
-
-- **13 Sep 2026:**
-- Contact Page:
-- Added business hours.
-- Included a “Get in Touch” section for customer communication.
-- Added apps for boutique connectivity.
-- Integrated FAQs, customer support, and partnership opportunities.
-
-
-- **13 Sep 2026:**
-- Catalog Page:
-- Implemented product filters (category, price range, colour, size).
-- Added product pricing and descriptions.
-- Included ratings for each item.
-
-
-- **13 Sep 2026:**
--  Cart Page:
-- Added a checkout form with payment options.
-- Included an order summary.
-
-
-- **13 Sep 2026:**
--  Checkout Page:
-- Added billing details.
-- Added shipping methods.
-- Added payment details.
-
-
-- **13 Sep 2026:**
-- Account Page:
-- Added loyalty rewards.
-- Included newsletter preferences.
-- Added payment methods and account settings.
-
-  
- - **16 Sep 2026:**
- - Added the needed file structure in GitHub consisting of the assets, images, CSS, index.html, and JS.
- - The assets folder has all the HTML files stored in it
- - The images folder has the images used to generate the website
- - The CSS folder has an external stylesheet inside 
- - I attempted to create a file structure; however, I encountered some errors along the way, which then required me to delete all the unwanted files on the main branch, from the images to the HTML files and the CSS and JS
- - Updated the sitemap code with the inclusion of the new webpages
- - Updated the sitemap image with the inclusion of the new webpages
- - Updated the blog and account webpages
-
-
--**18 Sep 2026:**
--Added the updated HTML files
--Added the hamburger button to the website
-
-
--**31 Oct 2026:**
--Acknowledged feedback from the second assignment and worked to improve the third attempt.
-- Key updates include:
-- Made sure to link all pages to the external CSS sheet
-- Made sure to link all pages to the external JS sheet
-- Added interactive elements & UI features.
-- Added featured product catalogs.
-- Added workable navigation and internal links.
-- Added dynamic enhancements and proper customer engagement.
-- Added SEO and semantic structure.
-- Added all references used to complete task 3
-- Added a toggle button that changes theme modes of themes on the site
-- Updated the sitemap with all existing webpages on the website 
-  
-- 1. Home Page 
-- Added a lightbox effect
-- Added hovering buttons showing the prices of items 
-- Added a functional subscribe now form
-- Added an enhancement to the customer reviews
-- Added a JavaScript photo viewer that enlarges images and lets users click through a slideshow.
-
-
-- 2. About Page 
-- Added images of the employees to show customers who they are contacting 
-- Added a search button to help users search for what they are looking for 
-
-- 3. Contact Page
-- Added a functional form where customers can type their contact details and message.
-- Added JavaScript to check for errors before submitting.
-- Added zoom in and out features on the map
-- Added more common questions customers ask in general 
-
-- 4. Enquiry Page 
-- Added a form used for asking about specific items, services, or sponsorship options.
-
-- 5. Size Guide Page
-- Added clear measurement guides for dresses, shoes, and rings.
-
-- 6. Product Catalog Page
-- Added a search bar and filter controls so users can sort items by price, name, or category.
-
-- 7. Shopping Cart Page
-- Added a function that calculates totals and provides a direct link to pay.
-
-- 8. Checkout Page 
-- Added features that allow the following to work: collecting shipping addresses, billing info, and payment methods.
-- Added a feature that makes sure all required information is correctly filled out before completing the order.
-
-- 9. Order Confirmation Page 
-- Added a page that displays a thank-you message, an order tracking number, and a list of bought items.
-- Added a customer feedback questionnaire form
-
-- 10. Account Page 
-- **User Profile:** Allows users to log in, create accounts, and update personal details.
-- **Order Tracking:** Shows past purchases and saved delivery addresses.
-
-- 11. Blog Page
-- Added more images on the blog page 
-
 ## 10. References
 -Ambrose, G. & Harris, P. (2015) Design Thinking. London: Bloomsbury.
 
