@@ -167,6 +167,7 @@ This submission contains:
 
 ## 8. Sitemap
 # Royal Glam Boutique
+<img src="Images/Designer%20%282%29.png" alt="Designer Sitemap" width="800">
 
 ## 9. Changelog
 - **10 Aug 2026:** Structured README.md with academic subtitles.
