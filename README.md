@@ -19,7 +19,7 @@ The project showcases collaboration in software development and website planning
 The website has seven pages – Homepage, Catalogue, Account, Cart, Blog, Location, and Contact – which have been planned with wireframes and a sitemap.  
 
 ### 3.3 Technical Collaboration  
-A private GitHub repository was created, and team members were working on separate branches, making commits with clear messages and using peer-reviewed pull requests.
+A private GitHub repository was created, and team members worked on separate branches, making commits with clear messages and using peer-reviewed pull requests.
 
 ### 3.4 Design Planning  
 Sitemaps and wireframes have been used to plan the website's structure and functionality.
@@ -40,15 +40,86 @@ The project reflects best practices of information systems, project management, 
 ---
 
 ## 5. Key Features and Functionality
-- **Homepage**: hero banner, navigation menu, featured products.
-- **Catalogue**: products list, images, description, prices, add-to-cart buttons.
-- **Account**: profile details, order history, account settings.
-- **Cart**: cart summary, product details, checkout.
-- **Blog**: featured posts, categories, recent articles.
-- **Location**: map, address, images of storefront and interior.
-- **Contact**: contact form, phone number, email, links to social networks. 
+## Website Structure & Page Breakdown
+## Website Pages Explained Simply
+
+### 1. Home Page (`index.html`)
+The front page of the website made to welcome visitors and show off the brand.
+* **Banners & Photos:** Has high-quality photos and banners that change look depending on dark or light mode.
+* **Featured Products:** Interactive product cards where you can hover to see prices and click to open a photo viewer.
+* **Extra Features:** Has a newsletter signup box and customer review sections.
 
 ---
+
+### 2. About Page (`about.html`)
+tells customers about the store and how it works.
+* **Meet the Team:** Shows photos and job roles of the team running Royal Glam Boutique.
+* **Store Policies:** Explains shipping times, returns, payment options, and privacy rules.
+* **Search Bar:** Includes a search tool so users can find information fast.
+
+---
+
+### 3. Product Catalog Page (`catalog.html`)
+The main shop page where customers browse through all products.
+* **Filters & Sorting:** Lets users search items by category, price, color, and size.
+* **Product Info:** Shows item pictures, descriptions, prices, stock levels, and ratings.
+* **Quick Search:** Has a search bar to instantly find specific items.
+
+---
+
+### 4. Size Guide Page (`size-guide.html`)
+Helps customers pick the right size before buying so they don't need to make returns.
+* **Size Tables:** Easy-to-read charts for clothes, shoes, and ring sizes.
+* **How to Measure:** Step-by-step instructions on measuring bust, waist, hips, and shoe sizes.
+
+---
+
+### 5. Shopping Cart Page (`cart.html`)
+Where customers check their selected items before buying.
+* **Automatic Calculator:** Calculates item totals, taxes, and final prices automatically.
+* **Order Summary:** Shows a clear list of costs and a button to go straight to checkout.
+
+---
+
+### 6. Checkout Page (`checkout.html`)
+Where customers enter their details to complete the payment.
+* **Information Forms:** Simple fields to enter billing details, shipping addresses, and payment choices.
+* **Error Checks:** Checks that email addresses, phone numbers, and required fields are filled out correctly before ordering.
+
+---
+
+### 7. Order Confirmation Page (`confirmation.html`)
+The final page shown right after a customer buys an item.
+* **Thank You Message:** Shows a confirmation message along with a unique tracking order number.
+* **Receipt Breakdown:** Shows a final list of the bought items and total amount paid.
+* **Feedback Form:** A quick survey where customers can rate their shopping experience.
+
+---
+
+### 8. Account Page (`account.html`)
+A personal area for shoppers to manage their profile.
+* **Profile Management:** Lets users log in, sign up, and edit personal details.
+* **Order History:** Shows past orders, delivery status, and saved addresses.
+* **Rewards & Preferences:** Tracks reward points, saved payment methods, and email settings.
+
+---
+
+### 9. Contact Page (`contact.html`)
+Helps customers get in touch with customer support.
+* **Contact Form:** A form with automatic checks to ensure valid messages before sending.
+* **Store Info & Help:** Shows opening hours, an interactive map, social links, and common FAQs.
+
+---
+
+### 10. Enquiry Page (`enquiry.html`)
+A special form for custom or business questions.
+* **Custom Requests:** Used for specific product requests, custom orders, business partnerships, or sponsorships.
+
+---
+
+### 11. Blog Page (`blog.html`)
+A place for fashion updates and news.
+* **Articles & Photos:** Displays fashion guides, trend articles, and lookbooks with clear photo galleries.
 
 ## 6. Timeline and Milestones
 - **Week 1**: Repository and wireframes.
@@ -77,9 +148,7 @@ This submission contains:
 - **Responsive Web Design.**
 
  ## 7. 3 Part 3 Details
-
 This submission contains:
-
 - **JavaScript Enhancements.**
 - **Interactive UI.**
 - **Interactive Maps.**
@@ -98,38 +167,19 @@ This submission contains:
 
 ## 8. Sitemap
 ### 8.1 Visual Sitemap
-<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/8bc3f966-e1f4-4100-b9c7-7b38d088a7b7" /># Royal Glam Boutique
+<img width="1024" height="559" alt="image" src="https://raw.githubusercontent.com/Britney-RR08/RoyalGlamBoutique/main/Images/RoyalGlamBoutique-Sitemap.png" /># Royal Glam Boutique
 
 image link 
-blob: <https://gemini.google.com/473e2645-831f-4a6b-a410-fb78f1806920>
+blob: <https://raw.githubusercontent.com/Britney-RR08/RoyalGlamBoutique/main/Images/RoyalGlamBoutique-Sitemap.png>
 
 *Figure 1: Visual representation of the Royal Glam Boutique website structure.*
-
-### 8.2 HTML Sitemap
- <!-- Sitemap -->
-    <div class="footer-sitemap">
-      <h5 class="text-warning">Quick Links</h5>
-      <ul class="list-unstyled">
-        <li  class="list-inline-item"><a href="Assets/about.html" class="text-light">About Us</a></li>
-        <li  class="list-inline-item"><a href="Assets/contact.html" class="text-light">Contact Us</a></li>
-        <li  class="list-inline-item"><a href="Assets/size.html" class="text-light">Size</a></li>
-        <li  class="list-inline-item"><a href="Assets/catalog.html" class="text-light">Catalog</a></li>
-        <li  class="list-inline-item"><a href="Assets/cart.html" class="text-light">Cart</a></li>
-        <li  class="list-inline-item"><a href="Assets/checkout.html" class="text-light">Checkout</a></li>
-        <li  class="list-inline-item"><a href="Assets/order-confirmation.html" class="text-light">Order Confirmation</a></li>
-        <li  class="list-inline-item"><a href="Assets/account.html" class="text-light">Account</a></li>
-        <li  class="list-inline-item"><a href="Assets/blog.html" class="text-light">Blog</a></li>
-      </ul>
-    </div>
-  </div>
----
 
 ## 9. Changelog
 - **10 Aug 2026:** Structured README.md with academic subtitles.
 - **14 Aug 2026:** Edited the sitemap code
 - **14 Aug 2026:** Replace visual sitemap image in README
 - **14 Aug 2026:** Added a section on website goals and objectives
-- **13 Sep 2026:** Working with feedbacl from part 1
+- **13 Sep 2026:** Working with feedback from part 1
 - **13 Sep 2026:** Second Attempt – Feedback Integration
 - **13 Sep 2026:** Acknowledged feedback from the first assignment and worked to improve the second attempt. Key updates include:
   
@@ -212,7 +262,7 @@ blob: <https://gemini.google.com/473e2645-831f-4a6b-a410-fb78f1806920>
  - Added the needed file structure in GitHub consisting of the assets, images, CSS, index.html, and JS.
  - The assets folder has all the HTML files stored in it
  - The images folder has the images used to generate the website
- - The css folder has an external stylesheet inside 
+ - The CSS folder has an external stylesheet inside 
  - I attempted to create a file structure; however, I encountered some errors along the way, which then required me to delete all the unwanted files on the main branch, from the images to the HTML files and the CSS and JS
  - Updated the sitemap code with the inclusion of the new webpages
  - Updated the sitemap image with the inclusion of the new webpages
@@ -225,12 +275,15 @@ blob: <https://gemini.google.com/473e2645-831f-4a6b-a410-fb78f1806920>
 
 
 -**31 Oct 2026:**
-- General updates:
-- Added interactive Elements & UI Features.
-- Added featured Product Catalogs.
-- Added comprehensive Navigation & Internal Links.
-- Added dynamic Enhancements & Customer Engagement.
-- Added SEO & Semantic Structure.
+-Acknowledged feedback from the second assignment and worked to improve the third attempt.
+- Key updates include:
+- Made sure to link all pages to the external CSS sheet
+- Made sure to link all pages to the external JS sheet
+- Added interactive elements & UI features.
+- Added featured product catalogs.
+- Added workable navigation and internal links.
+- Added dynamic enhancements and proper customer engagement.
+- Added SEO and semantic structure.
 - Added all references used to complete task 3
 - Added a toggle button that changes theme modes of themes on the site
   
@@ -243,11 +296,11 @@ blob: <https://gemini.google.com/473e2645-831f-4a6b-a410-fb78f1806920>
 
 
 - 2. About Page 
-- Added images of the employees
+- Added images of the employees to show customers who they are contacting 
 - Added a search button to help users search for what they are looking for 
 
 - 3. Contact Page
-- Added a  functional form where customers can type their contact details and message.
+- Added a functional form where customers can type their contact details and message.
 - Added JavaScript to check for errors before submitting.
 - Added zoom in and out features on the map
 - Added more common questions customers ask in general 
@@ -257,7 +310,6 @@ blob: <https://gemini.google.com/473e2645-831f-4a6b-a410-fb78f1806920>
 
 - 5. Size Guide Page
 - Added clear measurement guides for dresses, shoes, and rings.
-
 
 - 6. Product Catalog Page
 - Added a search bar and filter controls so users can sort items by price, name, or category.
